@@ -27,7 +27,7 @@
     "preview": "vite preview",
     "storybook-nocache": "start-storybook --no-manager-cache -p 6006",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "dependencies": {
     "@storybook/testing-library": "^0.0.13",
