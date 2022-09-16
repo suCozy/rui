@@ -23,8 +23,9 @@ const args = process.argv.slice(2);
         build: {
           target: ['es2015'],
           lib: {
+            name: `remember-ui/${module}`,
             entry: getModuleEntryPath(module),
-            formats: ['es', 'cjs'],
+            formats: ['es', 'umd'],
             fileName: getOutputFileName(module),
           },
           emptyOutDir: false,
