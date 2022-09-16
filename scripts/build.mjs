@@ -30,6 +30,13 @@ const args = process.argv.slice(2);
           emptyOutDir: false,
           rollupOptions: {
             external: ['react', 'react-dom', 'styled-components'],
+            output: {
+              globals: {
+                react: 'React',
+                'react-dom': 'ReactDOM',
+                'styled-components': 'styled',
+              },
+            },
           },
         },
       });
