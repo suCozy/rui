@@ -34,6 +34,20 @@ function generatePackageJsonForDist() {
     packageJsonObject.module = packageJsonObject.module.replace('dist/', '');
   }
 
+  const modules = getModulesToBuild();
+  packageJsonObject.exports = {
+    '.': {
+      import: `./index.js`,
+      require: `./index.umd.js`,
+    },
+  };
+  modules.map((module) => {
+    packageJsonObject.exports[`./${module}`] = {
+      import: `./${module}.js`,
+      require: `./${module}.umd.js`,
+    };
+  });
+
   return packageJsonObject;
 }
 
@@ -44,4 +58,12 @@ function getOutDir() {
   const tsconfigJsonObject = JSON.parse(tsconfigJson);
 
   return tsconfigJsonObject.compilerOptions.outDir.replace('./', '');
+}
+
+function getModulesToBuild() {
+  const buildConfig = fs.readFileSync(
+    path.resolve(__dirname, '../buildConfig.json').toString('utf-8')
+  );
+  const buildConfigObject = JSON.parse(buildConfig);
+  return ['index', ...(buildConfigObject.modules ?? [])];
 }
