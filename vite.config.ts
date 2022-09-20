@@ -1,9 +1,11 @@
 import react from "@vitejs/plugin-react";
-import * as path from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { visualizer } from "rollup-plugin-visualizer";
+
+/**
+ * NOTE: 빌드 관련 설정은 scripts/build.mjs 를 확인해주세요.
+ */
 
 export default () => {
   return defineConfig({
@@ -13,35 +15,6 @@ export default () => {
       dts({
         insertTypesEntry: true,
       }),
-      visualizer({ filename: "stats.html", open: true })
     ],
-    build: {
-      target: ["es2015"],
-      polyfillModulePreload: false,
-      lib: {
-        entry: path.resolve(__dirname, "src/index.ts"),
-        name: "remember-ui",
-        /** package.json과 파일 포멧을 맞춰야 한다
-         * es -> package.json의 module과 동일 === dist/index.es.js
-         * cjs -> package.json의 main 동일 === dist/index.cjs.js
-         */
-        formats: ["es", "cjs"],
-        fileName: (format) => `index.${format}.js`,
-      },
-      rollupOptions: {
-        external: [
-          "react",
-          "react-dom",
-          "styled-components",
-        ],
-        output: {
-          globals: {
-            react: "React",
-            "react-dom": "ReactDOM",
-            "styled-components": "styled",
-          },
-        },
-      },
-    },
   });
 };
