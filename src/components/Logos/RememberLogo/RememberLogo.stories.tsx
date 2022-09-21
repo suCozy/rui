@@ -9,7 +9,6 @@ const meta: ComponentMeta<typeof RememberLogo> = {
   args: {
     color: 'black',
     height: 20,
-    isTest: true,
   },
 };
 
