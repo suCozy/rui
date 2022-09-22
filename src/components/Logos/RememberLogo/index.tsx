@@ -13,9 +13,10 @@ export interface RememberLogoProps {
   color?: 'white' | 'black' | string;
   height?: number;
   env?: EnvType;
+  customElement?: React.ReactNode;
 }
 
-const getAppEnv = (env?: EnvType): number => {
+const getViewBoxWidth = (env?: EnvType): number => {
   switch (env) {
     case 'bravo':
     case 'alpha':
@@ -30,7 +31,7 @@ const getAppEnv = (env?: EnvType): number => {
   }
 };
 
-const logoByEnv = (env?: EnvType): JSX.Element | undefined => {
+const getLogo = (env?: EnvType): JSX.Element | undefined => {
   switch (env) {
     case 'bravo':
     case 'development':
@@ -64,17 +65,21 @@ export const RememberLogo = ({
   color = 'white',
   height = 20,
   env,
+  customElement,
 }: RememberLogoProps) => (
   <div
     style={{
       width: 'fit-content',
       height,
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
     }}
   >
     <svg
       className={className}
       height="100%"
-      viewBox={`0 0 ${getAppEnv(env)} 20`}
+      viewBox={`0 0 ${getViewBoxWidth(env)} 20`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
@@ -115,7 +120,8 @@ export const RememberLogo = ({
         d="M106.004 9.50452C106.188 8.01788 105.611 6.59976 104.427 6.56316C102.727 6.51154 101.931 9.06434 102.479 12.1615C102.776 13.8358 103.832 15.4567 105.438 16.1315C106.754 16.6843 108.835 16.5613 110.143 15.8537L110.507 16.3605C109.188 19.3216 106.344 20.2911 103.768 19.8781C100.604 19.3713 98.0776 16.7819 97.8964 12.7772C97.674 7.87241 100.574 5.08778 104.576 5.08778C107.738 5.09811 111.025 7.66781 110.69 12.7134H104.164V11.9775C105.011 11.6162 105.865 10.6251 106.004 9.50452Z"
         fill={color}
       />
-      {logoByEnv(env)}
+      {getLogo(env)}
     </svg>
+    {customElement}
   </div>
 );
