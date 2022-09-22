@@ -8,7 +8,9 @@ export type EnvType =
   | 'test'
   | 'development';
 
-export interface RememberLogoProps {
+export interface RememberLogoProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  ref?: React.Ref<HTMLDivElement>;
   className?: string;
   color?: 'white' | 'black' | string;
   height?: number;
@@ -66,8 +68,12 @@ export const RememberLogo = ({
   height = 20,
   env,
   customElement,
+  ref,
+  ...props
 }: RememberLogoProps) => (
   <div
+    {...props}
+    ref={ref}
     style={{
       width: 'fit-content',
       height,
