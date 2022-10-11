@@ -4,6 +4,7 @@
     "colors/v2",
     "colors/v3",
     "components",
-    "components/Buttons"
+    "components/Buttons",
+    "components/Logos"
   ]
 }
