@@ -1,0 +1,34 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import Dialog from './index';
+
+export default {
+  title: 'Modals/Dialog',
+  component: Dialog,
+} as ComponentMeta<typeof Dialog>;
+
+const Template: ComponentStory<typeof Dialog> = () => <Dialog />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: 'Button',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Button',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: 'Button',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: 'Button',
+};
