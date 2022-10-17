@@ -3,6 +3,9 @@
     "colors",
     "colors/v2",
     "colors/v3",
+    "mixins",
+    "mixins/breakpoints",
+    "mixins/typography",
     "components",
     "components/Buttons",
     "components/Logos"
