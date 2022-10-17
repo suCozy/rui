@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { primary200 } from 'colors/v3';
+import { primary200, contents000, contents100 } from 'colors/v3';
+import { getTypographyStyles } from 'mixins/typography';
 
 export const overlayShow = keyframes`
   0% { opacity: 0; }
@@ -23,7 +24,7 @@ export const StyledOverlay = styled(DialogPrimitive.Overlay)`
   }
 `;
 
-export const StyledContent = styled(DialogPrimitive.Content)`
+export const DialogContent = styled(DialogPrimitive.Content)`
   background-color: ${primary200};
   border-radius: 8px;
   position: fixed;
@@ -44,8 +45,10 @@ export const StyledContent = styled(DialogPrimitive.Content)`
   } ;
 `;
 
-export const Flex = styled.div`
-  display: flex;
+export const DialogIcon = styled.img`
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
 `;
 
 export const Box = styled.div``;
@@ -85,51 +88,20 @@ export const IconButton = styled.button`
   }
 `;
 
-export const Fieldset = styled.fieldset`
-  all: unset;
-  display: flex;
-  gap: 20;
-  align-items: center;
-  margin-bottom: 15;
-`;
+export const DialogTitle = styled(DialogPrimitive.Title)`
+  ${getTypographyStyles('Headline3_B')}
 
-export const Label = styled.label`
-  font-size: 15;
-  color: red;
-  width: 90;
-  text-align: right;
-`;
-
-export const Input = styled.input`
-  all: unset;
-  width: 100%;
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4;
-  padding: 0 10px;
-  font-size: 15;
-  line-height: 1;
-  color: red;
-  box-shadow: 0 0 0 1px red;
-  height: 35;
-
-  &:focus {
-    box-shadow: 0 0 0 2px red;
-  }
-`;
-
-export const StyledTitle = styled(DialogPrimitive.Title)`
+  color: ${contents000};
   margin: 0;
-  font-weight: 500;
-  color: blue;
-  font-size: 17;
+  padding: 0;
+  white-space: pre-line;
 `;
 
-export const StyledDescription = styled(DialogPrimitive.Description)`
-  margin: 10px 0 20px;
-  color: red;
-  font-size: 15;
-  line-height: 1.5;
+export const DialogDescription = styled(DialogPrimitive.Description)`
+  ${getTypographyStyles('Body1_M')}
+
+  color: ${contents100};
+  margin: 4px 0 24px;
+  text-align: center;
+  white-space: pre-line;
 `;

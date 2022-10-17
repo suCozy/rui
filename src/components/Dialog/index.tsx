@@ -1,61 +1,50 @@
-import * as Dialog from '@radix-ui/react-dialog';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 
+import { Flex } from 'components';
+import { DialogAlertIcon, DialogCheckIcon } from 'assets';
 import {
   StyledOverlay,
-  StyledContent,
-  Button,
-  Fieldset,
-  Label,
-  Input,
-  Flex,
-  IconButton,
-  StyledTitle,
-  StyledDescription,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogIcon,
 } from './styled';
 
 interface ContentProps {
   children: React.ReactNode;
+  dimmed?: boolean;
 }
 
-function Content({ children, ...props }: ContentProps) {
+function Content({ children, dimmed = true, ...props }: ContentProps) {
   return (
-    <Dialog.Portal>
-      <StyledOverlay />
-      <StyledContent {...props}>{children}</StyledContent>
-    </Dialog.Portal>
+    <DialogPrimitive.Portal>
+      {dimmed && <StyledOverlay />}
+      <DialogContent {...props}>
+        <Flex direction="column" align="center">
+          {children}
+        </Flex>
+      </DialogContent>
+    </DialogPrimitive.Portal>
   );
 }
 
-const DialogDemo = () => (
-  <Dialog.Root>
-    <Dialog.Trigger asChild>
-      <Button>Edit profile</Button>
-    </Dialog.Trigger>
-    <Content>
-      <StyledTitle>Edit profile</StyledTitle>
-      <StyledDescription>
-        Make changes to your profile here. Click save when you're done.
-      </StyledDescription>
-      <Fieldset>
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" defaultValue="Pedro Duarte" />
-      </Fieldset>
-      <Fieldset>
-        <Label htmlFor="username">Username</Label>
-        <Input id="username" defaultValue="@peduarte" />
-      </Fieldset>
-      <Flex style={{ marginTop: 25, justifyContent: 'flex-end' }}>
-        <Dialog.Close asChild>
-          <Button>Save changes</Button>
-        </Dialog.Close>
-      </Flex>
-      <Dialog.Close asChild>
-        <IconButton aria-label="Close">
-          {/* <Cross2Icon /> */}ㄹㄹㄴㄹㅁㄴㄹㄴㅁ
-        </IconButton>
-      </Dialog.Close>
-    </Content>
-  </Dialog.Root>
-);
+function Icon({ type = 'alert' }: { type: 'alert' | 'check' }) {
+  return (
+    <DialogIcon
+      src={type === 'alert' ? DialogAlertIcon : DialogCheckIcon}
+      alt="dialog-icon"
+    />
+  );
+}
 
-export default DialogDemo;
+function Title({ children }: { children: React.ReactNode }) {
+  return <DialogTitle>{children}</DialogTitle>;
+}
+
+function Description({ children }: { children: React.ReactNode }) {
+  return <DialogDescription>{children}</DialogDescription>;
+}
+
+const { Root, Trigger, Close } = DialogPrimitive;
+
+export { Root, Trigger, Close, Icon, Title, Description, Content };
