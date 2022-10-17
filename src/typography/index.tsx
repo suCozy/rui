@@ -1,19 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { FONT_FAMILY, TYPOGRAPHY_STYLES } from 'core/typography';
-
-export const getTypographyStyles = (
-  typography: keyof typeof TYPOGRAPHY_STYLES
-) => {
-  const { fontSize, lineHeight, fontWeight } = TYPOGRAPHY_STYLES[typography];
-  return css`
-    font-size: ${fontSize}px;
-    line-height: ${lineHeight}px;
-    font-weight: ${fontWeight};
-    font-family: ${FONT_FAMILY};
-  `;
-};
+import { getTypographyStyles, TYPOGRAPHY_STYLES } from 'mixins/typography';
 
 export const TypeItem = ({ typography, children }: Props) => (
   <RecentContainer typography={typography}>{children}</RecentContainer>

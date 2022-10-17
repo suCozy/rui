@@ -1,8 +1,4 @@
-import {
-  css,
-  CSSProperties,
-  FlattenSimpleInterpolation,
-} from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import { PRETENDARD_FONT_FAMILY, TYPOGRAPHY_STYLES } from './const';
 import { TypographyStyle } from './types';
