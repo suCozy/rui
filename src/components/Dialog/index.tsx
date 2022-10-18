@@ -15,7 +15,10 @@ interface ContentProps {
   children: React.ReactNode;
   dimmed?: boolean;
 }
-
+/**
+ * @param dimmed boolean
+ * @see https://www.radix-ui.com/docs/primitives/components/dialog
+ */
 function Content({ children, dimmed = true, ...props }: ContentProps) {
   return (
     <DialogPrimitive.Portal>
@@ -29,6 +32,9 @@ function Content({ children, dimmed = true, ...props }: ContentProps) {
   );
 }
 
+/**
+ * @param type 'alert' | 'check' / default: 'alert'
+ */
 function Icon({ type = 'alert' }: { type: 'alert' | 'check' }) {
   return (
     <DialogIcon
@@ -48,10 +54,16 @@ function CloseIcon() {
   );
 }
 
+/**
+ * @param children React.ReactNode
+ */
 function Title({ children }: { children: React.ReactNode }) {
   return <DialogTitle>{children}</DialogTitle>;
 }
 
+/**
+ * @param children React.ReactNode
+ */
 function Description({ children }: { children: React.ReactNode }) {
   return <DialogDescription>{children}</DialogDescription>;
 }
