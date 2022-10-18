@@ -12,6 +12,7 @@ type FlexProps = {
     | 'space-evenly';
   wrap: 'nowrap' | 'wrap' | 'wrap-reverse';
   gap: string;
+  width: string;
 };
 
 export const Flex = styled.div<Partial<FlexProps>>`
@@ -22,4 +23,5 @@ export const Flex = styled.div<Partial<FlexProps>>`
   justify-content: ${({ justify = 'center' }) => justify};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
   gap: ${({ gap = '0' }) => gap};
+  width: ${({ width = '100%' }) => width};
 `;

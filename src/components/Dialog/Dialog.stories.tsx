@@ -8,7 +8,7 @@ import * as Dialog from '.';
 const DialogComponent = () => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <Button>Edit profile</Button>
+      <button>Edit profile</button>
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.CloseIcon />
@@ -17,12 +17,15 @@ const DialogComponent = () => (
       <Dialog.Description>
         Make changes to your profile here. Click save when you're done.
       </Dialog.Description>
-      <Dialog.Close asChild>
-        <Flex gap="10px">
-          <Button>Save changes</Button>
-          <Button>Save changes</Button>
-        </Flex>
-      </Dialog.Close>
+      <Flex gap="10px">
+        {/* 추후 버튼 컴포넌트로 대체 */}
+        <Dialog.Close asChild>
+          <Button onClick={() => console.log('확인')}>확인</Button>
+        </Dialog.Close>
+        <Dialog.Close asChild>
+          <Button onClick={() => console.log('취소')}>취소</Button>
+        </Dialog.Close>
+      </Flex>
     </Dialog.Content>
   </Dialog.Root>
 );
