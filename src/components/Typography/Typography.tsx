@@ -1,25 +1,30 @@
 import React from 'react';
 
-import { TypographyStyle } from 'mixins/typography';
+import { type TypographyStyle } from 'mixins/typography';
 import { TYPOGRAPHY_COMPONENT_MAP } from './const';
 import { getTypographyComponent } from './styles';
-import { TypographyTagNames } from './types';
+import type { TypographyTagNames } from './types';
 
 export function Typography({
   variant = 'Body1_M',
   tagName,
+  color,
   children,
 }: TypographyProps) {
-  const Styled = getTypographyComponent({
-    variant,
-    tagName: tagName || TYPOGRAPHY_COMPONENT_MAP[variant],
-  });
+  const Component = getTypographyComponent(
+    tagName || TYPOGRAPHY_COMPONENT_MAP[variant]
+  );
 
-  return <Styled>{children}</Styled>;
+  return (
+    <Component variant={variant} color={color}>
+      {children}
+    </Component>
+  );
 }
 
 export interface TypographyProps {
   variant?: TypographyStyle;
   tagName?: TypographyTagNames;
+  color?: string;
   children?: React.ReactNode;
 }
