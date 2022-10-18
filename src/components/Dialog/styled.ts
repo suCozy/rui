@@ -54,38 +54,25 @@ export const DialogIcon = styled.img`
 export const Box = styled.div``;
 
 export const Button = styled.button`
+  ${getTypographyStyles('Headline4_M')}
+  width: 100%;
   all: unset;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4;
+  border: 1px solid #cdccc6;
   padding: 0 15px;
-  font-size: 15;
-  line-height: 1;
-  font-weight: 500;
-  height: 35;
+  height: 44px;
 `;
 
 export const IconButton = styled.button`
   all: unset;
-  font-family: inherit;
-  border-radius: 100%;
-  height: 25;
-  width: 25;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  position: absolute;
-  top: 10;
-  right: 10;
-
-  &:hover {
-    background-color: white;
-  }
-  &:focus {
-    box-shadow: 0 0 0 2px blue;
-  }
+  height: 16px;
+  width: 16px;
+  margin: -8px 0 8px 0;
+  align-self: flex-end;
+  cursor: pointer;
 `;
 
 export const DialogTitle = styled(DialogPrimitive.Title)`

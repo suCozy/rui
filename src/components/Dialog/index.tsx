@@ -1,13 +1,14 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 import { Flex } from 'components';
-import { DialogAlertIcon, DialogCheckIcon } from 'assets';
+import { IconClose, IconDialogAlert, IconDialogCheck } from 'assets';
 import {
   StyledOverlay,
   DialogContent,
   DialogTitle,
   DialogDescription,
   DialogIcon,
+  IconButton,
 } from './styled';
 
 interface ContentProps {
@@ -31,9 +32,19 @@ function Content({ children, dimmed = true, ...props }: ContentProps) {
 function Icon({ type = 'alert' }: { type: 'alert' | 'check' }) {
   return (
     <DialogIcon
-      src={type === 'alert' ? DialogAlertIcon : DialogCheckIcon}
+      src={type === 'alert' ? IconDialogAlert : IconDialogCheck}
       alt="dialog-icon"
     />
+  );
+}
+
+function CloseIcon() {
+  return (
+    <Close asChild>
+      <IconButton type="button" aria-label="Close">
+        <img src={IconClose} alt="close-icon" />
+      </IconButton>
+    </Close>
   );
 }
 
@@ -47,4 +58,4 @@ function Description({ children }: { children: React.ReactNode }) {
 
 const { Root, Trigger, Close } = DialogPrimitive;
 
-export { Root, Trigger, Close, Icon, Title, Description, Content };
+export { Root, Trigger, Close, Icon, CloseIcon, Title, Description, Content };

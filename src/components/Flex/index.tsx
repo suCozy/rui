@@ -19,7 +19,7 @@ export const Flex = styled.div<Partial<FlexProps>>`
   display: flex;
   flex-direction: ${({ direction = 'row' }) => direction};
   align-items: ${({ align = 'stretch' }) => align};
-  justify-content: ${({ justify = 'flex-start' }) => justify};
+  justify-content: ${({ justify = 'center' }) => justify};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
   gap: ${({ gap = '0' }) => gap};
 `;
