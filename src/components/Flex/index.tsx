@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 type FlexProps = {
+  className?: string;
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
   justify:
@@ -16,12 +17,13 @@ type FlexProps = {
 };
 
 /**
+ * @param className string
+ * @param gap string
+ * @param width string
  * @param direction 'row' | 'column' | 'row-reverse' | 'column-reverse'
  * @param align 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
  * @param justify 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
  * @param wrap 'nowrap' | 'wrap' | 'wrap-reverse'
- * @param gap string
- * @param width string
  */
 export const Flex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;

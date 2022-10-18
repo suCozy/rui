@@ -1,52 +1,43 @@
-import React from 'react';
-import './button.css';
+import type { ButtonProps } from './types';
+import { ButtonRoot, Spinner } from './styled';
+import { IconSpinner } from 'assets';
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-}
-
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
+function Root({
+  className,
+  disabled = false,
+  theme = 'solid',
+  outline = false,
+  size = 'small',
+  loading = false,
+  block = false,
+  children,
   ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+}: ButtonProps) {
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
-      style={{ backgroundColor }}
+    <ButtonRoot
+      className={className}
+      size={size}
+      theme={theme}
+      outline={outline}
+      disabled={disabled}
+      block={block}
+      loading={loading}
       {...props}
     >
-      {label}
-    </button>
+      {/* Spinner 컴포넌트로 대체 예정 */}
+      {loading && !disabled ? (
+        <Spinner
+          size={size}
+          outline={outline}
+          disabled={disabled}
+          src={IconSpinner}
+          alt="spinner"
+        />
+      ) : (
+        children
+      )}
+    </ButtonRoot>
   );
-};
+}
+
+export { Root };
