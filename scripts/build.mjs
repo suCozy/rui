@@ -9,10 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 (async function () {
   const args = process.argv.slice(2);
-  const buildConfig = fs.readFileSync(
-    path.resolve(__dirname, '..', 'buildConfig.json').toString('utf-8')
-  );
-  const buildConfigObject = JSON.parse(buildConfig);
+  const buildConfigObject = getBuildConfigObject();
   const modulesToBuild = getModulesToBuild(buildConfigObject.modules ?? []);
   const resolveAlias = getResolveAlias(buildConfigObject.modules ?? []);
 
@@ -62,6 +59,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
     open(path.resolve(__dirname, '..', 'visualizer', 'index.stats.html'));
   }
 })();
+
+function getBuildConfigObject() {
+  const buildConfig = fs.readFileSync(
+    path.resolve(__dirname, '..', 'buildConfig.json').toString('utf-8')
+  );
+  return JSON.parse(buildConfig) ?? {};
+}
 
 function getModulesToBuild(modules) {
   return ['index', ...(modules ?? [])];
