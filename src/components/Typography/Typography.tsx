@@ -1,5 +1,6 @@
-import { TypographyStyle } from 'mixins/typography';
 import React from 'react';
+
+import { TypographyStyle } from 'mixins/typography';
 import { TYPOGRAPHY_COMPONENT_MAP } from './const';
 import { getTypographyComponent } from './styles';
 import { TypographyTagNames } from './types';

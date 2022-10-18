@@ -1,11 +1,12 @@
+import { ReactNode } from 'react';
+import styled, { css } from 'styled-components';
+
 import {
   background100,
   contents000,
   contents100,
   contents300,
 } from 'colors/v3';
-import { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
 
 type TextAlign = 'left' | 'center' | 'right';
 

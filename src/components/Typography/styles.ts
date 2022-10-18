@@ -1,5 +1,6 @@
-import { getTypographyStyles, type TypographyStyle } from 'mixins/typography';
 import styled from 'styled-components';
+
+import { getTypographyStyles, type TypographyStyle } from 'mixins/typography';
 import type { TypographyTagNames } from './types';
 
 export const getTypographyComponent = ({
