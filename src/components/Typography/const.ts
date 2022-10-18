@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 import { TypographyStyle } from 'mixins/typography';
 import { TypographyTagNames } from './types';
 
