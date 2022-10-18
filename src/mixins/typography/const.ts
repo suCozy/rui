@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 export const TYPOGRAPHY_STYLES = {
   /** fontSize: 24, lineHeight: 34, fontWeight: 600 */
   Headline2_B: {
