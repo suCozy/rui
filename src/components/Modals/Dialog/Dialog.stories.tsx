@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Button } from 'components/Buttons';
+import Button from 'components/Buttons/Button';
 import { Flex } from 'components/Common/Flex';
 
 import Dialog from '.';
@@ -16,14 +16,26 @@ const DialogComponent = () => (
       <Dialog.Title>Title</Dialog.Title>
       <Dialog.Description>all description in here</Dialog.Description>
       <Flex gap="10px">
-        {/* 추후 버튼 컴포넌트로 대체 */}
         <Dialog.Close asChild>
-          <Button.Root theme="" onClick={() => console.log('확인')}>
+          <Button
+            theme="solid"
+            size="large"
+            outline
+            block
+            onClick={() => console.log('확인')}
+          >
             확인
-          </Button.Root>
+          </Button>
         </Dialog.Close>
         <Dialog.Close asChild>
-          <Button onClick={() => console.log('취소')}>취소</Button>
+          <Button
+            theme="solid"
+            size="large"
+            block
+            onClick={() => console.log('취소')}
+          >
+            취소
+          </Button>
         </Dialog.Close>
       </Flex>
     </Dialog.Content>

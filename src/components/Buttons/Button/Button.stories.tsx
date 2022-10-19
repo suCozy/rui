@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import * as Button from '.';
+import Button from '.';
 
 export default {
   title: 'Buttons/Button',
-  component: Button.Root,
+  component: Button,
   args: {
     disabled: false,
     theme: 'solid',
@@ -13,10 +13,10 @@ export default {
     loading: true,
     block: false,
   },
-} as ComponentMeta<typeof Button.Root>;
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button.Root> = (args) => (
-  <Button.Root {...args}>Button</Button.Root>
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
 );
 
 export const Primary = Template.bind({});

@@ -2,7 +2,7 @@ import type { ButtonProps } from './types';
 import { ButtonRoot } from './styles';
 import { Spinner } from 'components/Common/Spinner';
 
-function Root({
+function Button({
   className,
   disabled = false,
   theme = 'solid',
@@ -25,9 +25,10 @@ function Root({
       loading={loading}
       {...props}
     >
+      {/* 버튼 아이콘 추후 작업 예정 */}
       {loading && !disabled ? <Spinner size={isLarge ? 24 : 16} /> : children}
     </ButtonRoot>
   );
 }
 
-export { Root };
+export default Object.assign(Button, {});

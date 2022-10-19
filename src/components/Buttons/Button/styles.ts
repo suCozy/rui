@@ -24,6 +24,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   ${({ block }) =>
     block &&
     css`
+      flex-shrink: 1;
       width: 100%;
     `};
 

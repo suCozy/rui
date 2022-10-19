@@ -1,4 +1,5 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { DialogProps } from '@radix-ui/react-dialog';
 
 import { IconClose, IconDialogAlert, IconDialogCheck } from 'assets';
 import { Flex } from 'components/Common/Flex';
@@ -19,8 +20,8 @@ interface ContentProps {
 /**
  * @param children React.ReactNode
  */
-function Dialog({ children }: { children: React.ReactNode }) {
-  return <Root>{children}</Root>;
+function Dialog({ children, ...props }: DialogProps) {
+  return <Root {...props}>{children}</Root>;
 }
 
 /**
