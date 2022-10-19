@@ -1,6 +1,6 @@
 import type { ButtonProps } from './types';
-import { ButtonRoot, Spinner } from './styled';
-import { IconSpinner } from 'assets';
+import { ButtonRoot } from './styles';
+import { Spinner } from 'components/Common/Spinner';
 
 function Root({
   className,
@@ -13,6 +13,7 @@ function Root({
   children,
   ...props
 }: ButtonProps) {
+  const isLarge = size.includes('large');
   return (
     <ButtonRoot
       className={className}
@@ -24,18 +25,7 @@ function Root({
       loading={loading}
       {...props}
     >
-      {/* Spinner 컴포넌트로 대체 예정 */}
-      {loading && !disabled ? (
-        <Spinner
-          size={size}
-          outline={outline}
-          disabled={disabled}
-          src={IconSpinner}
-          alt="spinner"
-        />
-      ) : (
-        children
-      )}
+      {loading && !disabled ? <Spinner size={isLarge ? 24 : 16} /> : children}
     </ButtonRoot>
   );
 }

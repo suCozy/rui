@@ -9,7 +9,7 @@ import {
   DialogDescription,
   DialogIcon,
   IconButton,
-} from './styled';
+} from './styles';
 
 interface ContentProps {
   children: React.ReactNode;

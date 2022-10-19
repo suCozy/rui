@@ -5,6 +5,14 @@ import * as Button from '.';
 export default {
   title: 'Buttons/Button',
   component: Button.Root,
+  args: {
+    disabled: false,
+    theme: 'solid',
+    outline: false,
+    size: 'small',
+    loading: true,
+    block: false,
+  },
 } as ComponentMeta<typeof Button.Root>;
 
 const Template: ComponentStory<typeof Button.Root> = (args) => (
@@ -12,12 +20,3 @@ const Template: ComponentStory<typeof Button.Root> = (args) => (
 );
 
 export const Primary = Template.bind({});
-
-Primary.args = {
-  disabled: false,
-  theme: 'solid',
-  outline: false,
-  size: 'small',
-  loading: true,
-  block: false,
-};

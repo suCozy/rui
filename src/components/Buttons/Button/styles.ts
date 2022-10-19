@@ -58,23 +58,3 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       `};
   }
 `;
-
-const RotateAnimation = keyframes`
-  to { transform: rotate(360deg); };
-`;
-
-export const Spinner = styled.img<ButtonSpinnerStyleType>`
-  width: 16px;
-  height: 16px;
-
-  animation: ${RotateAnimation} 1.5s linear infinite;
-
-  ${({ size }) =>
-    (size === 'large' || size === 'xLarge') &&
-    css`
-      width: 24px;
-      height: 24px;
-    `};
-
-  display: ${({ disabled }) => (disabled ? 'none' : 'block')};
-`;

@@ -27,4 +27,4 @@ export const BUTTON_SIZES = {
 export const BUTTON_COLORS: Record<ButtonTheme, string> = {
   solid: contents000,
   secondary: contents150,
-};
+} as const;
