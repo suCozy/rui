@@ -7,6 +7,7 @@ import { contents300, contents999, contents000 } from 'colors/v3';
 
 export const ButtonRoot = styled.button<ButtonStyleType>`
   all: unset;
+  appearance: none;
   box-sizing: border-box;
   user-select: none;
   padding: 0 16px;

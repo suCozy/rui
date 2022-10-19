@@ -51,15 +51,6 @@ export const DialogIcon = styled.img`
   margin-bottom: 16px;
 `;
 
-export const Button = styled.button`
-  ${getTypographyStyles('Headline4_M')}
-  width: 100%;
-  border-radius: 4;
-  border: 1px solid #cdccc6;
-  padding: 0 15px;
-  height: 44px;
-`;
-
 export const IconButton = styled.button`
   all: unset;
   height: 16px;

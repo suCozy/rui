@@ -15,6 +15,14 @@ interface ContentProps {
   children: React.ReactNode;
   dimmed?: boolean;
 }
+
+/**
+ * @param children React.ReactNode
+ */
+function Dialog({ children }: { children: React.ReactNode }) {
+  return <Root>{children}</Root>;
+}
+
 /**
  * @param dimmed boolean
  * @see https://www.radix-ui.com/docs/primitives/components/dialog
@@ -70,4 +78,12 @@ function Description({ children }: { children: React.ReactNode }) {
 
 const { Root, Trigger, Close } = DialogPrimitive;
 
-export { Root, Trigger, Close, Icon, CloseIcon, Title, Description, Content };
+export default Object.assign(Dialog, {
+  Trigger,
+  Close,
+  Icon,
+  CloseIcon,
+  Title,
+  Description,
+  Content,
+});
