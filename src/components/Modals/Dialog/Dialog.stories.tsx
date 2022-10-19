@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Button } from './styles';
-import { Flex } from 'components/Flex';
+import { Flex } from 'components/Common/Flex';
 
 import * as Dialog from '.';
 

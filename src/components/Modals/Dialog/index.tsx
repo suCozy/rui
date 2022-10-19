@@ -1,7 +1,7 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { Flex } from 'components';
 import { IconClose, IconDialogAlert, IconDialogCheck } from 'assets';
+import { Flex } from 'components/Common/Flex';
 import {
   StyledOverlay,
   DialogContent,
