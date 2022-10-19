@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { getTypographyStyles } from 'mixins/typography';
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
-import type { ButtonStyleType, ButtonSpinnerStyleType } from './types';
+import type { ButtonStyleType } from './types';
 import { contents300, contents999, contents000 } from 'colors/v3';
 
 export const ButtonRoot = styled.button<ButtonStyleType>`
