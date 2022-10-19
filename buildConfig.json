@@ -8,6 +8,7 @@
     "mixins/typography",
     "components",
     "components/Buttons",
-    "components/Logos"
+    "components/Logos",
+    "components/Typography"
   ]
 }

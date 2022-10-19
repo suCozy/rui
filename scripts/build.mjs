@@ -6,13 +6,17 @@ import { fileURLToPath } from 'url';
 import { build } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const args = process.argv.slice(2);
 
 (async function () {
-  const modules = getModulesToBuild();
+  const args = process.argv.slice(2);
+  const buildConfigObject = getBuildConfigObject();
+  const modulesToBuild = getModulesToBuild(buildConfigObject.modules ?? []);
+  const resolveAlias = getResolveAlias(buildConfigObject.modules ?? []);
+
   console.log('Building modules...');
+
   await Promise.all(
-    modules.map(async (module) => {
+    modulesToBuild.map(async (module) => {
       return await build({
         plugins: [
           visualizer({
@@ -40,6 +44,9 @@ const args = process.argv.slice(2);
             },
           },
         },
+        resolve: {
+          alias: resolveAlias,
+        },
       });
     })
   );
@@ -53,12 +60,25 @@ const args = process.argv.slice(2);
   }
 })();
 
-function getModulesToBuild() {
+function getBuildConfigObject() {
   const buildConfig = fs.readFileSync(
-    path.resolve(__dirname, '../buildConfig.json').toString('utf-8')
+    path.resolve(__dirname, '..', 'buildConfig.json').toString('utf-8')
   );
-  const buildConfigObject = JSON.parse(buildConfig);
-  return ['index', ...(buildConfigObject.modules ?? [])];
+  return JSON.parse(buildConfig) ?? {};
+}
+
+function getModulesToBuild(modules) {
+  return ['index', ...(modules ?? [])];
+}
+
+function getResolveAlias(modules) {
+  const absolutePaths = [
+    ...new Set(modules.map((module) => module.split('/')[0])),
+  ];
+  return absolutePaths.map((absolutePath) => ({
+    find: absolutePath,
+    replacement: path.resolve(__dirname, '..', 'src', absolutePath),
+  }));
 }
 
 function getModuleEntryPath(module) {
