@@ -1,4 +1,6 @@
-export { ReactComponent as IconDialogCheck } from './icons/icon-confirm_check.svg';
+export { ReactComponent as IconConfirmAlert } from './icons/img-confirm_alert.svg';
+
+export { ReactComponent as IconCheck } from './icons/icon-confirm_check.svg';
 export { ReactComponent as IconClose } from './icons/icon_close_s.svg';
 export { ReactComponent as IconSpinner } from './icons/icon_spinner.svg';
 export { ReactComponent as IconFavoriteOff } from './icons/icon_favorite_off.svg';
