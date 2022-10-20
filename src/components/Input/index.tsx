@@ -18,20 +18,12 @@ export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, `aria-${string}`> {
   label?: string;
   hintText?: string;
-  leftElements?: ReactNode;
-  rightElements?: ReactNode;
+  leftElement?: ReactNode;
+  rightElement?: ReactNode;
 }
 
 const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  {
-    className,
-    label,
-    leftElements,
-    rightElements,
-    disabled,
-    hintText,
-    ...props
-  },
+  { className, label, leftElement, rightElement, disabled, hintText, ...props },
   ref
 ) => {
   // TODO: useId로 대체해야 함, 랜덤 ID생성하는 로직 작성할 것
@@ -40,7 +32,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     <>
       {label && <InputLabel htmlFor={labelId}>{label}</InputLabel>}
       <InputContainer disabled={disabled} className={className}>
-        {leftElements}
+        {leftElement}
         <InputInner
           disabled={disabled}
           id={labelId}
@@ -49,7 +41,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           ref={ref}
         />
         {hintText && <InputHintText>{hintText}</InputHintText>}
-        {rightElements}
+        {rightElement}
       </InputContainer>
     </>
   );
