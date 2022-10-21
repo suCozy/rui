@@ -12,7 +12,7 @@ const DialogComponent = () => (
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.CloseIcon />
-      <Dialog.Icon />
+      <Dialog.HeadIcon />
       <Dialog.Title>Title</Dialog.Title>
       <Dialog.Description>all description in here</Dialog.Description>
       <Flex gap="10px">
