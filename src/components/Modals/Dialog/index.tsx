@@ -53,7 +53,7 @@ function CloseIcon() {
   return (
     <Close asChild>
       <IconButton type="button" aria-label="Close">
-        <Icon iconName="icon_close_s" width={16} height={16} />
+        <Icon iconName="icon_close_s" />
       </IconButton>
     </Close>
   );

@@ -13,7 +13,8 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-  const isLarge = size.includes('large');
+  const isLarge = size.includes('arge');
+
   return (
     <ButtonRoot
       className={className}
@@ -25,8 +26,12 @@ function Button({
       loading={loading}
       {...props}
     >
-      {/* 버튼 아이콘 추후 작업 예정 */}
-      {loading && !disabled ? <Spinner size={isLarge ? 24 : 16} /> : children}
+      {/* left / right 아이콘 추가 시 Icon 컴포넌트를 사용해주세요. */}
+      {loading && !disabled ? (
+        <Spinner size={isLarge ? 24 : 16} color={outline ? 'black' : 'white'} />
+      ) : (
+        children
+      )}
     </ButtonRoot>
   );
 }
