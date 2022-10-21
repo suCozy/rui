@@ -1,78 +1,188 @@
-export { ReactComponent as IconConfirmAlert } from './icons/img-confirm_alert.svg';
+export { ReactComponent as img_confirm_alert } from './icons/img_confirm_alert.svg';
 
-export { ReactComponent as IconCheck } from './icons/icon-confirm_check.svg';
-export { ReactComponent as IconClose } from './icons/icon_close_s.svg';
-export { ReactComponent as IconSpinner } from './icons/icon_spinner.svg';
-export { ReactComponent as IconFavoriteOff } from './icons/icon_favorite_off.svg';
-export { ReactComponent as IconFavoriteOn } from './icons/icon_favorite_on.svg';
-export { ReactComponent as IconSOneOnOne } from './icons/icon_1on1_m.svg';
-export { ReactComponent as IconAddressBook } from './icons/icon_addressbook_m.svg';
-export { ReactComponent as IconAdjust } from './icons/icon_adjust_m.svg';
-export { ReactComponent as IconAlertOutline } from './icons/icon_alert_outline_m.svg';
-export { ReactComponent as IconAlert } from './icons/icon_alert_s.svg';
-export { ReactComponent as IconDoubleArrowLeft } from './icons/icon_arrow_double_left_s.svg';
-export { ReactComponent as IconDoubleArrowRight } from './icons/icon_arrow_double_right_s.svg';
-export { ReactComponent as IconArrowDown } from './icons/icon_arrow_down_m.svg';
-export { ReactComponent as IconArrowLeft } from './icons/icon_arrow_left_m.svg';
-export { ReactComponent as IconArrowRight } from './icons/icon_arrow_right_m.svg';
-export { ReactComponent as IconArrowUp } from './icons/icon_arrow_up_m.svg';
-export { ReactComponent as IconArrow2Down } from './icons/icon_arrow2_down_m.svg';
-export { ReactComponent as IconArrow2Left } from './icons/icon_arrow2_left_m.svg';
-export { ReactComponent as IconArrow2Right } from './icons/icon_arrow2_right_m.svg';
-export { ReactComponent as IconArrow2Up } from './icons/icon_arrow2_up_m.svg';
-export { ReactComponent as IconAttachFile } from './icons/icon_attachfile_s.svg';
-export { ReactComponent as IconBarChart } from './icons/icon_barchart_m.svg';
-export { ReactComponent as IconBlock } from './icons/icon_block_m.svg';
-export { ReactComponent as IconBookmarkOff } from './icons/icon_bookmark_off_m.svg';
-export { ReactComponent as IconBookmarkOn } from './icons/icon_bookmark_on_m.svg';
-export { ReactComponent as IconCalendar } from './icons/icon_calendar_s.svg';
-export { ReactComponent as IconCall } from './icons/icon_call_m.svg';
-export { ReactComponent as IconCamera } from './icons/icon_camera_m.svg';
-export { ReactComponent as IconCareer } from './icons/icon_career_s.svg';
-export { ReactComponent as IconCommy } from './icons/icon_commmy_m.svg';
-export { ReactComponent as IconCommunity } from './icons/icon_community_m.svg';
-export { ReactComponent as IconCrop } from './icons/icon_crop_m.svg';
-export { ReactComponent as IconDelete } from './icons/icon_delete_s.svg';
-export { ReactComponent as IconDownload } from './icons/icon_download_s.svg';
-export { ReactComponent as IconEdit } from './icons/icon_edit_s.svg';
-export { ReactComponent as IconEdu } from './icons/icon_edu_s.svg';
-export { ReactComponent as IconExternal } from './icons/icon_external_m.svg';
-export { ReactComponent as IconFilter } from './icons/icon_filter_s.svg';
-export { ReactComponent as IconHamburger } from './icons/icon_hamburger_m.svg';
-export { ReactComponent as IconHelp } from './icons/icon_help_m.svg';
-export { ReactComponent as IconImage } from './icons/icon_image_m.svg';
-export { ReactComponent as IconImportContacts } from './icons/icon_importcontacts_s.svg';
-export { ReactComponent as IconInfo } from './icons/icon_info_s.svg';
-export { ReactComponent as IconKakaoNavi } from './icons/icon_kakaonavi_m.svg';
-export { ReactComponent as IconLink } from './icons/icon_link_m.svg';
-export { ReactComponent as IconMail } from './icons/icon_mail_m.svg';
-export { ReactComponent as IconMap } from './icons/icon_map_s.svg';
-export { ReactComponent as IconMemo } from './icons/icon_memo_m.svg';
-export { ReactComponent as IconMessage } from './icons/icon_message_m.svg';
-export { ReactComponent as IconMuteOutline } from './icons/icon_mute_m_outline.svg';
-export { ReactComponent as IconMute } from './icons/icon_mute_m.svg';
-export { ReactComponent as IconNotice } from './icons/icon_notice_m.svg';
-export { ReactComponent as IconPersonSearch } from './icons/icon_personsearch_l.svg';
-export { ReactComponent as IconPhone } from './icons/icon_phone_m.svg';
-export { ReactComponent as IconPlus } from './icons/icon_plus_s.svg';
-export { ReactComponent as IconPostLike } from './icons/icon_post_like_s.svg';
-export { ReactComponent as IconPostReplay } from './icons/icon_post_reply_s.svg';
-export { ReactComponent as IconView } from './icons/icon_post_view_s.svg';
-export { ReactComponent as IconProfile } from './icons/icon_profile_s.svg';
-export { ReactComponent as IconProfileSetting } from './icons/icon_profilesetting_m.svg';
-export { ReactComponent as IconQRCode } from './icons/icon_qrcode_m.svg';
-export { ReactComponent as IconRefresh } from './icons/icon_refresh_s.svg';
-export { ReactComponent as IconSearch } from './icons/icon_search_s.svg';
-export { ReactComponent as IconSelect } from './icons/icon_select_s.svg';
-export { ReactComponent as IconSetting } from './icons/icon_setting_s.svg';
-export { ReactComponent as IconShare } from './icons/icon_share_s.svg';
-export { ReactComponent as IconSkill } from './icons/icon_skill_m.svg';
-export { ReactComponent as IconTeambc } from './icons/icon_teambc_m.svg';
-export { ReactComponent as IconTime } from './icons/icon_time_s.svg';
-export { ReactComponent as IconUpload } from './icons/icon_upload_s.svg';
-export { ReactComponent as IconVideo } from './icons/icon_video_s.svg';
-export { ReactComponent as IconVisibilityOn } from './icons/icon_visibility_m.svg';
-export { ReactComponent as IconVisibilityOff } from './icons/icon_visibility_off_m.svg';
-export { ReactComponent as IconWon } from './icons/icon_won_s.svg';
-export { ReactComponent as IconZoomIn } from './icons/icon_zoomin_m.svg';
-export { ReactComponent as IconReComment } from './icons/icon_cm_recomment_s.svg';
+export { ReactComponent as control_favorite_off } from './icons/control_favorite_off.svg';
+export { ReactComponent as control_favorite_on } from './icons/control_favorite_on.svg';
+
+export { ReactComponent as control_bookmark_off_m } from './icons/control_bookmark_off_m.svg';
+export { ReactComponent as control_bookmark_on_m } from './icons/control_bookmark_on_m.svg';
+
+export { ReactComponent as icon_1on1_l } from './icons/icon_1on1_l.svg';
+export { ReactComponent as icon_1on1_m } from './icons/icon_1on1_m.svg';
+
+export { ReactComponent as icon_addressbook_m } from './icons/icon_addressbook_m.svg';
+
+export { ReactComponent as icon_adjust_m } from './icons/icon_adjust_m.svg';
+
+export { ReactComponent as icon_alert_s } from './icons/icon_alert_s.svg';
+export { ReactComponent as icon_alert_m } from './icons/icon_alert_m.svg';
+export { ReactComponent as icon_alert_outline_m } from './icons/icon_alert_outline_m.svg';
+
+export { ReactComponent as icon_arrow_double_left_m } from './icons/icon_arrow_double_left_m.svg';
+export { ReactComponent as icon_arrow_double_left_s } from './icons/icon_arrow_double_left_s.svg';
+
+export { ReactComponent as icon_arrow_double_right_m } from './icons/icon_arrow_double_right_m.svg';
+export { ReactComponent as icon_arrow_double_right_s } from './icons/icon_arrow_double_right_s.svg';
+
+export { ReactComponent as icon_arrow_down_m } from './icons/icon_arrow_down_m.svg';
+export { ReactComponent as icon_arrow_down_s } from './icons/icon_arrow_down_s.svg';
+
+export { ReactComponent as icon_arrow_left_m } from './icons/icon_arrow_left_m.svg';
+export { ReactComponent as icon_arrow_left_s } from './icons/icon_arrow_left_s.svg';
+
+export { ReactComponent as icon_arrow_right_m } from './icons/icon_arrow_right_m.svg';
+export { ReactComponent as icon_arrow_right_s } from './icons/icon_arrow_right_s.svg';
+
+export { ReactComponent as icon_arrow_up_m } from './icons/icon_arrow_up_m.svg';
+export { ReactComponent as icon_arrow_up_s } from './icons/icon_arrow_right_s.svg';
+
+export { ReactComponent as icon_arrow2_down_m } from './icons/icon_arrow2_down_m.svg';
+
+export { ReactComponent as icon_arrow2_left_m } from './icons/icon_arrow2_left_m.svg';
+
+export { ReactComponent as icon_arrow2_right_m } from './icons/icon_arrow2_right_m.svg';
+
+export { ReactComponent as icon_arrow2_up_m } from './icons/icon_arrow2_up_m.svg';
+
+export { ReactComponent as icon_attachfile_m } from './icons/icon_attachfile_m.svg';
+export { ReactComponent as icon_attachfile_s } from './icons/icon_attachfile_s.svg';
+
+export { ReactComponent as icon_barchart_m } from './icons/icon_barchart_m.svg';
+
+export { ReactComponent as icon_block_m } from './icons/icon_block_m.svg';
+
+export { ReactComponent as icon_calendar_s } from './icons/icon_calendar_s.svg';
+export { ReactComponent as icon_calendar_m } from './icons/icon_calendar_m.svg';
+
+export { ReactComponent as icon_call_m } from './icons/icon_call_m.svg';
+
+export { ReactComponent as icon_camera_m } from './icons/icon_camera_m.svg';
+export { ReactComponent as icon_camera_l } from './icons/icon_camera_l.svg';
+
+export { ReactComponent as icon_career_inactive_m } from './icons/icon_career_inactive_m.svg';
+export { ReactComponent as icon_career_s } from './icons/icon_career_s.svg';
+export { ReactComponent as icon_career_m } from './icons/icon_career_s.svg';
+
+export { ReactComponent as icon_close_m } from './icons/icon_close_m.svg';
+export { ReactComponent as icon_close_s } from './icons/icon_close_s.svg';
+
+export { ReactComponent as icon_cm_recomment_s } from './icons/icon_cm_recomment_s.svg';
+
+export { ReactComponent as icon_commmy_m } from './icons/icon_commmy_m.svg';
+
+export { ReactComponent as icon_community_inactive_m } from './icons/icon_community_inactive_m.svg';
+export { ReactComponent as icon_community_m } from './icons/icon_community_m.svg';
+
+export { ReactComponent as icon_confirm_check } from './icons/icon_confirm_check.svg';
+
+export { ReactComponent as icon_crop_m } from './icons/icon_crop_m.svg';
+
+export { ReactComponent as icon_delete_s } from './icons/icon_delete_s.svg';
+export { ReactComponent as icon_delete_m } from './icons/icon_delete_m.svg';
+
+export { ReactComponent as icon_download_s } from './icons/icon_download_s.svg';
+export { ReactComponent as icon_download_m } from './icons/icon_download_m.svg';
+
+export { ReactComponent as icon_edit_s } from './icons/icon_edit_s.svg';
+export { ReactComponent as icon_edit_m } from './icons/icon_edit_m.svg';
+export { ReactComponent as icon_edit_l } from './icons/icon_edit_l.svg';
+
+export { ReactComponent as icon_edu_s } from './icons/icon_edu_s.svg';
+export { ReactComponent as icon_edu_m } from './icons/icon_edu_m.svg';
+
+export { ReactComponent as icon_external_m } from './icons/icon_external_m.svg';
+
+export { ReactComponent as icon_filter_s } from './icons/icon_filter_s.svg';
+export { ReactComponent as icon_filter_m } from './icons/icon_filter_m.svg';
+
+export { ReactComponent as icon_hamburger_m } from './icons/icon_hamburger_m.svg';
+
+export { ReactComponent as icon_help_m } from './icons/icon_help_m.svg';
+export { ReactComponent as icon_help_l } from './icons/icon_help_l.svg';
+
+export { ReactComponent as icon_image_m } from './icons/icon_image_m.svg';
+export { ReactComponent as icon_image_l } from './icons/icon_image_l.svg';
+
+export { ReactComponent as icon_importcontacts_s } from './icons/icon_importcontacts_s.svg';
+export { ReactComponent as icon_importcontacts_m } from './icons/icon_importcontacts_m.svg';
+
+export { ReactComponent as icon_info_s } from './icons/icon_info_s.svg';
+export { ReactComponent as icon_info_m } from './icons/icon_info_m.svg';
+
+export { ReactComponent as icon_kakaonavi_m } from './icons/icon_kakaonavi_m.svg';
+
+export { ReactComponent as icon_link_m } from './icons/icon_link_m.svg';
+
+export { ReactComponent as icon_mail_m } from './icons/icon_mail_m.svg';
+export { ReactComponent as icon_mail_l } from './icons/icon_mail_l.svg';
+
+export { ReactComponent as icon_map_s } from './icons/icon_map_s.svg';
+export { ReactComponent as icon_map_m } from './icons/icon_map_m.svg';
+
+export { ReactComponent as icon_memo_m } from './icons/icon_memo_m.svg';
+
+export { ReactComponent as icon_message_m } from './icons/icon_message_m.svg';
+
+export { ReactComponent as icon_mute_m_outline } from './icons/icon_mute_m_outline.svg';
+export { ReactComponent as icon_mute_s } from './icons/icon_mute_s.svg';
+export { ReactComponent as icon_mute_m } from './icons/icon_mute_m.svg';
+
+export { ReactComponent as icon_notice_m } from './icons/icon_notice_m.svg';
+export { ReactComponent as icon_notice_l } from './icons/icon_notice_l.svg';
+
+export { ReactComponent as icon_personsearch_l } from './icons/icon_personsearch_l.svg';
+
+export { ReactComponent as icon_phone_m } from './icons/icon_phone_m.svg';
+
+export { ReactComponent as icon_plus_s } from './icons/icon_plus_s.svg';
+export { ReactComponent as icon_plus_m } from './icons/icon_plus_m.svg';
+
+export { ReactComponent as icon_post_like_s } from './icons/icon_post_like_s.svg';
+
+export { ReactComponent as icon_post_reply_s } from './icons/icon_post_reply_s.svg';
+
+export { ReactComponent as icon_post_view_s } from './icons/icon_post_view_s.svg';
+
+export { ReactComponent as icon_profile_s } from './icons/icon_profile_s.svg';
+export { ReactComponent as icon_profilesetting_m } from './icons/icon_profilesetting_m.svg';
+
+export { ReactComponent as icon_qrcode_m } from './icons/icon_qrcode_m.svg';
+
+export { ReactComponent as icon_refresh_s } from './icons/icon_refresh_s.svg';
+export { ReactComponent as icon_refresh_m } from './icons/icon_refresh_m.svg';
+
+export { ReactComponent as icon_search_s } from './icons/icon_search_s.svg';
+export { ReactComponent as icon_search_m } from './icons/icon_search_m.svg';
+
+export { ReactComponent as icon_select_s } from './icons/icon_select_s.svg';
+export { ReactComponent as icon_select_m } from './icons/icon_select_m.svg';
+
+export { ReactComponent as icon_setting_s } from './icons/icon_setting_s.svg';
+export { ReactComponent as icon_setting_m } from './icons/icon_setting_m.svg';
+export { ReactComponent as icon_setting_l } from './icons/icon_setting_l.svg';
+
+export { ReactComponent as icon_share_s } from './icons/icon_share_s.svg';
+export { ReactComponent as icon_share_m } from './icons/icon_share_m.svg';
+
+export { ReactComponent as icon_skill_m } from './icons/icon_skill_m.svg';
+
+export { ReactComponent as icon_teambc_m } from './icons/icon_teambc_m.svg';
+
+export { ReactComponent as icon_time_s } from './icons/icon_time_s.svg';
+export { ReactComponent as icon_time_m } from './icons/icon_time_m.svg';
+
+export { ReactComponent as icon_upload_s } from './icons/icon_upload_s.svg';
+export { ReactComponent as icon_upload_m } from './icons/icon_upload_m.svg';
+
+export { ReactComponent as icon_video_s } from './icons/icon_video_s.svg';
+
+export { ReactComponent as icon_visibility_m } from './icons/icon_visibility_m.svg';
+
+export { ReactComponent as icon_visibility_off_m } from './icons/icon_visibility_off_m.svg';
+
+export { ReactComponent as icon_won_s } from './icons/icon_won_s.svg';
+export { ReactComponent as icon_won_m } from './icons/icon_won_m.svg';
+
+export { ReactComponent as icon_zoomin_m } from './icons/icon_zoomin_m.svg';
+export { ReactComponent as image_confirm_m } from './icons/image_confirm_m.svg';
+
+export { ReactComponent as icon_spinner } from './icons/icon_spinner.svg';
