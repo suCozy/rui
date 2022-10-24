@@ -1,11 +1,13 @@
 import {
-  useMemo,
   forwardRef,
   memo,
+  ReactNode,
+  useState,
   type ForwardRefRenderFunction,
   type InputHTMLAttributes,
-  ReactNode,
 } from 'react';
+
+import { createRandomId } from 'utils/id';
 
 import {
   InputContainer,
@@ -20,14 +22,24 @@ export interface InputProps
   hintText?: string;
   leftElement?: ReactNode;
   rightElement?: ReactNode;
+  hasToggleVisibleIcon?: boolean;
 }
 
 const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { className, label, leftElement, rightElement, disabled, hintText, ...props },
+  {
+    className,
+    label,
+    leftElement,
+    rightElement,
+    disabled,
+    hintText,
+    hasToggleVisibleIcon,
+    ...props
+  },
   ref
 ) => {
-  // TODO: useId로 대체해야 함, 랜덤 ID생성하는 로직 작성할 것
-  const labelId = useMemo(() => String(Date.now()), []);
+  const [labelId] = useState(createRandomId());
+
   return (
     <>
       {label && <InputLabel htmlFor={labelId}>{label}</InputLabel>}
@@ -41,6 +53,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           ref={ref}
         />
         {hintText && <InputHintText>{hintText}</InputHintText>}
+        {/* {hasToggleVisibleIcon && <} */}
         {rightElement}
       </InputContainer>
     </>
