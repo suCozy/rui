@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { createElement } from 'react';
 
 import * as Assets from 'assets';
 
@@ -28,14 +29,16 @@ const Template: ComponentStory<typeof Input> = ({
   rightElement,
   ...args
 }) => {
-  const RenderedLeftElement = Assets[String(leftElement)];
-  const RenderedRightElement = Assets[String(rightElement)];
+  const renderedLeftElement =
+    leftElement && createElement(Assets[String(leftElement)]);
+  const renderedRightElement =
+    leftElement && createElement(Assets[String(rightElement)]);
 
   return (
     <Input
       {...args}
-      leftElement={leftElement === 'none' ? null : <RenderedLeftElement />}
-      rightElement={rightElement === 'none' ? null : <RenderedRightElement />}
+      leftElement={leftElement === 'none' ? null : renderedLeftElement}
+      rightElement={rightElement === 'none' ? null : renderedRightElement}
     />
   );
 };
