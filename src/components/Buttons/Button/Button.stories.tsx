@@ -9,7 +9,7 @@ export default {
     disabled: false,
     theme: 'solid',
     outline: false,
-    size: 'small',
+    size: 'large',
     loading: true,
     block: false,
   },

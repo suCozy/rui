@@ -1,8 +1,8 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
-import { IconClose, IconDialogAlert, IconDialogCheck } from 'assets';
 import { Flex } from 'components/Common/Flex';
+import Icon from 'components/Icon';
 import {
   StyledOverlay,
   DialogContent,
@@ -41,15 +41,11 @@ function Content({ children, dimmed = true, ...props }: ContentProps) {
   );
 }
 
-/**
- * @param type 'alert' | 'check' / default: 'alert'
- */
-function Icon({ type = 'alert' }: { type: 'alert' | 'check' }) {
+function HeadIcon() {
   return (
-    <DialogIcon
-      src={type === 'alert' ? IconDialogAlert : IconDialogCheck}
-      alt="dialog-icon"
-    />
+    <DialogIcon>
+      <Icon iconName="img_confirm_alert" />
+    </DialogIcon>
   );
 }
 
@@ -57,7 +53,7 @@ function CloseIcon() {
   return (
     <Close asChild>
       <IconButton type="button" aria-label="Close">
-        <img src={IconClose} alt="close-icon" />
+        <Icon iconName="icon_close_s" />
       </IconButton>
     </Close>
   );
@@ -82,7 +78,7 @@ const { Root, Trigger, Close } = DialogPrimitive;
 export default Object.assign(Dialog, {
   Trigger,
   Close,
-  Icon,
+  HeadIcon,
   CloseIcon,
   Title,
   Description,

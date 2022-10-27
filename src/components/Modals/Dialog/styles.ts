@@ -45,9 +45,7 @@ export const DialogContent = styled(DialogPrimitive.Content)`
   } ;
 `;
 
-export const DialogIcon = styled.img`
-  width: 48px;
-  height: 48px;
+export const DialogIcon = styled.div`
   margin-bottom: 16px;
 `;
 
