@@ -29,7 +29,7 @@ export const Flex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
   flex-direction: ${({ direction = 'row' }) => direction};
-  align-items: ${({ align = 'stretch' }) => align};
+  align-items: ${({ align = 'center' }) => align};
   justify-content: ${({ justify = 'center' }) => justify};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
   gap: ${({ gap = '0' }) => gap};
