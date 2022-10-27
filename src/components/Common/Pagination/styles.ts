@@ -42,6 +42,13 @@ const Button = styled.button`
     pointer-events: none;
   }
 
+  &:hover,
+  &:focus {
+    border: solid 1px ${contents300};
+    border-radius: 4px;
+    background-color: ${background100};
+  }
+
   ${mobileOnly(css`
     min-width: 44px;
     height: 44px;

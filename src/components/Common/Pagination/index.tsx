@@ -47,25 +47,33 @@ export function Pagination({
   const onClickPage = (page: number) => onChangePage(page);
 
   return (
-    <PaginationContainer className={className} aria-label="Pagination">
+    <PaginationContainer
+      className={className}
+      role="navigation"
+      aria-label="페이지네이션"
+    >
       <MoveToButton
         disabled={isFirstPageDisabled}
         position="left"
         onClick={onClickFirstPage}
+        aria-label="첫 페이지로 이동"
       >
         <Icon
           iconName="icon_arrow_double_left_s"
           color={iconColor(isFirstPageDisabled)}
+          aria-hidden="true"
         />
       </MoveToButton>
       <MoveToButton
         disabled={isPrevPageDisabled}
         position="left"
         onClick={onClickPrevPage}
+        aria-label="이전 페이지로 이동"
       >
         <Icon
           iconName="icon_arrow_left_s"
           color={iconColor(isPrevPageDisabled)}
+          aria-hidden="true"
         />
       </MoveToButton>
       <Pages>
@@ -74,6 +82,7 @@ export function Pagination({
             <PageButton
               selected={_page === activePage}
               onClick={() => onClickPage(_page)}
+              aria-label={`페이지 ${_page}`}
             >
               {_page}
             </PageButton>
@@ -84,20 +93,24 @@ export function Pagination({
         disabled={isNextPageDisabled}
         position="right"
         onClick={onClickNextPage}
+        aria-label="다음 페이지로 이동"
       >
         <Icon
           iconName="icon_arrow_right_s"
           color={iconColor(isNextPageDisabled)}
+          aria-hidden="true"
         />
       </MoveToButton>
       <MoveToButton
         disabled={isLastPageDisabled}
         position="right"
         onClick={onClickLastPage}
+        aria-label="마지막 페이지로 이동"
       >
         <Icon
           iconName="icon_arrow_double_right_s"
           color={iconColor(isLastPageDisabled)}
+          aria-hidden="true"
         />
       </MoveToButton>
     </PaginationContainer>

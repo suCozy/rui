@@ -10,6 +10,7 @@ const meta: ComponentMeta<typeof Pagination> = {
     totalItemCount: 100,
     pageRangeDisplayed: 10,
     itemCountPerPage: 10,
+    className: 'pagination',
   },
 };
 
