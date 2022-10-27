@@ -26,7 +26,8 @@
     "prettier-fix": "prettier --write src",
     "storybook-nocache": "start-storybook --no-manager-cache -p 6006",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook -o docs",
+    "make-import:icons": "node scripts/makeImportIcons.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.0"
