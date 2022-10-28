@@ -2,8 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
 
 import { Flex } from 'components/Common';
-
-import Control from '.';
+import Control from '../Control';
 
 const meta: ComponentMeta<typeof Control> = {
   title: 'Control/Control',
