@@ -30,6 +30,7 @@
     "make-import:icons": "node scripts/makeImportIcons.mjs"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-dialog": "^1.0.0"
   },
   "devDependencies": {
