@@ -1,1 +1,1 @@
-import * from "./Check";
+export * from './Control';

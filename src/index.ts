@@ -9,4 +9,4 @@ export * from './components/Modals';
 export * from './components/Typography';
 export * from './components/Common/Flex';
 export * from './components/Common/Pagination';
-export * from './components/Control/Check';
+export * from './components/Control/Control';
