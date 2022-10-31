@@ -4,6 +4,10 @@ export { ReactComponent as control_check_off_m } from '/src/assets/icons/control
 export { ReactComponent as control_check_off_s } from '/src/assets/icons/control_check_off_s.svg';
 export { ReactComponent as control_check_on_m } from '/src/assets/icons/control_check_on_m.svg';
 export { ReactComponent as control_check_on_s } from '/src/assets/icons/control_check_on_s.svg';
+export { ReactComponent as control_checkbox_off_m } from '/src/assets/icons/control_checkbox_off_m.svg';
+export { ReactComponent as control_checkbox_off_s } from '/src/assets/icons/control_checkbox_off_s.svg';
+export { ReactComponent as control_checkbox_on_m } from '/src/assets/icons/control_checkbox_on_m.svg';
+export { ReactComponent as control_checkbox_on_s } from '/src/assets/icons/control_checkbox_on_s.svg';
 export { ReactComponent as control_favorite_off } from '/src/assets/icons/control_favorite_off.svg';
 export { ReactComponent as control_favorite_on } from '/src/assets/icons/control_favorite_on.svg';
 export { ReactComponent as icon_1on1_l } from '/src/assets/icons/icon_1on1_l.svg';
