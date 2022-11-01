@@ -17,7 +17,7 @@ export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     showPanel: true,
-    panelPosition: 'right',
+    panelPosition: 'bottom',
     showNav: true,
     isFullscreen: false,
     isToolshown: true,

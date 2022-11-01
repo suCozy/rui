@@ -1,19 +1,23 @@
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import styled from 'styled-components';
 
-import { contents300 } from 'colors/v3';
-
-export const ControlRoot = styled(CheckboxPrimitive.Root)`
-  all: unset;
+export const ControlRoot = styled.label`
   cursor: pointer;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+`;
 
-  &:disabled {
-    cursor: not-allowed;
-
-    * {
-      fill: ${contents300};
-    }
-  }
+export const ControlInput = styled.input`
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  cursor: inherit;
 `;

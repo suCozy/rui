@@ -1,47 +1,51 @@
-import { Children, cloneElement, isValidElement, ReactNode } from 'react';
-
-import Check from '../Check';
-import { ControlRoot } from './styles';
+import ControlOptionIcon from '../ControlOptionIcon';
+import { ControlInput, ControlRoot } from './styles';
 import type { ControlProps } from './types';
 
 /**
  *
- * @prop {boolean | 'indeterminate'} checked - indeterminate일 경우 hover, focus 상태
+ * @prop {ReactNode} children
+ * @prop {boolean} checked
  * @prop {'small' | 'medium'} size / default: 'medium'
- * @prop {boolean} defaultChecked
- * @prop {string} id string
- * @prop {string} name string
- * @prop {boolean} asChild / default: false
+ * @prop {'check' | 'checkbox' | 'favorite' | 'bookmark'} option
  * @prop {function} onCheckedChange
  * @prop {boolean} disabled boolean
  * @prop {boolean} required boolean
- * @prop {string} value / default: 'on'
  * @see https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference
  */
 function Control({
   children,
   checked,
-  defaultChecked,
-  name,
+  disabled,
   size = 'medium',
+  option = 'checkbox',
+  onCheckedChange,
   id,
+  name,
   ...props
 }: ControlProps) {
   return (
-    <ControlRoot
-      id={id}
-      role="checkbox"
-      aria-checked={!!checked}
-      aria-label={name}
-      {...props}
-    >
-      {Children.map<ReactNode, ReactNode>(children, (child) => {
-        if (isValidElement(child)) {
-          return cloneElement(child, { checked, size, ...child.props });
-        }
-      })}
+    <ControlRoot htmlFor={id}>
+      <ControlInput
+        id={id}
+        type="checkbox"
+        aria-checked={checked}
+        aria-label={name}
+        tabIndex={0}
+        checked={checked}
+        onChange={(e) => {
+          if (disabled) {
+            return;
+          }
+          onCheckedChange(e);
+        }}
+        {...props}
+      />
+      <ControlOptionIcon checked={checked} size={size} option={option} />
+      {/* 라벨 디자인 미정 */}
+      {children}
     </ControlRoot>
   );
 }
 
-export default Object.assign(Control, { Check });
+export default Control;
