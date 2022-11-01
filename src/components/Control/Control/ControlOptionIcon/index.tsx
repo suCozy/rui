@@ -1,5 +1,5 @@
-import Icon from 'components/Icon';
-import { ControlChildrenType } from '../Control/types';
+import Icon, { IconName } from 'components/Icon';
+import { ControlChildrenType } from '../types';
 
 const ICON_NAME = {
   check: { on: 'control_check_on_m', off: 'control_check_off_m' },
@@ -13,7 +13,11 @@ function ControlOptionIcon({ checked, size, option }: ControlChildrenType) {
 
   return (
     <Icon
-      iconName={checked ? ICON_NAME[option].on : ICON_NAME[option].off}
+      iconName={
+        checked
+          ? (ICON_NAME[option].on as IconName)
+          : (ICON_NAME[option].off as IconName)
+      }
       width={iconSize}
       height={iconSize}
       aria-hidden="true"
