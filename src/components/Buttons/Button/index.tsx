@@ -36,4 +36,4 @@ function Button({
   );
 }
 
-export default Object.assign(Button, {});
+export default Button;

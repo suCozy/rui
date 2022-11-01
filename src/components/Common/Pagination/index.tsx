@@ -2,7 +2,7 @@ import { contents000, contents300 } from 'colors/v3';
 import Icon from 'components/Icon';
 import { range } from 'utils/common';
 import {
-  MoveToButton,
+  BaseButton,
   Pages,
   Page,
   PaginationContainer,
@@ -52,9 +52,8 @@ export function Pagination({
       role="navigation"
       aria-label="페이지네이션"
     >
-      <MoveToButton
+      <BaseButton
         disabled={isFirstPageDisabled}
-        position="left"
         onClick={onClickFirstPage}
         aria-label="첫 페이지로 이동"
       >
@@ -63,10 +62,9 @@ export function Pagination({
           color={iconColor(isFirstPageDisabled)}
           aria-hidden="true"
         />
-      </MoveToButton>
-      <MoveToButton
+      </BaseButton>
+      <BaseButton
         disabled={isPrevPageDisabled}
-        position="left"
         onClick={onClickPrevPage}
         aria-label="이전 페이지로 이동"
       >
@@ -75,7 +73,7 @@ export function Pagination({
           color={iconColor(isPrevPageDisabled)}
           aria-hidden="true"
         />
-      </MoveToButton>
+      </BaseButton>
       <Pages>
         {range(firstPage, rangeLastPage)?.map((_page) => (
           <Page key={_page}>
@@ -89,9 +87,8 @@ export function Pagination({
           </Page>
         ))}
       </Pages>
-      <MoveToButton
+      <BaseButton
         disabled={isNextPageDisabled}
-        position="right"
         onClick={onClickNextPage}
         aria-label="다음 페이지로 이동"
       >
@@ -100,10 +97,9 @@ export function Pagination({
           color={iconColor(isNextPageDisabled)}
           aria-hidden="true"
         />
-      </MoveToButton>
-      <MoveToButton
+      </BaseButton>
+      <BaseButton
         disabled={isLastPageDisabled}
-        position="right"
         onClick={onClickLastPage}
         aria-label="마지막 페이지로 이동"
       >
@@ -112,7 +108,7 @@ export function Pagination({
           color={iconColor(isLastPageDisabled)}
           aria-hidden="true"
         />
-      </MoveToButton>
+      </BaseButton>
     </PaginationContainer>
   );
 }

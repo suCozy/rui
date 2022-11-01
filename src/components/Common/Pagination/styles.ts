@@ -12,6 +12,11 @@ export const PaginationContainer = styled.nav`
   user-select: none;
   margin: 0;
   padding: 0;
+  gap: 16px;
+
+  ${mobileOnly(css`
+    gap: 8px;
+  `)};
 `;
 
 export const Pages = styled.ul`
@@ -22,7 +27,7 @@ export const Pages = styled.ul`
 
 export const Page = styled.li``;
 
-const Button = styled.button`
+export const BaseButton = styled.button`
   ${getTypographyStyles('Body1_M')}
   all: unset;
   appearance: none;
@@ -55,7 +60,7 @@ const Button = styled.button`
   `)}
 `;
 
-export const PageButton = styled(Button)<{ selected?: boolean }>`
+export const PageButton = styled(BaseButton)<{ selected?: boolean }>`
   ${({ selected }) =>
     selected &&
     css`
@@ -63,26 +68,4 @@ export const PageButton = styled(Button)<{ selected?: boolean }>`
       border-radius: 4px;
       background-color: ${background100};
     `}
-`;
-
-export const MoveToButton = styled(Button)<{
-  position: 'left' | 'right';
-}>`
-  ${({ position }) =>
-    (position === 'left' &&
-      css`
-        margin-right: 16px;
-
-        ${mobileOnly(css`
-          margin-right: 8px;
-        `)};
-      `) ||
-    (position === 'right' &&
-      css`
-        margin-left: 16px;
-
-        ${mobileOnly(css`
-          margin-left: 8px;
-        `)};
-      `)}
 `;
