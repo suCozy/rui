@@ -1,3 +1,4 @@
+import { contents300, secondary100 } from 'colors/v3';
 import Icon, { IconName } from 'components/Icon';
 import { ControlChildrenType } from '../types';
 
@@ -21,6 +22,7 @@ function ControlOptionIcon({ checked, size, option }: ControlChildrenType) {
       width={iconSize}
       height={iconSize}
       aria-hidden="true"
+      color={checked ? secondary100 : contents300}
     />
   );
 }
