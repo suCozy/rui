@@ -7,6 +7,7 @@ export const ControlRoot = styled.label`
   position: relative;
   width: fit-content;
   height: fit-content;
+  gap: 8px;
 `;
 
 export const ControlInput = styled.input`

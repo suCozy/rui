@@ -1,7 +1,8 @@
-import Icon from 'components/Icon';
-import { ControlChildrenType } from '../Control/types';
+import { contents300, secondary100 } from 'colors/v3';
+import { Icon, type IconName } from 'components/Icon';
+import type { ControlChildrenType, ControlOption } from '../types';
 
-const ICON_NAME = {
+const ICON_NAME: Record<ControlOption, Record<'on' | 'off', IconName>> = {
   check: { on: 'control_check_on_m', off: 'control_check_off_m' },
   checkbox: { on: 'control_checkbox_on_m', off: 'control_checkbox_off_m' },
   favorite: { on: 'control_bookmark_on_m', off: 'control_bookmark_off_m' },
@@ -17,6 +18,7 @@ function ControlOptionIcon({ checked, size, option }: ControlChildrenType) {
       width={iconSize}
       height={iconSize}
       aria-hidden="true"
+      color={checked ? secondary100 : contents300}
     />
   );
 }
