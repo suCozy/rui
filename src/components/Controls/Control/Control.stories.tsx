@@ -4,7 +4,7 @@ import { useArgs } from '@storybook/client-api';
 import Control from '.';
 
 export default {
-  title: 'Control/Control',
+  title: 'Controls/Control',
   component: Control,
   args: {
     disabled: false,

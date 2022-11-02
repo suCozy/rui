@@ -11,5 +11,5 @@ export * from './components/Modals';
 export * from './components/Typography';
 export * from './components/Common/Flex';
 export * from './components/Common/Pagination';
-export * from './components/Control/Control';
-export * from './components/Control/Switch';
+export * from './components/Controls/Control';
+export * from './components/Controls/Switch';
