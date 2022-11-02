@@ -40,3 +40,6 @@ export const bgRoleBlue = '#E0F5FC';
 export const bgRoleGreen = '#E7F6E5';
 export const whiteFixed = '#FFFFF9';
 export const blackFixed = '#000000';
+
+// Divider
+export const divider = bg300;
