@@ -30,7 +30,7 @@ function Control({
         id={id}
         type="checkbox"
         aria-checked={checked}
-        aria-label={name}
+        aria-label={children?.toString()}
         tabIndex={0}
         checked={checked}
         onChange={(e) => {
