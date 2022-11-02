@@ -1,47 +1,40 @@
 import styled from 'styled-components';
 
-export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
-  align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
-  justify:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly';
-  flow: 'row' | 'column' | 'dense' | 'row dense' | 'column dense';
-  wrap: 'nowrap' | 'wrap' | 'wrap-reverse';
-  columns: number;
-  gap: string;
-  columnGap: string;
-  rowGap: string;
-  width: string;
+interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+  width?: string;
+  height?: string;
+  align?: React.CSSProperties['alignItems'];
+  justify?: React.CSSProperties['justifyContent'];
+  flow?: React.CSSProperties['gridAutoFlow'];
+  columns?: number;
+  gap?: string;
+  columnGap?: string;
+  rowGap?: string;
 }
 
 /**
- * @prop {string} className
  * @prop {string} width
- * @prop {'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'} align
- * @prop {'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'} justify
- * @prop {'row' | 'column' | 'dense' | 'row dense' | 'column dense'} flow
+ * @prop {string} height
+ * @prop {React.CSSProperties['alignItems']} align
+ * @prop {React.CSSProperties['justifyContent']} justify
+ * @prop {React.CSSProperties['gridAutoFlow']} flow
  * @prop {number} columns
  * @prop {string} gap
  * @prop {string} columnGap
  * @prop {string} rowGap
- * @prop {'nowrap' | 'wrap' | 'wrap-reverse'} wrap
  */
 const Grid = styled.div<Partial<GridProps>>`
   box-sizing: border-box;
   display: grid;
+  width: ${({ width = '100%' }) => width};
+  height: ${({ height = '100%' }) => height};
   align-items: ${({ align = 'center' }) => align};
   justify-content: ${({ justify = 'center' }) => justify};
   grid-auto-flow: ${({ flow = 'center' }) => flow};
   grid-template-columns: ${({ columns = 1 }) => `repeat(${columns}, 1fr)`};
-  flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
   gap: ${({ gap = '0px' }) => gap};
   column-gap: ${({ columnGap = '0px' }) => columnGap};
   row-gap: ${({ rowGap = '0px' }) => rowGap};
-  width: ${({ width = '100%' }) => width};
 `;
 
 export default Grid;
