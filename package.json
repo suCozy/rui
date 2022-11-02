@@ -1,6 +1,6 @@
 {
   "name": "@remember_web/ui",
-  "version": "0.0.0-beta.17",
+  "version": "0.0.0-beta.18",
   "description": "Remember UI Components",
   "homepage": "https://dramancompany.github.io/rui/",
   "author": "Remember",
@@ -34,6 +34,7 @@
     "@radix-ui/react-switch": "^1.0.1"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
