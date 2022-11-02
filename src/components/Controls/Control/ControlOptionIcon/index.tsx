@@ -1,5 +1,5 @@
 import { contents300, secondary100 } from 'colors/v3';
-import { Icon, type IconName } from 'components/Icon';
+import Icon, { type IconName } from 'components/Icon';
 import type { ControlChildrenType, ControlOption } from '../types';
 
 const ICON_NAME: Record<ControlOption, Record<'on' | 'off', IconName>> = {
