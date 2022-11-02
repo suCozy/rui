@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
   justify:
     | 'flex-start'
@@ -30,7 +30,7 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
  * @prop {string} rowGap
  * @prop {'nowrap' | 'wrap' | 'wrap-reverse'} wrap
  */
-export const Grid = styled.div<Partial<GridProps>>`
+const Grid = styled.div<Partial<GridProps>>`
   box-sizing: border-box;
   display: grid;
   align-items: ${({ align = 'center' }) => align};
@@ -43,3 +43,5 @@ export const Grid = styled.div<Partial<GridProps>>`
   row-gap: ${({ rowGap = '0px' }) => rowGap};
   width: ${({ width = '100%' }) => width};
 `;
+
+export default Grid;

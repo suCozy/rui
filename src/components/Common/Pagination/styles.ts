@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { getTypographyStyles } from 'mixins/typography';
-import { background100, contents000, contents300 } from 'colors/v3';
+import { bg100, contents000, contents300 } from 'colors/v3';
 import { mobileOnly } from 'mixins/breakpoints';
 
 export const PaginationContainer = styled.nav`
@@ -51,7 +51,7 @@ export const BaseButton = styled.button`
   &:focus {
     border: solid 1px ${contents300};
     border-radius: 4px;
-    background-color: ${background100};
+    background-color: ${bg100};
   }
 
   ${mobileOnly(css`
@@ -66,6 +66,6 @@ export const PageButton = styled(BaseButton)<{ selected?: boolean }>`
     css`
       border: solid 1px ${contents300};
       border-radius: 4px;
-      background-color: ${background100};
+      background-color: ${bg100};
     `}
 `;
