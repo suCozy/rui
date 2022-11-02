@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-type FlexProps = {
+interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
@@ -14,7 +14,7 @@ type FlexProps = {
   wrap: 'nowrap' | 'wrap' | 'wrap-reverse';
   gap: string;
   width: string;
-};
+}
 
 /**
  * @param className string
