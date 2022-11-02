@@ -19,7 +19,7 @@ interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
  * @param {React.CSSProperties['flexDirection']} direction
  * @param {React.CSSProperties['flexWrap']} wrap
  */
-export const Flex = styled.div<Partial<FlexProps>>`
+const Flex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
   width: ${({ width = '100%' }) => width};
@@ -30,3 +30,5 @@ export const Flex = styled.div<Partial<FlexProps>>`
   flex-direction: ${({ direction = 'row' }) => direction};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 `;
+
+export default Flex;
