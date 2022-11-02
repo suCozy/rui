@@ -30,7 +30,8 @@
     "make-import:icons": "node scripts/makeImportIcons.mjs"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.0"
+    "@radix-ui/react-dialog": "^1.0.0",
+    "@radix-ui/react-separator": "^1.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.13",
