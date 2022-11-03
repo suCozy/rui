@@ -1,5 +1,5 @@
 import { contents000, contents999 } from 'colors/v3';
-import Icon from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 import { Container } from './styles';
 
 export interface SpinnerProps {

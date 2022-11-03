@@ -2,7 +2,7 @@ import type { ButtonProps } from './types';
 import { ButtonRoot } from './styles';
 import { Spinner } from 'components/Common/Spinner';
 
-function Button({
+export function Button({
   className,
   disabled = false,
   theme = 'solid',
@@ -35,5 +35,3 @@ function Button({
     </ButtonRoot>
   );
 }
-
-export default Button;

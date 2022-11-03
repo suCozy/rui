@@ -1,4 +1,4 @@
-import ControlOptionIcon from './ControlOptionIcon';
+import { ControlOptionIcon } from './ControlOptionIcon';
 import { ControlInput, ControlRoot } from './styles';
 import type { ControlProps } from './types';
 
@@ -13,7 +13,7 @@ import type { ControlProps } from './types';
  * @prop {boolean} required boolean
  * @see https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference
  */
-function Control({
+export function Control({
   children,
   checked,
   disabled,
@@ -47,5 +47,3 @@ function Control({
     </ControlRoot>
   );
 }
-
-export default Control;

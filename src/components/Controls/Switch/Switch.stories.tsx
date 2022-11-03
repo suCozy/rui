@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
 
-import Switch from '.';
+import { Switch } from '.';
 
 export default {
   title: 'Controls/Switch',
