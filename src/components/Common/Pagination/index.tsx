@@ -1,5 +1,5 @@
 import { contents000, contents300 } from 'colors/v3';
-import Icon from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 import { range } from 'utils/common';
 import {
   BaseButton,
@@ -8,7 +8,7 @@ import {
   PaginationContainer,
   PageButton,
 } from './styles';
-import { PaginationProps } from './types';
+import type { PaginationProps } from './types';
 import usePagination from './usePagination';
 
 export function Pagination({

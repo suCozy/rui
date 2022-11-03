@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { TypographyStyle } from 'mixins/typography';
-import { TypographyTagNames } from './types';
+import type { TypographyTagNames } from './types';
 
 export const TYPOGRAPHY_COMPONENT_MAP: Record<
   TypographyStyle,
