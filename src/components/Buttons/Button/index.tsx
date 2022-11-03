@@ -7,7 +7,7 @@ export function Button({
   disabled = false,
   theme = 'solid',
   outline = false,
-  size = 'small',
+  size,
   loading = false,
   block = false,
   children,
@@ -21,6 +21,7 @@ export function Button({
       size={size}
       theme={theme}
       outline={outline}
+      disabled={disabled}
       block={block}
       {...props}
     >
