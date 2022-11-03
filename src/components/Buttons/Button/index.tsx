@@ -21,9 +21,7 @@ export function Button({
       size={size}
       theme={theme}
       outline={outline}
-      disabled={disabled}
       block={block}
-      loading={loading}
       {...props}
     >
       {/* left / right 아이콘 추가 시 Icon 컴포넌트를 사용해주세요. */}

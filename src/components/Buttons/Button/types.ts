@@ -13,6 +13,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export type ButtonStyleType = Required<
-  Pick<ButtonProps, 'block' | 'disabled' | 'outline' | 'size' | 'loading'>
+export type ButtonStyleType = Pick<
+  ButtonProps,
+  'block' | 'disabled' | 'outline' | 'size' | 'loading'
 > & { theme: ButtonTheme };
