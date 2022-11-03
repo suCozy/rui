@@ -19,6 +19,7 @@ export const Spinner = ({
       width={size}
       height={size}
       color={color === 'black' ? contents000 : contents999}
+      aria-hidden={true}
     />
   </Container>
 );

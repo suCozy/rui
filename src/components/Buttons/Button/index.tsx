@@ -13,7 +13,7 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const isLarge = size.includes('arge');
+  const isLarge = size.toLocaleLowerCase().includes('large');
 
   return (
     <ButtonRoot
