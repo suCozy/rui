@@ -31,6 +31,7 @@ export const parameters = {
     disable: true,
   },
   controls: {
+    expanded: true,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,

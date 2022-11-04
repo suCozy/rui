@@ -2,18 +2,18 @@ import type { ButtonProps } from './types';
 import { ButtonRoot } from './styles';
 import { Spinner } from 'components/Common/Spinner';
 
-function Button({
+export function Button({
   className,
   disabled = false,
   theme = 'solid',
   outline = false,
-  size = 'small',
+  size,
   loading = false,
   block = false,
   children,
   ...props
 }: ButtonProps) {
-  const isLarge = size.includes('arge');
+  const isLarge = size.toLocaleLowerCase().includes('large');
 
   return (
     <ButtonRoot
@@ -23,7 +23,6 @@ function Button({
       outline={outline}
       disabled={disabled}
       block={block}
-      loading={loading}
       {...props}
     >
       {/* left / right 아이콘 추가 시 Icon 컴포넌트를 사용해주세요. */}
@@ -35,5 +34,3 @@ function Button({
     </ButtonRoot>
   );
 }
-
-export default Button;

@@ -1,5 +1,5 @@
 import { contents300, secondary100 } from 'colors/v3';
-import Icon, { type IconName } from 'components/Icon';
+import { Icon, type IconName } from 'components/Icon/Icon';
 import type { ControlChildrenType, ControlOption } from '../types';
 
 const ICON_NAME: Record<ControlOption, Record<'on' | 'off', IconName>> = {
@@ -9,7 +9,11 @@ const ICON_NAME: Record<ControlOption, Record<'on' | 'off', IconName>> = {
   bookmark: { on: 'control_favorite_on', off: 'control_favorite_off' },
 };
 
-function ControlOptionIcon({ checked, size, option }: ControlChildrenType) {
+export function ControlOptionIcon({
+  checked,
+  size,
+  option,
+}: ControlChildrenType) {
   const iconSize = size === 'small' ? 16 : 24;
 
   return (
@@ -22,5 +26,3 @@ function ControlOptionIcon({ checked, size, option }: ControlChildrenType) {
     />
   );
 }
-
-export default ControlOptionIcon;

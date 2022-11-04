@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 
-import Flex from '../Flex';
+import { Flex } from '../Flex';
 
 import Divider from './index';
 

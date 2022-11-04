@@ -11,15 +11,15 @@ interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * @param {string} width
- * @param {string} height
- * @param {string} gap
- * @param {React.CSSProperties['alignItems']} align
- * @param {React.CSSProperties['justifyContent']} justify
- * @param {React.CSSProperties['flexDirection']} direction
- * @param {React.CSSProperties['flexWrap']} wrap
+ * @prop {string} width
+ * @prop {string} height
+ * @prop {string} gap
+ * @prop {React.CSSProperties['alignItems']} align
+ * @prop {React.CSSProperties['justifyContent']} justify
+ * @prop {React.CSSProperties['flexDirection']} direction
+ * @prop {React.CSSProperties['flexWrap']} wrap
  */
-const Flex = styled.div<Partial<FlexProps>>`
+export const Flex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
   width: ${({ width = '100%' }) => width};
@@ -30,5 +30,3 @@ const Flex = styled.div<Partial<FlexProps>>`
   flex-direction: ${({ direction = 'row' }) => direction};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 `;
-
-export default Flex;

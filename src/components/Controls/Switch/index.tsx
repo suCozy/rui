@@ -1,5 +1,5 @@
 import { SwitchRoot, SwitchThumb, Label } from './styles';
-import { SwitchProps } from './types';
+import type { SwitchProps } from './types';
 
 /**
  *
@@ -13,7 +13,12 @@ import { SwitchProps } from './types';
  * @prop {boolean} required boolean
  * @see https://www.radix-ui.com/docs/primitives/components/switch#api-reference
  */
-function Switch({ children, id, size = 'small', ...props }: SwitchProps) {
+export function Switch({
+  children,
+  id,
+  size = 'small',
+  ...props
+}: SwitchProps) {
   return (
     <Label htmlFor={id}>
       <SwitchRoot
@@ -30,5 +35,3 @@ function Switch({ children, id, size = 'small', ...props }: SwitchProps) {
     </Label>
   );
 }
-
-export default Switch;
