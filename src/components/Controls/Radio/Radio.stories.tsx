@@ -1,5 +1,7 @@
-import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
+import { ComponentStory } from '@storybook/react';
+
+import { Flex } from 'components/Common';
 
 import { Radio } from '.';
 
@@ -22,8 +24,16 @@ export const Template: ComponentStory<typeof Radio> = ({
   const [{ checked }, updateArgs] = useArgs();
   const handleCheck = () => updateArgs({ checked: !checked });
   return (
-    <Radio onCheckedChange={handleCheck} {...args}>
-      Children으로 라벨을 지정할 수 있습니다.
-    </Radio>
+    <Flex gap="10px" justify="start" align="start" direction="column">
+      <Radio onCheckedChange={handleCheck} {...args}>
+        radio button1
+      </Radio>
+      <Radio onCheckedChange={handleCheck} {...args}>
+        radio button2
+      </Radio>
+      <Radio onCheckedChange={handleCheck} {...args}>
+        radio button3
+      </Radio>
+    </Flex>
   );
 };
