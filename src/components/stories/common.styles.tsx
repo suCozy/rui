@@ -1,12 +1,7 @@
 import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import {
-  background100,
-  contents000,
-  contents100,
-  contents300,
-} from 'colors/v3';
+import { bg100, contents000, contents100, contents300 } from 'colors/v3';
 
 type TextAlign = 'left' | 'center' | 'right';
 
@@ -14,7 +9,7 @@ export const Paper = styled.div<{
   $minWidth?: number;
   $maxWidth?: number;
 }>`
-  background: ${background100};
+  background: ${bg100};
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.1);
