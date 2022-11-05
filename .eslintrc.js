@@ -5,9 +5,7 @@ const getExternals = () => {
   const getPackageJson = () =>
     require(path.resolve(process.cwd(), 'package.json'));
 
-  const dependencies = getPackageJson().dependencies;
-  const peerDependencies = getPackageJson().peerDependencies;
-  const devDependencies = getPackageJson().devDependencies;
+  const { dependencies, peerDependencies, devDependencies } = getPackageJson();
 
   return Object.keys({
     ...dependencies,
