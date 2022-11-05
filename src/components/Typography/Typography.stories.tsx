@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { renderToStaticMarkup } from 'react-dom/server';
 
+import { renderToStaticMarkup } from 'react-dom/server';
 import {
   Paper,
   Table,
