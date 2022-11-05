@@ -78,6 +78,10 @@ module.exports = {
             pattern: `${name}`,
             group: 'external',
           })),
+          ...getExternals().map((name) => ({
+            pattern: `${name}/**`,
+            group: 'external',
+          })),
           {
             pattern: 'global-style/**',
             group: 'sibling',
