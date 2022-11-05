@@ -6,8 +6,13 @@ const getExternals = () => {
 
   const dependencies = getPackageJson().dependencies;
   const peerDependencies = getPackageJson().peerDependencies;
+  const devDependencies = getPackageJson().devDependencies;
 
-  return Object.keys({ ...dependencies, ...peerDependencies });
+  return Object.keys({
+    ...dependencies,
+    ...peerDependencies,
+    ...devDependencies,
+  });
 };
 
 module.exports = {

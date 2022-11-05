@@ -2977,6 +2977,7 @@ __metadata:
     "@storybook/addon-links": ^6.5.13
     "@storybook/addons": ^6.5.13
     "@storybook/builder-vite": ^0.2.5
+    "@storybook/client-api": ^6.5.13
     "@storybook/react": ^6.5.13
     "@storybook/testing-library": ^0.0.13
     "@types/react": ^18.0.17
@@ -3723,7 +3724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/client-api@npm:6.5.13":
+"@storybook/client-api@npm:6.5.13, @storybook/client-api@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/client-api@npm:6.5.13"
   dependencies:

@@ -1,5 +1,5 @@
-import { ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
+import { ComponentStory } from '@storybook/react';
 
 import Control from '.';
 
