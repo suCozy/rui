@@ -1,5 +1,6 @@
 const path = require('path');
 
+/** @link https://github.com/import-js/eslint-plugin-import/issues/2164 */
 const getExternals = () => {
   const getPackageJson = () =>
     require(path.resolve(process.cwd(), 'package.json'));
