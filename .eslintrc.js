@@ -1,5 +1,15 @@
 const path = require('path');
 
+const getExternals = () => {
+  const getPackageJson = () =>
+    require(path.resolve(process.cwd(), 'package.json'));
+
+  const dependencies = getPackageJson().dependencies;
+  const peerDependencies = getPackageJson().peerDependencies;
+
+  return Object.keys({ ...dependencies, ...peerDependencies });
+};
+
 module.exports = {
   extends: [
     'react-app',
@@ -60,6 +70,10 @@ module.exports = {
           ['internal', 'parent', 'sibling'],
         ],
         pathGroups: [
+          ...getExternals().map((name) => ({
+            pattern: `${name}`,
+            group: 'external',
+          })),
           {
             pattern: 'global-style/**',
             group: 'sibling',
