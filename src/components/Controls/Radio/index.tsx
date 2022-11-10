@@ -1,32 +1,30 @@
-import { ControlOptionIcon } from './ControlOptionIcon';
-import { ControlInput, ControlRoot } from './styles';
-import type { ControlProps } from './types';
+import { ControlRoot } from '../Control/styles';
+import { RadioInput } from './styles';
+import { ControlProps } from './types';
 
 /**
  *
  * @prop {ReactNode} children
+ * @prop {string} id
  * @prop {boolean} checked
- * @prop {'small' | 'medium'} size / default: 'medium'
- * @prop {'check' | 'checkbox' | 'favorite' | 'bookmark'} option
  * @prop {function} onCheckedChange
- * @prop {boolean} disabled boolean
+ * @prop {boolean} disabled
  */
-export function Control({
+export function Radio({
   children,
-  checked,
   disabled = false,
-  size = 'medium',
-  option = 'checkbox',
+  checked,
   onCheckedChange,
   id,
   name,
   ...props
-}: ControlProps) {
+}: Omit<ControlProps, 'size'>) {
   return (
     <ControlRoot htmlFor={id}>
-      <ControlInput
+      <RadioInput
         id={id}
-        type="checkbox"
+        name={name}
+        type="radio"
         aria-checked={checked}
         aria-label={name}
         tabIndex={0}
@@ -40,7 +38,6 @@ export function Control({
         }}
         {...props}
       />
-      <ControlOptionIcon checked={checked} size={size} option={option} />
       {/* 라벨 디자인 미정 */}
       {children}
     </ControlRoot>
