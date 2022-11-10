@@ -53,11 +53,15 @@ Dialog.Content = function ({
   );
 };
 
-Dialog.HeadIcon = function ({ type }: { type: 'alert' | 'confirm' }) {
+Dialog.HeadIcon = function ({
+  type = 'alert',
+}: {
+  type?: 'alert' | 'confirm';
+}) {
   return (
     <DialogIcon>
       {type === 'alert' && <Icon iconName="icon_confirm_alert" />}
-      {type === 'alert' && <Icon iconName="icon_confirm_check" />}
+      {type === 'confirm' && <Icon iconName="icon_confirm_check" />}
     </DialogIcon>
   );
 };
