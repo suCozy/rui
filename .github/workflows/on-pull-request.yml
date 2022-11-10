@@ -10,6 +10,7 @@ jobs:
       nodeVersion: 16
       autoFix: true
       useRememberUI: false
+      tscCommand: "yarn tsc"
     secrets: inherit
 
   assign-reviewers:

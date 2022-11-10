@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import {
   Paper,
