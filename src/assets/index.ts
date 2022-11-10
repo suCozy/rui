@@ -51,6 +51,7 @@ export { ReactComponent as icon_cm_recomment_s } from '/src/assets/icons/icon_cm
 export { ReactComponent as icon_commmy_m } from '/src/assets/icons/icon_commmy_m.svg';
 export { ReactComponent as icon_community_inactive_m } from '/src/assets/icons/icon_community_inactive_m.svg';
 export { ReactComponent as icon_community_m } from '/src/assets/icons/icon_community_m.svg';
+export { ReactComponent as icon_confirm_alert } from '/src/assets/icons/icon_confirm_alert.svg';
 export { ReactComponent as icon_confirm_check } from '/src/assets/icons/icon_confirm_check.svg';
 export { ReactComponent as icon_crop_m } from '/src/assets/icons/icon_crop_m.svg';
 export { ReactComponent as icon_delete_m } from '/src/assets/icons/icon_delete_m.svg';
@@ -122,4 +123,3 @@ export { ReactComponent as icon_won_m } from '/src/assets/icons/icon_won_m.svg';
 export { ReactComponent as icon_won_s } from '/src/assets/icons/icon_won_s.svg';
 export { ReactComponent as icon_zoomin_m } from '/src/assets/icons/icon_zoomin_m.svg';
 export { ReactComponent as image_confirm_m } from '/src/assets/icons/image_confirm_m.svg';
-export { ReactComponent as img_confirm_alert } from '/src/assets/icons/img_confirm_alert.svg';

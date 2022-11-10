@@ -1,7 +1,7 @@
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory } from '@storybook/react';
 
-import Control from '.';
+import { Control } from '.';
 
 export default {
   title: 'Controls/Control',

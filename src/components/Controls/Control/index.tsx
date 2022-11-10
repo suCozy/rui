@@ -1,4 +1,6 @@
-import ControlOptionIcon from './ControlOptionIcon';
+import React from 'react';
+
+import { ControlOptionIcon } from './ControlOptionIcon';
 import { ControlInput, ControlRoot } from './styles';
 import type { ControlProps } from './types';
 
@@ -10,13 +12,11 @@ import type { ControlProps } from './types';
  * @prop {'check' | 'checkbox' | 'favorite' | 'bookmark'} option
  * @prop {function} onCheckedChange
  * @prop {boolean} disabled boolean
- * @prop {boolean} required boolean
- * @see https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference
  */
-function Control({
+export function Control({
   children,
   checked,
-  disabled,
+  disabled = false,
   size = 'medium',
   option = 'checkbox',
   onCheckedChange,
@@ -30,9 +30,10 @@ function Control({
         id={id}
         type="checkbox"
         aria-checked={checked}
-        aria-label={children?.toString()}
+        aria-label={name}
         tabIndex={0}
         checked={checked}
+        disabled={disabled}
         onChange={(e) => {
           if (disabled) {
             return;
@@ -47,5 +48,3 @@ function Control({
     </ControlRoot>
   );
 }
-
-export default Control;
