@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ControlRoot } from '../Control/styles';
 import { RadioInput } from './styles';
 import { ControlProps } from './types';

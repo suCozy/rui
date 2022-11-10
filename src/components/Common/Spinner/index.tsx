@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { contents000, contents999 } from 'colors/v3';
 import { Icon } from 'components/Icon/Icon';
 import { Container } from './styles';

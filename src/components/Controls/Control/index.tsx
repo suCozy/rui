@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ControlOptionIcon } from './ControlOptionIcon';
 import { ControlInput, ControlRoot } from './styles';
 import type { ControlProps } from './types';

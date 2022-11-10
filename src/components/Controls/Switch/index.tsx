@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { SwitchRoot, SwitchThumb, Label } from './styles';
 import type { SwitchProps } from './types';
 

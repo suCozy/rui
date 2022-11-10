@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { contents000, contents300 } from 'colors/v3';
 import { Icon } from 'components/Icon/Icon';
 import { range } from 'utils/common';
