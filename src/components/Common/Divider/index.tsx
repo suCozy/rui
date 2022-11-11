@@ -11,7 +11,7 @@ export interface DividerProps extends SeparatorPrimitive.SeparatorProps {
  * @prop {"horizontal" | "vertical"} orientation - default: "horizontal"
  * @prop {boolean} decorative - pure한 장식 컴포넌트 여부. true일 경우 웹 접근성 속성에서 제거됨.
  */
-const Divider = styled(SeparatorPrimitive.Root)<DividerProps>`
+export const Divider = styled(SeparatorPrimitive.Root)<DividerProps>`
   background-color: ${({ color = divider }) => color};
   &[data-orientation='horizontal'] {
     height: 1px;
@@ -23,5 +23,3 @@ const Divider = styled(SeparatorPrimitive.Root)<DividerProps>`
     width: 1px;
   }
 `;
-
-export default Divider;

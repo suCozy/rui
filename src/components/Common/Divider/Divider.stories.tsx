@@ -2,7 +2,7 @@ import { ComponentStory } from '@storybook/react';
 
 import { Flex } from '../Flex';
 
-import Divider from './index';
+import { Divider } from './index';
 
 export default {
   title: 'Common/Divider',

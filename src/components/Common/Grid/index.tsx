@@ -23,7 +23,7 @@ interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
  * @prop {string} columnGap
  * @prop {string} rowGap
  */
-const Grid = styled.div<Partial<GridProps>>`
+export const Grid = styled.div<Partial<GridProps>>`
   box-sizing: border-box;
   display: grid;
   width: ${({ width = '100%' }) => width};
@@ -36,5 +36,3 @@ const Grid = styled.div<Partial<GridProps>>`
   column-gap: ${({ columnGap = '0px' }) => columnGap};
   row-gap: ${({ rowGap = '0px' }) => rowGap};
 `;
-
-export default Grid;
