@@ -2476,12 +2476,17 @@ __metadata:
     "@radix-ui/react-switch": ^1.0.1
     "@storybook/addon-a11y": ^6.5.13
     "@storybook/addon-actions": ^6.5.13
+    "@storybook/addon-backgrounds": ^6.5.13
+    "@storybook/addon-docs": ^6.5.13
     "@storybook/addon-essentials": ^6.5.13
     "@storybook/addon-interactions": ^6.5.13
     "@storybook/addon-links": ^6.5.13
+    "@storybook/addon-measure": ^6.5.13
+    "@storybook/addon-outline": ^6.5.13
     "@storybook/addons": ^6.5.13
     "@storybook/builder-vite": ^0.2.5
     "@storybook/client-api": ^6.5.13
+    "@storybook/client-logger": ^6.5.13
     "@storybook/react": ^6.5.13
     "@storybook/testing-library": ^0.0.13
     "@types/react": ^18.0.17
@@ -2657,7 +2662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-backgrounds@npm:6.5.13":
+"@storybook/addon-backgrounds@npm:6.5.13, @storybook/addon-backgrounds@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/addon-backgrounds@npm:6.5.13"
   dependencies:
@@ -2714,7 +2719,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:6.5.13":
+"@storybook/addon-docs@npm:6.5.13, @storybook/addon-docs@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/addon-docs@npm:6.5.13"
   dependencies:
@@ -2880,7 +2885,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-measure@npm:6.5.13":
+"@storybook/addon-measure@npm:6.5.13, @storybook/addon-measure@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/addon-measure@npm:6.5.13"
   dependencies:
@@ -2904,7 +2909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-outline@npm:6.5.13":
+"@storybook/addon-outline@npm:6.5.13, @storybook/addon-outline@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/addon-outline@npm:6.5.13"
   dependencies:
@@ -3199,7 +3204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/client-logger@npm:6.5.13, @storybook/client-logger@npm:^6.4.0":
+"@storybook/client-logger@npm:6.5.13, @storybook/client-logger@npm:^6.4.0, @storybook/client-logger@npm:^6.5.13":
   version: 6.5.13
   resolution: "@storybook/client-logger@npm:6.5.13"
   dependencies:
