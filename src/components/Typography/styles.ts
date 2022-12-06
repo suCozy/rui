@@ -9,5 +9,4 @@ export const StyledTypography = styled.div<{
 }>`
   ${({ variant = 'Body1_M' }) => getTypographyStyles(variant)}
   color: ${({ color = contents000 }) => color};
-  margin: 0;
 `;
