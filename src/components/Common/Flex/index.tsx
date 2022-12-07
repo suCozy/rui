@@ -1,25 +1,17 @@
+import type { CSSProperties, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
-  align?: React.CSSProperties['alignItems'];
-  direction?: React.CSSProperties['flexDirection'];
-  justify?: React.CSSProperties['justifyContent'];
-  wrap?: React.CSSProperties['flexWrap'];
+export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
+  align?: CSSProperties['alignItems'];
+  direction?: CSSProperties['flexDirection'];
+  justify?: CSSProperties['justifyContent'];
+  wrap?: CSSProperties['flexWrap'];
   gap?: string;
   width?: string;
   height?: string;
 }
 
-/**
- * @prop {string} width
- * @prop {string} height
- * @prop {string} gap
- * @prop {React.CSSProperties['alignItems']} align
- * @prop {React.CSSProperties['justifyContent']} justify
- * @prop {React.CSSProperties['flexDirection']} direction
- * @prop {React.CSSProperties['flexWrap']} wrap
- */
-export const Flex = styled.div<Partial<FlexProps>>`
+const StyledFlex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
   width: ${({ width = '100%' }) => width};
@@ -30,3 +22,14 @@ export const Flex = styled.div<Partial<FlexProps>>`
   flex-direction: ${({ direction = 'row' }) => direction};
   flex-wrap: ${({ wrap = 'nowrap' }) => wrap};
 `;
+
+/**
+ * @prop {string} width
+ * @prop {string} height
+ * @prop {string} gap
+ * @prop {CSSProperties['alignItems']} align
+ * @prop {CSSProperties['justifyContent']} justify
+ * @prop {CSSProperties['flexDirection']} direction
+ * @prop {CSSProperties['flexWrap']} wrap
+ */
+export const Flex = (props: FlexProps) => <StyledFlex {...props} />;
