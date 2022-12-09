@@ -1,7 +1,22 @@
 import React from 'react';
 
-import { getViewBoxWidth, getLogo } from '../EnvLabel';
+import { getEnvLabel, EnvType } from '../EnvLabel';
 import { RememberLogoProps } from '../types';
+
+export const getViewBoxWidth = (env?: EnvType): number => {
+  switch (env) {
+    case 'bravo':
+    case 'alpha':
+    case 'development':
+      return 161;
+    case 'test':
+      return 149;
+    case 'production':
+    case 'final':
+    default:
+      return 122;
+  }
+};
 
 export const RememberLogo = ({
   className,
@@ -67,7 +82,7 @@ export const RememberLogo = ({
         d="M106.004 9.50452C106.188 8.01788 105.611 6.59976 104.427 6.56316C102.727 6.51154 101.931 9.06434 102.479 12.1615C102.776 13.8358 103.832 15.4567 105.438 16.1315C106.754 16.6843 108.835 16.5613 110.143 15.8537L110.507 16.3605C109.188 19.3216 106.344 20.2911 103.768 19.8781C100.604 19.3713 98.0776 16.7819 97.8964 12.7772C97.674 7.87241 100.574 5.08778 104.576 5.08778C107.738 5.09811 111.025 7.66781 110.69 12.7134H104.164V11.9775C105.011 11.6162 105.865 10.6251 106.004 9.50452Z"
         fill={color}
       />
-      {getLogo(env)}
+      {getEnvLabel(env)}
     </svg>
     {customElement}
   </div>

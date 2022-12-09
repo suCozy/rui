@@ -8,22 +8,7 @@ export type EnvType =
   | 'test'
   | 'development';
 
-export const getViewBoxWidth = (env?: EnvType): number => {
-  switch (env) {
-    case 'bravo':
-    case 'alpha':
-    case 'development':
-      return 161;
-    case 'test':
-      return 149;
-    case 'production':
-    case 'final':
-    default:
-      return 122;
-  }
-};
-
-export const getLogo = (env?: EnvType): JSX.Element | undefined => {
+export const getEnvLabel = (env?: EnvType): JSX.Element | undefined => {
   switch (env) {
     case 'bravo':
     case 'development':
