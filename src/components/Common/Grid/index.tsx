@@ -1,29 +1,19 @@
+import type { CSSProperties, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   width?: string;
   height?: string;
-  align?: React.CSSProperties['alignItems'];
-  justify?: React.CSSProperties['justifyContent'];
-  flow?: React.CSSProperties['gridAutoFlow'];
+  align?: CSSProperties['alignItems'];
+  justify?: CSSProperties['justifyContent'];
+  flow?: CSSProperties['gridAutoFlow'];
   columns?: number;
   gap?: string;
   columnGap?: string;
   rowGap?: string;
 }
 
-/**
- * @prop {string} width
- * @prop {string} height
- * @prop {React.CSSProperties['alignItems']} align
- * @prop {React.CSSProperties['justifyContent']} justify
- * @prop {React.CSSProperties['gridAutoFlow']} flow
- * @prop {number} columns
- * @prop {string} gap
- * @prop {string} columnGap
- * @prop {string} rowGap
- */
-export const Grid = styled.div<Partial<GridProps>>`
+const StyledGrid = styled.div<Partial<GridProps>>`
   box-sizing: border-box;
   display: grid;
   width: ${({ width = '100%' }) => width};
@@ -36,3 +26,16 @@ export const Grid = styled.div<Partial<GridProps>>`
   column-gap: ${({ columnGap = '0px' }) => columnGap};
   row-gap: ${({ rowGap = '0px' }) => rowGap};
 `;
+
+/**
+ * @prop {string} width
+ * @prop {string} height
+ * @prop {CSSProperties['alignItems']} align
+ * @prop {CSSProperties['justifyContent']} justify
+ * @prop {CSSProperties['gridAutoFlow']} flow
+ * @prop {number} columns
+ * @prop {string} gap
+ * @prop {string} columnGap
+ * @prop {string} rowGap
+ */
+export const Grid = (props: GridProps) => <StyledGrid {...props} />;

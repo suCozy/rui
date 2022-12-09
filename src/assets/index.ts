@@ -83,6 +83,7 @@ export { ReactComponent as icon_map_m } from '/src/assets/icons/icon_map_m.svg';
 export { ReactComponent as icon_map_s } from '/src/assets/icons/icon_map_s.svg';
 export { ReactComponent as icon_memo_m } from '/src/assets/icons/icon_memo_m.svg';
 export { ReactComponent as icon_message_m } from '/src/assets/icons/icon_message_m.svg';
+export { ReactComponent as icon_more_vertical_m } from '/src/assets/icons/icon_more_vertical_m.svg';
 export { ReactComponent as icon_mute_m } from '/src/assets/icons/icon_mute_m.svg';
 export { ReactComponent as icon_mute_m_outline } from '/src/assets/icons/icon_mute_m_outline.svg';
 export { ReactComponent as icon_mute_s } from '/src/assets/icons/icon_mute_s.svg';

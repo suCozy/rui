@@ -15,7 +15,7 @@ const DialogComponent = () => (
       <Dialog.HeadIcon />
       <Dialog.Title>Title</Dialog.Title>
       <Dialog.Description>all description in here</Dialog.Description>
-      <Flex gap="10px">
+      <Flex gap="10px" width="100%">
         <Dialog.Close asChild>
           <Button
             theme="solid"
