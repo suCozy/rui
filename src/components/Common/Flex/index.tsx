@@ -14,8 +14,8 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
 const StyledFlex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
-  width: ${({ width = '100%' }) => width};
-  height: ${({ height = '100%' }) => height};
+  width: ${({ width = 'auto' }) => width};
+  height: ${({ height = 'auto' }) => height};
   gap: ${({ gap = '0' }) => gap};
   align-items: ${({ align = 'center' }) => align};
   justify-content: ${({ justify = 'center' }) => justify};
