@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { type TypographyStyle } from 'mixins/typography';
-import { TYPOGRAPHY_COMPONENT_MAP } from './const';
-import { getTypographyComponent } from './styles';
+import { StyledTypography } from './styles';
 import type { TypographyTagNames } from './types';
 
 export function Typography({
@@ -11,14 +10,10 @@ export function Typography({
   color,
   children,
 }: TypographyProps) {
-  const Component = getTypographyComponent(
-    tagName || TYPOGRAPHY_COMPONENT_MAP[variant]
-  );
-
   return (
-    <Component variant={variant} color={color}>
+    <StyledTypography as={tagName} variant={variant} color={color}>
       {children}
-    </Component>
+    </StyledTypography>
   );
 }
 

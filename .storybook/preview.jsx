@@ -17,7 +17,7 @@ export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     showPanel: true,
-    panelPosition: 'right',
+    panelPosition: 'bottom',
     showNav: true,
     isFullscreen: false,
     isToolshown: true,
@@ -31,10 +31,29 @@ export const parameters = {
     disable: true,
   },
   controls: {
+    expanded: true,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  // @see https://storybook.js.org/docs/react/writing-tests/accessibility-testing#configure
+  a11y: {
+    element: '#root',
+    config: {
+      rules: [
+        {
+          id: 'autocomplete-valid',
+          selector: '*:not([autocomplete="nope"])',
+        },
+        {
+          id: 'image-alt',
+          enabled: false,
+        },
+      ],
+    },
+    options: {},
+    manual: false,
   },
 };
 

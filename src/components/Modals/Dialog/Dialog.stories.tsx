@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Button from 'components/Buttons/Button';
+import { Button } from 'components/Buttons/Button';
 import { Flex } from 'components/Common/Flex';
 
-import Dialog from '.';
+import { Dialog } from '.';
 
 const DialogComponent = () => (
   <Dialog>
@@ -15,7 +15,7 @@ const DialogComponent = () => (
       <Dialog.HeadIcon />
       <Dialog.Title>Title</Dialog.Title>
       <Dialog.Description>all description in here</Dialog.Description>
-      <Flex gap="10px">
+      <Flex gap="10px" width="100%">
         <Dialog.Close asChild>
           <Button
             theme="solid"

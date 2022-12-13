@@ -25,6 +25,7 @@ export const StyledOverlay = styled(DialogPrimitive.Overlay)`
 `;
 
 export const DialogContent = styled(DialogPrimitive.Content)`
+  box-sizing: border-box;
   background-color: ${primary200};
   border-radius: 8px;
   position: fixed;
@@ -33,6 +34,7 @@ export const DialogContent = styled(DialogPrimitive.Content)`
   transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 360px;
+  min-width: 300px;
   max-height: 85vh;
   padding: 32px 24px 24px;
 
@@ -59,7 +61,7 @@ export const IconButton = styled.button`
 `;
 
 export const DialogTitle = styled(DialogPrimitive.Title)`
-  ${getTypographyStyles('Headline3_B')}
+  ${getTypographyStyles('Headline4_B')}
 
   color: ${contents000};
   margin: 0;

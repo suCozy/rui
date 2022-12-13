@@ -1,5 +1,5 @@
 import { contents000, contents150 } from 'colors/v3';
-import { ButtonTheme } from './types';
+import type { ButtonTheme } from './types';
 
 export const BUTTON_SIZES = {
   small: {

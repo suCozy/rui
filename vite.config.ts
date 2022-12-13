@@ -10,7 +10,7 @@ import svgr from 'vite-plugin-svgr';
 export default () => {
   return defineConfig({
     plugins: [
-      process.env.npm_lifecycle_event === 'build' ? null : react(),
+      react({ jsxRuntime: 'classic' }),
       tsconfigPaths(),
       dts({
         insertTypesEntry: true,

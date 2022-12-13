@@ -1,8 +1,9 @@
+import React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
 import { Flex } from 'components/Common/Flex';
-import Icon from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 import {
   StyledOverlay,
   DialogContent,
@@ -17,18 +18,29 @@ interface ContentProps {
   dimmed?: boolean;
 }
 
+const { Root, Trigger, Close } = DialogPrimitive;
+
 /**
- * @param children React.ReactNode
+ * @prop {React.ReactNode} children
+ * @prop {boolean} open
+ * @prop {boolean} defaultOpen
+ * @prop {(open: boolean) => void} onOpenChange
+ * @prop {boolean} modal
+ * @prop {string} id
  */
-function Dialog({ children, ...props }: DialogProps) {
+export function Dialog({ children, ...props }: DialogProps) {
   return <Root {...props}>{children}</Root>;
 }
 
 /**
- * @param dimmed boolean
+ * @prop {boolean} dimmed
  * @see https://www.radix-ui.com/docs/primitives/components/dialog
  */
-function Content({ children, dimmed = true, ...props }: ContentProps) {
+Dialog.Content = function ({
+  children,
+  dimmed = true,
+  ...props
+}: ContentProps) {
   return (
     <DialogPrimitive.Portal>
       {dimmed && <StyledOverlay />}
@@ -39,17 +51,22 @@ function Content({ children, dimmed = true, ...props }: ContentProps) {
       </DialogContent>
     </DialogPrimitive.Portal>
   );
-}
+};
 
-function HeadIcon() {
+Dialog.HeadIcon = function ({
+  type = 'alert',
+}: {
+  type?: 'alert' | 'confirm';
+}) {
   return (
     <DialogIcon>
-      <Icon iconName="img_confirm_alert" />
+      {type === 'alert' && <Icon iconName="icon_confirm_alert" />}
+      {type === 'confirm' && <Icon iconName="icon_confirm_check" />}
     </DialogIcon>
   );
-}
+};
 
-function CloseIcon() {
+Dialog.CloseIcon = function () {
   return (
     <Close asChild>
       <IconButton type="button" aria-label="Close">
@@ -57,30 +74,15 @@ function CloseIcon() {
       </IconButton>
     </Close>
   );
-}
+};
 
-/**
- * @param children React.ReactNode
- */
-function Title({ children }: { children: React.ReactNode }) {
+Dialog.Title = function ({ children }: { children: React.ReactNode }) {
   return <DialogTitle>{children}</DialogTitle>;
-}
+};
 
-/**
- * @param children React.ReactNode
- */
-function Description({ children }: { children: React.ReactNode }) {
+Dialog.Description = function ({ children }: { children: React.ReactNode }) {
   return <DialogDescription>{children}</DialogDescription>;
-}
+};
 
-const { Root, Trigger, Close } = DialogPrimitive;
-
-export default Object.assign(Dialog, {
-  Trigger,
-  Close,
-  HeadIcon,
-  CloseIcon,
-  Title,
-  Description,
-  Content,
-});
+Dialog.Trigger = Trigger;
+Dialog.Close = Close;
