@@ -67,6 +67,7 @@
     "eslint-plugin-react": "^7.31.7",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.7",
+    "humps": "^2.0.1",
     "open": "^8.4.0",
     "prettier": "^2.7.1",
     "react": "^17.0.0",
