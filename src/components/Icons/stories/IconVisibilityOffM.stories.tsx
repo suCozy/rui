@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconVisibilityOffM } from "..";
+import { IconVisibilityOffM } from '..';
 
 export default {
   title: 'Icons/IconVisibilityOffM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconVisibilityOffM>;
 
 const Template: ComponentStory<typeof IconVisibilityOffM> = (args) => (

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ControlCheckboxOffM } from "..";
+import { ControlCheckboxOffM } from '..';
 
 export default {
   title: 'Icons/ControlCheckboxOffM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof ControlCheckboxOffM>;
 
 const Template: ComponentStory<typeof ControlCheckboxOffM> = (args) => (

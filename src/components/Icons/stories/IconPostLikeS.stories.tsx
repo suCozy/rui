@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconPostLikeS } from "..";
+import { IconPostLikeS } from '..';
 
 export default {
   title: 'Icons/IconPostLikeS',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconPostLikeS>;
 
 const Template: ComponentStory<typeof IconPostLikeS> = (args) => (

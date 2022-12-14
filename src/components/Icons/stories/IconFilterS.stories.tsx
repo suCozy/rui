@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconFilterS } from "..";
+import { IconFilterS } from '..';
 
 export default {
   title: 'Icons/IconFilterS',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconFilterS>;
 
 const Template: ComponentStory<typeof IconFilterS> = (args) => (

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconMuteM } from "..";
+import { IconMuteM } from '..';
 
 export default {
   title: 'Icons/IconMuteM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconMuteM>;
 
 const Template: ComponentStory<typeof IconMuteM> = (args) => (

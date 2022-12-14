@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconZoominM } from "..";
+import { IconZoominM } from '..';
 
 export default {
   title: 'Icons/IconZoominM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconZoominM>;
 
 const Template: ComponentStory<typeof IconZoominM> = (args) => (

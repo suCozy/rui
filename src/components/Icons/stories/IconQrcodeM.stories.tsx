@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconQrcodeM } from "..";
+import { IconQrcodeM } from '..';
 
 export default {
   title: 'Icons/IconQrcodeM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconQrcodeM>;
 
 const Template: ComponentStory<typeof IconQrcodeM> = (args) => (

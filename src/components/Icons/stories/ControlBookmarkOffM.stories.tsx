@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ControlBookmarkOffM } from "..";
+import { ControlBookmarkOffM } from '..';
 
 export default {
   title: 'Icons/ControlBookmarkOffM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof ControlBookmarkOffM>;
 
 const Template: ComponentStory<typeof ControlBookmarkOffM> = (args) => (

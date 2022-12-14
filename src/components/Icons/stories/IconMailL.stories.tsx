@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconMailL } from "..";
+import { IconMailL } from '..';
 
 export default {
   title: 'Icons/IconMailL',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconMailL>;
 
 const Template: ComponentStory<typeof IconMailL> = (args) => (

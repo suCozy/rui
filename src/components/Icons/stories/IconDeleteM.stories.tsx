@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconDeleteM } from "..";
+import { IconDeleteM } from '..';
 
 export default {
   title: 'Icons/IconDeleteM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconDeleteM>;
 
 const Template: ComponentStory<typeof IconDeleteM> = (args) => (

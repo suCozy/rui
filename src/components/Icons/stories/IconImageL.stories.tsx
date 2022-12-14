@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconImageL } from "..";
+import { IconImageL } from '..';
 
 export default {
   title: 'Icons/IconImageL',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconImageL>;
 
 const Template: ComponentStory<typeof IconImageL> = (args) => (

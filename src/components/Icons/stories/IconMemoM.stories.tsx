@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconMemoM } from "..";
+import { IconMemoM } from '..';
 
 export default {
   title: 'Icons/IconMemoM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconMemoM>;
 
 const Template: ComponentStory<typeof IconMemoM> = (args) => (

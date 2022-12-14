@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconAdjustM } from "..";
+import { IconAdjustM } from '..';
 
 export default {
   title: 'Icons/IconAdjustM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconAdjustM>;
 
 const Template: ComponentStory<typeof IconAdjustM> = (args) => (

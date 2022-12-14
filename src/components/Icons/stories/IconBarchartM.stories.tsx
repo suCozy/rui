@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconBarchartM } from "..";
+import { IconBarchartM } from '..';
 
 export default {
   title: 'Icons/IconBarchartM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconBarchartM>;
 
 const Template: ComponentStory<typeof IconBarchartM> = (args) => (

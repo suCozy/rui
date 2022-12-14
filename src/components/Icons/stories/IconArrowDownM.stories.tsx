@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconArrowDownM } from "..";
+import { IconArrowDownM } from '..';
 
 export default {
   title: 'Icons/IconArrowDownM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconArrowDownM>;
 
 const Template: ComponentStory<typeof IconArrowDownM> = (args) => (

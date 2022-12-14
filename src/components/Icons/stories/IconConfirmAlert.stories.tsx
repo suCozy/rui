@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconConfirmAlert } from "..";
+import { IconConfirmAlert } from '..';
 
 export default {
   title: 'Icons/IconConfirmAlert',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconConfirmAlert>;
 
 const Template: ComponentStory<typeof IconConfirmAlert> = (args) => (

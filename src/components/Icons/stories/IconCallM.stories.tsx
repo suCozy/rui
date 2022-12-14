@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconCallM } from "..";
+import { IconCallM } from '..';
 
 export default {
   title: 'Icons/IconCallM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconCallM>;
 
 const Template: ComponentStory<typeof IconCallM> = (args) => (

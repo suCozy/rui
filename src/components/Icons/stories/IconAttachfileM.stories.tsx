@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconAttachfileM } from "..";
+import { IconAttachfileM } from '..';
 
 export default {
   title: 'Icons/IconAttachfileM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconAttachfileM>;
 
 const Template: ComponentStory<typeof IconAttachfileM> = (args) => (

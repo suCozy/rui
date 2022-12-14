@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconEditL } from "..";
+import { IconEditL } from '..';
 
 export default {
   title: 'Icons/IconEditL',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconEditL>;
 
 const Template: ComponentStory<typeof IconEditL> = (args) => (

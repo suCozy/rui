@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ControlFavoriteOff } from "..";
+import { ControlFavoriteOff } from '..';
 
 export default {
   title: 'Icons/ControlFavoriteOff',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof ControlFavoriteOff>;
 
 const Template: ComponentStory<typeof ControlFavoriteOff> = (args) => (

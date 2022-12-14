@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconConfirmCheck } from "..";
+import { IconConfirmCheck } from '..';
 
 export default {
   title: 'Icons/IconConfirmCheck',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconConfirmCheck>;
 
 const Template: ComponentStory<typeof IconConfirmCheck> = (args) => (

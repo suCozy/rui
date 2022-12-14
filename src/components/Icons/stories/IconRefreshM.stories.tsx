@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconRefreshM } from "..";
+import { IconRefreshM } from '..';
 
 export default {
   title: 'Icons/IconRefreshM',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconRefreshM>;
 
 const Template: ComponentStory<typeof IconRefreshM> = (args) => (

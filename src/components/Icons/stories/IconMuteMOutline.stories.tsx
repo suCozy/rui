@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconMuteMOutline } from "..";
+import { IconMuteMOutline } from '..';
 
 export default {
   title: 'Icons/IconMuteMOutline',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconMuteMOutline>;
 
 const Template: ComponentStory<typeof IconMuteMOutline> = (args) => (

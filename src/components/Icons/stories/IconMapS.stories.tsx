@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconMapS } from "..";
+import { IconMapS } from '..';
 
 export default {
   title: 'Icons/IconMapS',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconMapS>;
 
 const Template: ComponentStory<typeof IconMapS> = (args) => (

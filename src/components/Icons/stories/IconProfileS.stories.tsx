@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IconProfileS } from "..";
+import { IconProfileS } from '..';
 
 export default {
   title: 'Icons/IconProfileS',
@@ -8,8 +8,8 @@ export default {
   args: {
     width: '32px',
     height: '32px',
-    color: 'black'
-  }
+    color: 'black',
+  },
 } as ComponentMeta<typeof IconProfileS>;
 
 const Template: ComponentStory<typeof IconProfileS> = (args) => (
