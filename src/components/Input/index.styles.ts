@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components';
 import * as Label from '@radix-ui/react-label';
 
 import {
-  accent100,
-  background200,
+  bg200,
   contents000,
   contents200,
   contents300,
   contents999,
+  roleRed,
 } from 'colors/v3';
 import { ellipsis, getTypographyStyles } from 'mixins/typography';
 
@@ -29,7 +29,7 @@ export const InputContainer = styled.div<{ disabled?: boolean }>`
   ${({ disabled }) =>
     disabled &&
     css`
-      background-color: ${background200};
+      background-color: ${bg200};
     `}
 `;
 
@@ -65,6 +65,6 @@ export const InputLabel = styled(Label.Label)`
 
 export const InputHintText = styled.span`
   ${getTypographyStyles('Body1_M')}
-  color: ${accent100};
+  color: ${roleRed};
   white-space: nowrap;
 `;
