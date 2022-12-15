@@ -62,6 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:7.31.7"],\
             ["eslint-plugin-react-hooks", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:4.6.0"],\
             ["eslint-plugin-storybook", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:0.6.7"],\
+            ["humps", "npm:2.0.1"],\
             ["open", "npm:8.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:17.0.2"],\
@@ -5467,6 +5468,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:7.31.7"],\
             ["eslint-plugin-react-hooks", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:4.6.0"],\
             ["eslint-plugin-storybook", "virtual:c394e6595154aa4729a403213ffa74b07623d1b1b08fcfabd05b9d9222885dec3583d184d467055e955ab6b7a7ef972b0f3db34fa1a76d9d259f6f4648d23090#npm:0.6.7"],\
+            ["humps", "npm:2.0.1"],\
             ["open", "npm:8.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:17.0.2"],\
@@ -15014,6 +15016,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["humanize-ms", "npm:1.2.1"],\
             ["ms", "npm:2.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["humps", [\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/humps-npm-2.0.1-268b3f430d-7d5a674cfc.zip/node_modules/humps/",\
+          "packageDependencies": [\
+            ["humps", "npm:2.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\

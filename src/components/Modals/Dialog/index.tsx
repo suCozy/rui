@@ -3,7 +3,11 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
 import { Flex } from 'components/Common/Flex';
-import { Icon } from 'components/Icon/Icon';
+import {
+  IconConfirmAlert,
+  IconConfirmCheck,
+  IconCloseS,
+} from 'components/Icons';
 import {
   StyledOverlay,
   DialogContent,
@@ -60,8 +64,8 @@ Dialog.HeadIcon = function ({
 }) {
   return (
     <DialogIcon>
-      {type === 'alert' && <Icon iconName="icon_confirm_alert" />}
-      {type === 'confirm' && <Icon iconName="icon_confirm_check" />}
+      {type === 'alert' && <IconConfirmAlert />}
+      {type === 'confirm' && <IconConfirmCheck />}
     </DialogIcon>
   );
 };
@@ -70,7 +74,7 @@ Dialog.CloseIcon = function () {
   return (
     <Close asChild>
       <IconButton type="button" aria-label="Close">
-        <Icon iconName="icon_close_s" />
+        <IconCloseS />
       </IconButton>
     </Close>
   );
