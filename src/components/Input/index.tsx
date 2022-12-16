@@ -57,6 +57,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   },
   ref
 ) => {
+  const [inputId] = useState(createRandomId());
   const [labelId] = useState(createRandomId());
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   const isForceVisibleInput =
@@ -67,7 +68,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   return (
     <>
       {label && (
-        <InputLabel htmlFor={labelId}>
+        <InputLabel id={labelId} htmlFor={inputId}>
           {label}
           {props.required && <mark>*</mark>}
         </InputLabel>
@@ -80,7 +81,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         {leftElement}
         <InputInner
           disabled={disabled}
-          id={labelId}
+          id={inputId}
           aria-labelledby={label ? labelId : undefined}
           {...props}
           type={isForceVisibleInput ? 'text' : props.type ?? 'text'}
