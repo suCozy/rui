@@ -1,7 +1,12 @@
 import React from 'react';
 
 import { contents000, contents300 } from 'colors/v3';
-import { Icon } from 'components/Icon/Icon';
+import {
+  IconArrowDoubleLeftS,
+  IconArrowLeftS,
+  IconArrowRightS,
+  IconArrowDoubleRightM,
+} from 'components/Icons';
 import { range } from 'utils/common';
 import {
   BaseButton,
@@ -59,8 +64,7 @@ export function Pagination({
         onClick={onClickFirstPage}
         aria-label="첫 페이지로 이동"
       >
-        <Icon
-          iconName="icon_arrow_double_left_s"
+        <IconArrowDoubleLeftS
           color={iconColor(isFirstPageDisabled)}
           aria-hidden="true"
         />
@@ -70,8 +74,7 @@ export function Pagination({
         onClick={onClickPrevPage}
         aria-label="이전 페이지로 이동"
       >
-        <Icon
-          iconName="icon_arrow_left_s"
+        <IconArrowLeftS
           color={iconColor(isPrevPageDisabled)}
           aria-hidden="true"
         />
@@ -94,8 +97,7 @@ export function Pagination({
         onClick={onClickNextPage}
         aria-label="다음 페이지로 이동"
       >
-        <Icon
-          iconName="icon_arrow_right_s"
+        <IconArrowRightS
           color={iconColor(isNextPageDisabled)}
           aria-hidden="true"
         />
@@ -105,8 +107,7 @@ export function Pagination({
         onClick={onClickLastPage}
         aria-label="마지막 페이지로 이동"
       >
-        <Icon
-          iconName="icon_arrow_double_right_s"
+        <IconArrowDoubleRightM
           color={iconColor(isLastPageDisabled)}
           aria-hidden="true"
         />

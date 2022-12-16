@@ -7,7 +7,7 @@
     "mixins/breakpoints",
     "mixins/typography",
     "components",
-    "components/Icon",
+    "components/Icons",
     "components/Modals",
     "components/Buttons",
     "components/Common",

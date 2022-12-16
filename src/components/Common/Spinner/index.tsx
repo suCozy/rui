@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { contents000, contents999 } from 'colors/v3';
-import { Icon } from 'components/Icon/Icon';
+import { IconSpinner } from 'components/Icons';
 import { Container } from './styles';
 
 export interface SpinnerProps {
@@ -16,8 +16,7 @@ export const Spinner = ({
   className,
 }: SpinnerProps) => (
   <Container className={className}>
-    <Icon
-      iconName="icon_spinner"
+    <IconSpinner
       width={size}
       height={size}
       color={color === 'black' ? contents000 : contents999}
