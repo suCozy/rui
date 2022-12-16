@@ -19,6 +19,8 @@ import {
   InputTogglePasswordVisibilityButton,
 } from './index.styles';
 
+export type HintTextColorType = 'roleRed' | 'contents000' | 'contents300';
+
 type BaseInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   `aria-${string}`
@@ -28,6 +30,7 @@ type TextInputProps = {
   type?: 'text' | 'number' | 'email' | 'search' | 'tel' | 'url';
   label?: ReactNode;
   hintText?: string;
+  hintTextColor?: HintTextColorType;
   leftElement?: ReactNode;
   rightElement?: ReactNode;
   errorMessage?: string;
@@ -48,6 +51,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     rightElement,
     disabled,
     hintText,
+    hintTextColor,
     errorMessage,
     ...props
   },
@@ -59,7 +63,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     props.type === 'password' &&
     props.hasTogglePasswordVisibilityButton &&
     isVisiblePassword;
-
+  hintTextColor;
   return (
     <>
       {label && (
@@ -82,7 +86,9 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           type={isForceVisibleInput ? 'text' : props.type ?? 'text'}
           ref={ref}
         />
-        {hintText && <InputHintText>{hintText}</InputHintText>}
+        {hintText && (
+          <InputHintText textColor={hintTextColor}>{hintText}</InputHintText>
+        )}
         {props.type === 'password' &&
           props.hasTogglePasswordVisibilityButton && (
             <TogglePasswordVisibilityButton

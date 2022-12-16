@@ -11,6 +11,8 @@ import {
 } from 'colors/v3';
 import { ellipsis, getTypographyStyles } from 'mixins/typography';
 
+import { HintTextColorType } from '.';
+
 export const InputContainer = styled.div<{
   disabled?: boolean;
   hasError?: boolean;
@@ -87,9 +89,10 @@ export const InputError = styled.div`
   margin-top: 8px;
 `;
 
-export const InputHintText = styled.span`
+export const InputHintText = styled.span<{ textColor?: HintTextColorType }>`
   ${getTypographyStyles('Body1_M')}
-  color: ${roleRed};
+  color: ${({ textColor }) =>
+    ({ roleRed, contents000, contents300 }[textColor ?? 'roleRed'] ?? roleRed)};
   white-space: nowrap;
 `;
 

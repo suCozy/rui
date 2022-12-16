@@ -35,6 +35,11 @@ export default {
     },
     placeholder: { defaultValue: 'PlaceHolder', type: 'string' },
     hintText: { type: 'string' },
+    hintTextColor: {
+      control: 'select',
+      options: ['roleRed', 'contents000', 'contents300'],
+      defaultValue: 'roleRed',
+    },
     leftElement: { control: 'select', options: iconNames },
     rightElement: { control: 'select', options: iconNames },
     label: { type: 'string' },
