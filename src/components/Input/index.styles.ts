@@ -11,7 +11,10 @@ import {
 } from 'colors/v3';
 import { ellipsis, getTypographyStyles } from 'mixins/typography';
 
-export const InputContainer = styled.div<{ disabled?: boolean }>`
+export const InputContainer = styled.div<{
+  disabled?: boolean;
+  hasError?: boolean;
+}>`
   display: flex;
   align-items: center;
   border: 1px solid ${contents300};
@@ -22,15 +25,21 @@ export const InputContainer = styled.div<{ disabled?: boolean }>`
 
   transition: border-color 0.2s, background-color 0.2s;
 
-  &:focus-within {
-    border-color: ${contents000};
-  }
-
-  ${({ disabled }) =>
+  ${({ hasError, disabled }) => [
+    hasError
+      ? css`
+          border-color: ${roleRed};
+        `
+      : css`
+          &:focus-within {
+            border-color: ${contents000};
+          }
+        `,
     disabled &&
-    css`
-      background-color: ${bg200};
-    `}
+      css`
+        background-color: ${bg200};
+      `,
+  ]}
 `;
 
 export const InputInner = styled.input`
@@ -61,10 +70,35 @@ export const InputLabel = styled(Label.Label)`
   ${getTypographyStyles('Headline4_B')}
   display: block;
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  > mark {
+    all: unset;
+    color: ${roleRed};
+  }
+`;
+
+export const InputError = styled.div`
+  ${getTypographyStyles('Body2_M')}
+  color: ${roleRed};
+
+  margin-top: 8px;
 `;
 
 export const InputHintText = styled.span`
   ${getTypographyStyles('Body1_M')}
   color: ${roleRed};
   white-space: nowrap;
+`;
+
+export const InputTogglePasswordVisibilityButton = styled.button`
+  all: unset;
+  appearance: none;
+  cursor: pointer;
+
+  > svg {
+    display: block;
+  }
 `;
