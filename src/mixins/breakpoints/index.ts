@@ -4,16 +4,25 @@ import {
   landingMobileSizeBreak,
   mobileSizeBreak,
   mobileSmallSizeBreak,
+  mobile360Break,
 } from './const';
 export * from './const';
 
 /** `max-width: ${mobileSmallSizeBreak}px` */
-export const mobileSmallOnly = (cssContent: string) => css`
+export const mobileSmallOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (max-width: ${mobileSmallSizeBreak}px) {
     ${cssContent}
   }
 `;
 
+/** `max-width: ${mobile360Break}px` */
+export const mobile360SizeOnly = (
+  cssContent: FlattenSimpleInterpolation
+) => css`
+  @media only screen and (max-width: ${mobile360Break}px) {
+    ${cssContent}
+  }
+`;
 /** `max-width: ${mobileSizeBreak}px` */
 export const mobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (max-width: ${mobileSizeBreak}px) {
