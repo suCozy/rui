@@ -28,7 +28,7 @@ export const RememberSquareLogo = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_222_7)">
+      <g clipPath="url(#clip0_222_7)">
         <path
           d="M18 0H2C0.895431 0 0 0.895431 0 2V18C0 19.1046 0.895431 20 2 20H18C19.1046 20 20 19.1046 20 18V2C20 0.895431 19.1046 0 18 0Z"
           fill={backgroundColor}
