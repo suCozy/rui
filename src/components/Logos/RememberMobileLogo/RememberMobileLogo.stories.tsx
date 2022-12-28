@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { RememberMobileLogo } from './index';
+import { RememberMobileLogo } from '.';
 
 const meta: ComponentMeta<typeof RememberMobileLogo> = {
   title: 'Logos/RememberMobileLogo ',
