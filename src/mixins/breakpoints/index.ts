@@ -16,7 +16,7 @@ export const mobileSmallOnly = (cssContent: FlattenSimpleInterpolation) => css`
 `;
 
 /** `max-width: ${mobile360Break}px` */
-export const mobile360SizeOnly = (
+export const mobile360pxOnly = (
   cssContent: FlattenSimpleInterpolation
 ) => css`
   @media only screen and (max-width: ${mobile360Break}px) {
