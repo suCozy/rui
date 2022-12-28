@@ -8,4 +8,5 @@ export interface RememberLogoProps
   height?: number;
   env?: EnvType;
   customElement?: React.ReactNode;
+  backgroundColor?: string;
 }
