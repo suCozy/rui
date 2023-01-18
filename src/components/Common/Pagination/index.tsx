@@ -5,7 +5,7 @@ import {
   IconArrowDoubleLeftS,
   IconArrowLeftS,
   IconArrowRightS,
-  IconArrowDoubleRightM,
+  IconArrowDoubleRightS,
 } from 'components/Icons';
 import { range } from 'utils/common';
 import {
@@ -107,7 +107,7 @@ export function Pagination({
         onClick={onClickLastPage}
         aria-label="마지막 페이지로 이동"
       >
-        <IconArrowDoubleRightM
+        <IconArrowDoubleRightS
           color={iconColor(isLastPageDisabled)}
           aria-hidden="true"
         />
