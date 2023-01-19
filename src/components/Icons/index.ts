@@ -77,6 +77,8 @@ export { ReactComponent as IconInfoM } from '/src/assets/icons/icon_info_m.svg';
 export { ReactComponent as IconInfoS } from '/src/assets/icons/icon_info_s.svg';
 export { ReactComponent as IconKakaonaviM } from '/src/assets/icons/icon_kakaonavi_m.svg';
 export { ReactComponent as IconLinkM } from '/src/assets/icons/icon_link_m.svg';
+export { ReactComponent as IconLockM } from '/src/assets/icons/icon_lock_m.svg';
+export { ReactComponent as IconLockS } from '/src/assets/icons/icon_lock_s.svg';
 export { ReactComponent as IconMailL } from '/src/assets/icons/icon_mail_l.svg';
 export { ReactComponent as IconMailM } from '/src/assets/icons/icon_mail_m.svg';
 export { ReactComponent as IconMapM } from '/src/assets/icons/icon_map_m.svg';
