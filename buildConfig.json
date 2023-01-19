@@ -13,6 +13,7 @@
     "components/Common",
     "components/Controls",
     "components/Logos",
-    "components/Typography"
+    "components/Typography",
+    "components/Common/Flex"
   ]
 }
