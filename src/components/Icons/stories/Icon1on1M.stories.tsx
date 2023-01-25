@@ -6,8 +6,6 @@ export default {
   title: 'Icons/Icon1on1M',
   component: Icon1on1M,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof Icon1on1M>;

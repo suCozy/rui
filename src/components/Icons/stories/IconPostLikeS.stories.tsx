@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconPostLikeS',
   component: IconPostLikeS,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconPostLikeS>;
