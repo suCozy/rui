@@ -117,6 +117,7 @@ export { ReactComponent as IconSpinner } from '/src/assets/icons/icon_spinner.sv
 export { ReactComponent as IconTeambcM } from '/src/assets/icons/icon_teambc_m.svg';
 export { ReactComponent as IconTimeM } from '/src/assets/icons/icon_time_m.svg';
 export { ReactComponent as IconTimeS } from '/src/assets/icons/icon_time_s.svg';
+export { ReactComponent as IconTipS } from '/src/assets/icons/icon_tip_s.svg';
 export { ReactComponent as IconUploadM } from '/src/assets/icons/icon_upload_m.svg';
 export { ReactComponent as IconUploadS } from '/src/assets/icons/icon_upload_s.svg';
 export { ReactComponent as IconVideoS } from '/src/assets/icons/icon_video_s.svg';
