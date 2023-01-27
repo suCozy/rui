@@ -46,11 +46,11 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   }
 
   &:hover {
-    background-color: ${contents150};
+    background-color: ${contents100};
   }
 
   &:active {
-    background-color: ${contents100};
+    background-color: ${contents150};
   }
 
   ${({ block }) =>
