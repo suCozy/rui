@@ -1,8 +1,6 @@
 export * as colors from './colors';
 export * as mixins from './mixins';
 
-export * as Icons from './assets';
-
 export * from './components/Buttons/Button';
 export * from './components/Modals/Dialog';
 

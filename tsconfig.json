@@ -16,13 +16,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "declaration": true,
-    "declarationDir": "./dist/types"
+    "baseUrl": "./src"
   },
-  "include": ["custom.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["node_modules", "./dist", "storybook-static"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["custom.d.ts", "src/**/*", "rollup.config.ts"],
+  "exclude": ["node_modules", "dist", "storybook-static"]
 }

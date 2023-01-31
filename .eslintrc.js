@@ -144,5 +144,5 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['vite.config.ts'],
+  ignorePatterns: ['rollup.config.ts'],
 };
