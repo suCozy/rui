@@ -1,4 +1,4 @@
-import { defineConfig, Plugin } from 'rollup';
+import { defineConfig } from 'rollup';
 import typescript from 'rollup-plugin-typescript2';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -7,6 +7,12 @@ import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const outputRule = {
+  'colors/v2/index': './src/colors/v2/index.ts',
+  'colors/v3/index': './src/colors/v3/index.ts',
+  'components/index': './src/components/index.ts',
+  'mixins/index': './src/mixins/index.ts',
+};
 
 export default () => {
   return defineConfig({
@@ -19,20 +25,28 @@ export default () => {
       url(),
       commonjs(),
       babel({
-        extensions: [...extensions, '.svg'],
-        babelHelpers: 'bundled',
+        extensions: extensions,
+        babelHelpers: 'runtime',
+        exclude: './node_modules/**/*',
       }),
     ],
-    input: './src/index.ts',
-    output: {
-      dir: './dist',
-      format: 'es',
-      globals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'styled-components': 'styled',
+    input: outputRule,
+    output: [
+      {
+        sourcemap: true,
+        dir: './dist',
+        format: 'es',
+        entryFileNames: '[name].mjs',
+        chunkFileNames: 'chunks/[hash]/[name].mjs',
       },
-    },
-    external: ['react', 'react-dom', 'styled-components'],
+      {
+        sourcemap: true,
+        dir: './dist',
+        format: 'cjs',
+        entryFileNames: '[name].js',
+        chunkFileNames: 'chunks/[hash]/[name].js',
+      },
+    ],
+    external: ['react', 'react-dom', 'styled-components', /@babel\/runtime/],
   });
 };

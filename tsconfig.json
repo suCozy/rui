@@ -12,12 +12,14 @@
     "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
-  "include": ["custom.d.ts", "src/**/*", "rollup.config.ts"],
-  "exclude": ["node_modules", "dist", "storybook-static"]
+  "include": ["custom.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "dist", "storybook-static", "./rollup.config.ts"]
 }
