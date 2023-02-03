@@ -144,5 +144,5 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ['rollup.config.ts'],
+  ignorePatterns: ['rollup.config.mjs'],
 };

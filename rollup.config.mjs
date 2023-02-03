@@ -7,7 +7,7 @@ import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
-const outputRule = {
+export const outputRule = {
   'colors/v2/index': './src/colors/v2/index.ts',
   'colors/v3/index': './src/colors/v3/index.ts',
   'components/index': './src/components/index.ts',

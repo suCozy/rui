@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { outputRule } from '../rollup.config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,26 +26,16 @@ function generatePackageJsonForDist() {
     path.resolve(__dirname, '../package.json').toString('utf-8')
   );
   const packageJsonObject = JSON.parse(packageJson);
-  packageJsonObject.scripts = {};
-  packageJsonObject.devDependencies = {};
-  if (packageJsonObject.main.startsWith('dist')) {
-    packageJsonObject.main = packageJsonObject.main.replace('dist/', '');
-  }
-  if (packageJsonObject.module.startsWith('dist')) {
-    packageJsonObject.module = packageJsonObject.module.replace('dist/', '');
-  }
 
   const modules = getModulesToBuild();
+
   packageJsonObject.exports = {
-    '.': {
-      import: `./index.js`,
-      require: `./index.umd.js`,
-    },
+    '.': null,
   };
   modules.map((module) => {
-    packageJsonObject.exports[`./${module}`] = {
-      import: `./${module}.js`,
-      require: `./${module}.umd.js`,
+    packageJsonObject.exports[`./${module.replace('/index', '')}`] = {
+      import: `./${module}.mjs`,
+      require: `./${module}.js`,
     };
   });
 
@@ -61,9 +52,6 @@ function getOutDir() {
 }
 
 function getModulesToBuild() {
-  const buildConfig = fs.readFileSync(
-    path.resolve(__dirname, '../buildConfig.json').toString('utf-8')
-  );
-  const buildConfigObject = JSON.parse(buildConfig);
-  return ['index', ...(buildConfigObject.modules ?? [])];
+  const subModules = Object.keys(outputRule);
+  return subModules;
 }

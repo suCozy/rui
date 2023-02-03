@@ -5,8 +5,6 @@
   "homepage": "https://dramancompany.github.io/rui/",
   "author": "Remember",
   "license": "MIT",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -16,18 +14,18 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin rollup-plugin-typescript2",
+    "build": "yarn make:icons && rollup -c && yarn make:packageJson",
     "build:visualize": "yarn build --visualize",
-    "pub": "yarn build && node scripts/prepublish.mjs && cd dist && npm publish --tag latest",
-    "pub:beta": "yarn build && node scripts/prepublish.mjs && cd dist && npm publish --tag beta",
+    "pub": "yarn build && cd dist && npm publish --tag latest",
+    "pub:beta": "yarn build && cd dist && npm publish --tag beta",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier -c src",
     "prettier-fix": "prettier --write src",
     "storybook-nocache": "start-storybook --no-manager-cache -p 6006",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
-    "make-import:icons": "node scripts/makeImportIcons.mjs"
+    "make:icons": "node scripts/makeImportIcons.mjs",
+    "make:packageJson": "node scripts/makePackageJson.mjs"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
@@ -95,14 +93,13 @@
     "tslib": "^2.5.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.4",
-    "vite-plugin-dts": "^1.4.1",
     "vite-plugin-svgr": "^2.2.2",
     "vite-tsconfig-paths": "^3.5.0"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "styled-components": "^5.3.5"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "styled-components": ">=5.3.5"
   },
   "bugs": {
     "url": "https://github.com/dramancompany/rui/issues"
