@@ -28,7 +28,6 @@ export default async () => {
             'rollup.config.mjs',
             '**/stories/**/*',
             'src/**/*.stories.{ts,tsx}',
-            'src/utils/**',
           ],
         }),
         nodeResolve({
