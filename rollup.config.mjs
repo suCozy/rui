@@ -1,9 +1,8 @@
 import { defineConfig } from 'rollup';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
-import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import { promise as glob } from 'glob-promise';
 
@@ -17,50 +16,52 @@ export default async () => {
     return obj;
   }, {});
 
-  return defineConfig({
-    plugins: [
-      typescript({
-        include: ['custom.d.ts', 'src/**/*.{ts,tsx}'],
-        exclude: [
-          'node_modules',
-          'dist',
-          'storybook-static',
-          'rollup.config.mjs',
-          '**/stories/**/*',
-          'src/**/*.stories.{ts,tsx}',
-          'utils',
-        ],
-      }),
-      nodeResolve({
-        extensions,
-      }),
-      commonjs(),
-      babel({
-        extensions: extensions,
-        babelHelpers: 'runtime',
-        exclude: './node_modules/**/*',
-      }),
-      svgr({ exportType: 'named', typescript: true }),
-    ],
-    input,
-    output: [
-      {
-        sourcemap: true,
-        dir: './dist',
-        format: 'es',
-        entryFileNames: '[name].mjs',
-        chunkFileNames: 'chunks/[hash]/[name].mjs',
-      },
-      {
-        sourcemap: true,
-        dir: './dist',
-        format: 'cjs',
-        entryFileNames: '[name].js',
-        chunkFileNames: 'chunks/[hash]/[name].js',
-      },
-    ],
-    external: ['react', 'react-dom', 'styled-components', /@babel\/runtime/],
-  });
+  return defineConfig([
+    {
+      plugins: [
+        typescript({
+          include: ['custom.d.ts', 'src/**/*.{ts,tsx}'],
+          exclude: [
+            'node_modules',
+            'dist',
+            'storybook-static',
+            'rollup.config.mjs',
+            '**/stories/**/*',
+            'src/**/*.stories.{ts,tsx}',
+            'src/utils/**',
+          ],
+        }),
+        nodeResolve({
+          extensions,
+        }),
+        commonjs(),
+        babel({
+          extensions: extensions,
+          babelHelpers: 'runtime',
+          exclude: './node_modules/**/*',
+        }),
+        svgr({ exportType: 'named', typescript: true }),
+      ],
+      input,
+      output: [
+        {
+          sourcemap: true,
+          dir: './dist',
+          format: 'es',
+          entryFileNames: '[name].mjs',
+          chunkFileNames: 'chunks/[hash]/[name].mjs',
+        },
+        {
+          sourcemap: true,
+          dir: './dist',
+          format: 'cjs',
+          entryFileNames: '[name].js',
+          chunkFileNames: 'chunks/[hash]/[name].js',
+        },
+      ],
+      external: ['react', 'react-dom', 'styled-components', /@babel\/runtime/],
+    },
+  ]);
 };
 
 function getInputAlias(path) {

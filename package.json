@@ -1,6 +1,6 @@
 {
   "name": "@remember_web/ui",
-  "version": "0.0.1-local.23",
+  "version": "0.1.0-beta.2",
   "description": "Remember UI Components",
   "homepage": "https://dramancompany.github.io/rui/",
   "author": "Remember",
@@ -34,7 +34,7 @@
     }
   },
   "scripts": {
-    "build": "rm -rf ./dist && yarn make:icons && rollup -c && cp ./package.json ./dist/package.json",
+    "build": "rm -rf ./dist && yarn make:icons && rollup -c && cp ./package.json ./dist/package.json && cp ./custom.d.ts ./dist/custom.d.ts",
     "build:visualize": "yarn build --visualize",
     "pub": "yarn build && cd dist && npm publish --tag latest",
     "pub:beta": "yarn build && cd dist && npm publish --tag beta",
@@ -111,7 +111,6 @@
     "react-dom": "^17.0.0",
     "rollup": "^3.12.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-visualizer": "^5.8.1",
     "styled-components": "^5.3.5",
     "tslib": "^2.5.0",
