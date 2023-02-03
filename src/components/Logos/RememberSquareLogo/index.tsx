@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { RememberLogoProps } from '../types';
 
 export const RememberSquareLogo = ({

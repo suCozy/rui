@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { contents000, contents300 } from 'colors/v3';
+import { contents000, contents300 } from 'mixins/colors';
 import {
   IconArrowDoubleLeftS,
   IconArrowLeftS,
   IconArrowRightS,
   IconArrowDoubleRightS,
-} from 'components/Icons';
+} from 'icons';
 import { range } from 'utils/common';
 import {
   BaseButton,

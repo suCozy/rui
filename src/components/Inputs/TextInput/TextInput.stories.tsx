@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { createElement } from 'react';
 
-import * as Icons from 'components/Icons';
+import * as Icons from 'icons';
 
-import Input from '.';
+import { TextInput } from '.';
 const iconNames = ['none', ...Object.keys(Icons)];
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Input',
-  component: Input,
+  component: TextInput,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     type: {
@@ -22,7 +22,7 @@ export default {
         'tel',
         'url',
         'password',
-      ] as Parameters<typeof Input>[0]['type'][],
+      ] as Parameters<typeof TextInput>[0]['type'][],
       defaultValue: 'text',
     },
     hasTogglePasswordVisibilityButton: {
@@ -50,10 +50,10 @@ export default {
       defaultValue: false,
     },
   },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof TextInput>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Input> = ({
+const Template: ComponentStory<typeof TextInput> = ({
   leftElement,
   rightElement,
   ...args
@@ -64,7 +64,7 @@ const Template: ComponentStory<typeof Input> = ({
     rightElement && createElement(Icons[String(rightElement)]);
 
   return (
-    <Input
+    <TextInput
       {...args}
       leftElement={leftElement === 'none' ? null : renderedLeftElement}
       rightElement={rightElement === 'none' ? null : renderedRightElement}

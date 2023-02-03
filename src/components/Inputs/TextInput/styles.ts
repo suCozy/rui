@@ -8,7 +8,7 @@ import {
   contents300,
   contents999,
   roleRed,
-} from 'colors/v3';
+} from 'mixins/colors';
 import { ellipsis, getTypographyStyles } from 'mixins/typography';
 
 import { HintTextColorType } from '.';

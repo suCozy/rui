@@ -4,7 +4,7 @@ import { default as humps } from 'humps';
 
 const BASE_DIR = path.join(process.cwd(), '/src');
 const ICONS_DIR = path.join(BASE_DIR, 'assets/icons');
-const EXPORT_DIR = path.join(BASE_DIR, 'components/Icons');
+const EXPORT_DIR = path.join(BASE_DIR, 'icons');
 
 const createIconFileTemplate = (componentName, fileName) => {
   const iconAbsPath = path.join(ICONS_DIR, fileName);

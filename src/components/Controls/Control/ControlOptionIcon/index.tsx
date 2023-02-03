@@ -1,4 +1,4 @@
-import { contents300, secondary100 } from 'colors/v3';
+import { contents300, secondary100 } from 'mixins/colors';
 import {
   ControlCheckOnM,
   ControlCheckOffM,
@@ -8,7 +8,7 @@ import {
   ControlBookmarkOffM,
   ControlFavoriteOn,
   ControlFavoriteOff,
-} from 'components/Icons';
+} from 'icons';
 import type { ControlChildrenType, ControlOption } from '../types';
 
 const ICON_NAME: Record<

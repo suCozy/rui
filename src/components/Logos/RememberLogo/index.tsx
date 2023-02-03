@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getEnvLabel, EnvType } from '../EnvLabel';
 import { RememberLogoProps } from '../types';
 

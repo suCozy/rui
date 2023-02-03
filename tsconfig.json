@@ -6,7 +6,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "useDefineForClassFields": true,
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "strict": true,
@@ -20,6 +20,6 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
-  "include": ["custom.d.ts", "src/**/*"],
+  "include": ["./custom.d.ts", "./src/**/*"],
   "exclude": ["node_modules", "dist", "storybook-static", "rollup.config.mjs"]
 }

@@ -2475,6 +2475,7 @@ __metadata:
     "@storybook/react": ^6.5.13
     "@storybook/testing-library": ^0.0.13
     "@svgr/rollup": ^6.5.1
+    "@types/glob": ^8.0.1
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
     "@types/rollup-plugin-peer-deps-external": ^2.2.1
@@ -2492,6 +2493,8 @@ __metadata:
     eslint-plugin-react: ^7.31.7
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-storybook: ^0.6.7
+    glob: ^8.1.0
+    glob-promise: ^6.0.2
     humps: ^2.0.1
     open: ^8.4.0
     prettier: ^2.7.1
@@ -4173,7 +4176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:*":
+"@types/glob@npm:*, @types/glob@npm:^8.0.0, @types/glob@npm:^8.0.1":
   version: 8.0.1
   resolution: "@types/glob@npm:8.0.1"
   dependencies:
@@ -9420,6 +9423,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob-promise@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "glob-promise@npm:6.0.2"
+  dependencies:
+    "@types/glob": ^8.0.0
+  peerDependencies:
+    glob: ^8.0.3
+  checksum: 3caa63b052ddcf28d3498a0c93ef623bc43d0fa57487844782b77175c32db1602fd63e4e26091075125083b21eb3e81b4318d5d24139b9b033a764e64b6b3bc3
+  languageName: node
+  linkType: hard
+
 "glob-regex@npm:^0.3.0":
   version: 0.3.2
   resolution: "glob-regex@npm:0.3.2"
@@ -9469,7 +9483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.1, glob@npm:^8.0.3":
+"glob@npm:^8.0.1, glob@npm:^8.0.3, glob@npm:^8.1.0":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:

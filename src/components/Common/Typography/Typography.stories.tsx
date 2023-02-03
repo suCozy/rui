@@ -11,7 +11,8 @@ import {
   TitleContainer,
 } from 'components/stories/common.styles';
 import { TypographyStyle, TYPOGRAPHY_STYLES } from 'mixins/typography';
-import { Typography } from './Typography';
+
+import { Typography } from '.';
 
 export default {
   title: 'Typography/Typography',

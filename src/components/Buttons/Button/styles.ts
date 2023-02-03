@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { getTypographyStyles } from 'mixins/typography';
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
 import type { ButtonStyleType } from './types';
-import { contents300, contents999, contents000 } from 'colors/v3';
+import { contents300, contents999, contents000 } from 'mixins/colors';
 
 export const ButtonRoot = styled.button<ButtonStyleType>`
   all: unset;

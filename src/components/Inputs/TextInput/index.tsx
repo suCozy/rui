@@ -7,9 +7,8 @@ import {
   type InputHTMLAttributes,
 } from 'react';
 
-import { IconVisibilityS, IconVisibilityOffS } from 'components/Icons';
+import { IconVisibilityS, IconVisibilityOffS } from 'icons';
 import { createRandomId } from 'utils/id';
-
 import {
   InputContainer,
   InputError,
@@ -17,7 +16,7 @@ import {
   InputInner,
   InputLabel,
   InputTogglePasswordVisibilityButton,
-} from './index.styles';
+} from './styles';
 
 export type HintTextColorType = 'roleRed' | 'contents000' | 'contents300';
 
@@ -43,7 +42,7 @@ type PasswordInputProps = Omit<TextInputProps, 'type'> & {
 
 export type InputProps = BaseInputProps & (TextInputProps | PasswordInputProps);
 
-const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
+const _TextInput: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   {
     className,
     label,
@@ -123,4 +122,4 @@ const TogglePasswordVisibilityButton = ({
   </InputTogglePasswordVisibilityButton>
 );
 
-export default memo(forwardRef(Input));
+export const TextInput = memo(forwardRef(_TextInput));

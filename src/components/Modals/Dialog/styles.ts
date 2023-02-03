@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { primary200, contents000, contents100 } from 'colors/v3';
+import { primary200, contents000, contents100 } from 'mixins/colors';
 import { getTypographyStyles } from 'mixins/typography';
 
 export const overlayShow = keyframes`
@@ -44,7 +44,7 @@ export const DialogContent = styled(DialogPrimitive.Content)`
 
   @media (prefers-reduced-motion: no-preference) {
     animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  } ;
+  }
 `;
 
 export const DialogIcon = styled.div`

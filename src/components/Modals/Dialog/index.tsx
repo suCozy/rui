@@ -3,11 +3,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
 import { Flex } from 'components/Common/Flex';
-import {
-  IconConfirmAlert,
-  IconConfirmCheck,
-  IconCloseS,
-} from 'components/Icons';
+import { IconConfirmAlert, IconConfirmCheck, IconCloseS } from 'icons';
 import {
   StyledOverlay,
   DialogContent,

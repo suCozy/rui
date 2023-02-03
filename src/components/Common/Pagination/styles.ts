@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { getTypographyStyles } from 'mixins/typography';
-import { bg100, contents000, contents300 } from 'colors/v3';
+import { bg100, contents000, contents300 } from 'mixins/colors';
 import { mobileOnly } from 'mixins/breakpoints';
 
 export const PaginationContainer = styled.nav`

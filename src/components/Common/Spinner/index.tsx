@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { contents000, contents999 } from 'colors/v3';
-import { IconSpinner } from 'components/Icons';
+import { contents000, contents999 } from 'mixins/colors';
+import { IconSpinner } from 'icons';
 import { Container } from './styles';
 
 export interface SpinnerProps {
