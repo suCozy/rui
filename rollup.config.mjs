@@ -4,6 +4,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import svgr from '@svgr/rollup';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { promise as glob } from 'glob-promise';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -19,6 +20,7 @@ export default async () => {
   return defineConfig([
     {
       plugins: [
+        visualizer({ open: true }),
         typescript({
           include: ['custom.d.ts', 'src/**/*.{ts,tsx}'],
           exclude: [
