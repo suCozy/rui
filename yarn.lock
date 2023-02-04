@@ -2457,8 +2457,6 @@ __metadata:
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
     "@rollup/plugin-terser": ^0.4.0
-    "@rollup/plugin-typescript": ^11.0.0
-    "@rollup/plugin-url": ^8.0.1
     "@storybook/addon-a11y": ^6.5.13
     "@storybook/addon-actions": ^6.5.13
     "@storybook/addon-backgrounds": ^6.5.13
@@ -2478,7 +2476,6 @@ __metadata:
     "@types/glob": ^8.0.1
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
-    "@types/rollup-plugin-peer-deps-external": ^2.2.1
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.36.2
     "@typescript-eslint/parser": ^5.36.2
@@ -2502,7 +2499,8 @@ __metadata:
     react-dom: ^17.0.0
     react-is: ^18.2.0
     rollup: ^3.12.0
-    rollup-plugin-peer-deps-external: ^2.2.4
+    rollup-plugin-terser: ^7.0.2
+    rollup-plugin-typescript2: ^0.34.1
     rollup-plugin-visualizer: ^5.9.0
     styled-components: ^5.3.5
     tslib: ^2.5.0
@@ -2590,42 +2588,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "@rollup/plugin-typescript@npm:11.0.0"
-  dependencies:
-    "@rollup/pluginutils": ^5.0.1
-    resolve: ^1.22.1
-  peerDependencies:
-    rollup: ^2.14.0||^3.0.0
-    tslib: "*"
-    typescript: ">=3.7.0"
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-    tslib:
-      optional: true
-  checksum: b0d34ff0ad6bfc681c437ef42df7b02f04c361465be5a2044cd30cac5b003045c54e4377d58ab91925e296076b792bbb5ddded72cacdd21092bc8694a95b046f
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-url@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "@rollup/plugin-url@npm:8.0.1"
-  dependencies:
-    "@rollup/pluginutils": ^5.0.1
-    make-dir: ^3.1.0
-    mime: ^3.0.0
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0||^3.0.0
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: 25a16622feeec63d958117f7ab65b3a4f72bab4ab86a4c7d5447ec646e88b5ac47186e344a2fdf179e1c12b5a9e76b8edbf568f5f76f7c25e0168ddd6374501e
-  languageName: node
-  linkType: hard
-
-"@rollup/pluginutils@npm:^4.2.1":
+"@rollup/pluginutils@npm:^4.1.2, @rollup/pluginutils@npm:^4.2.1":
   version: 4.2.1
   resolution: "@rollup/pluginutils@npm:4.2.1"
   dependencies:
@@ -4161,13 +4124,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:0.0.39":
-  version: 0.0.39
-  resolution: "@types/estree@npm:0.0.39"
-  checksum: 412fb5b9868f2c418126451821833414189b75cc6bf84361156feed733e3d92ec220b9d74a89e52722e03d5e241b2932732711b7497374a404fad49087adc248
-  languageName: node
-  linkType: hard
-
 "@types/estree@npm:^0.0.51":
   version: 0.0.51
   resolution: "@types/estree@npm:0.0.51"
@@ -4396,16 +4352,6 @@ __metadata:
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
   checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
-  languageName: node
-  linkType: hard
-
-"@types/rollup-plugin-peer-deps-external@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@types/rollup-plugin-peer-deps-external@npm:2.2.1"
-  dependencies:
-    "@types/node": "*"
-    rollup: ^0.63.4
-  checksum: d6bf4ca92e8b09ca35c0397b89a8b8368bb3d1448a5b82a39ab18886f4b4a3d73f197ed49470e10350b2b5ddc892d4050c5e01ac6247fc63321a5ac9fc6f7363
   languageName: node
   linkType: hard
 
@@ -8920,7 +8866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.3.1, find-cache-dir@npm:^3.3.2":
   version: 3.3.2
   resolution: "find-cache-dir@npm:3.3.2"
   dependencies:
@@ -9122,7 +9068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.1.0":
+"fs-extra@npm:^10.0.0, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -10928,7 +10874,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^26.5.0, jest-worker@npm:^26.6.2":
+"jest-worker@npm:^26.2.1, jest-worker@npm:^26.5.0, jest-worker@npm:^26.6.2":
   version: 26.6.2
   resolution: "jest-worker@npm:26.6.2"
   dependencies:
@@ -11706,15 +11652,6 @@ __metadata:
   bin:
     mime: cli.js
   checksum: 1497ba7b9f6960694268a557eae24b743fd2923da46ec392b042469f4b901721ba0adcf8b0d3c2677839d0e243b209d76e5edcbd09cfdeffa2dfb6bb4df4b862
-  languageName: node
-  linkType: hard
-
-"mime@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "mime@npm:3.0.0"
-  bin:
-    mime: cli.js
-  checksum: f43f9b7bfa64534e6b05bd6062961681aeb406a5b53673b53b683f27fcc4e739989941836a355eef831f4478923651ecc739f4a5f6e20a76487b432bfd4db928
   languageName: node
   linkType: hard
 
@@ -14044,12 +13981,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-peer-deps-external@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "rollup-plugin-peer-deps-external@npm:2.2.4"
+"rollup-plugin-terser@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "rollup-plugin-terser@npm:7.0.2"
+  dependencies:
+    "@babel/code-frame": ^7.10.4
+    jest-worker: ^26.2.1
+    serialize-javascript: ^4.0.0
+    terser: ^5.0.0
   peerDependencies:
-    rollup: "*"
-  checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
+    rollup: ^2.0.0
+  checksum: af84bb7a7a894cd00852b6486528dfb8653cf94df4c126f95f389a346f401d054b08c46bee519a2ab6a22b33804d1d6ac6d8c90b1b2bf8fffb097eed73fc3c72
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-typescript2@npm:^0.34.1":
+  version: 0.34.1
+  resolution: "rollup-plugin-typescript2@npm:0.34.1"
+  dependencies:
+    "@rollup/pluginutils": ^4.1.2
+    find-cache-dir: ^3.3.2
+    fs-extra: ^10.0.0
+    semver: ^7.3.7
+    tslib: ^2.4.0
+  peerDependencies:
+    rollup: ">=1.26.3"
+    typescript: ">=2.4.0"
+  checksum: 107e66b9ab1aaf4b237564e500ea9de9f2d3f0a81be5139dc753fc76bbf00a1a2230eb1ec59145d2dfc4c4da9be8211f1f3e1370007efe1e24ce45a00905e558
   languageName: node
   linkType: hard
 
@@ -14069,18 +14027,6 @@ __metadata:
   bin:
     rollup-plugin-visualizer: dist/bin/cli.js
   checksum: 362d4fac0295c14bd205dbc85c20c31f4b6c47604868da21d9565ed47e0333759f08b9fe0acb82f78221f5173ea01e4eb70d47351eb6012216afe71b5492ed5f
-  languageName: node
-  linkType: hard
-
-"rollup@npm:^0.63.4":
-  version: 0.63.5
-  resolution: "rollup@npm:0.63.5"
-  dependencies:
-    "@types/estree": 0.0.39
-    "@types/node": "*"
-  bin:
-    rollup: ./bin/rollup
-  checksum: a8af189d03e402b1ea70788c4c8bffc3af7db612e8c1effbea63f411b1d683378b9e8d10c9b2fae81aaf6f12c8a0aad6802ab7e1a7dee006229398b03e92e5e5
   languageName: node
   linkType: hard
 
@@ -15249,6 +15195,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"terser@npm:^5.0.0":
+  version: 5.16.3
+  resolution: "terser@npm:5.16.3"
+  dependencies:
+    "@jridgewell/source-map": ^0.3.2
+    acorn: ^8.5.0
+    commander: ^2.20.0
+    source-map-support: ~0.5.20
+  bin:
+    terser: bin/terser
+  checksum: d3c2ac1c2723c37b698b25b68d76fd315a1277fddde113983d5783d1f2a01dd7b8ed83ba3f54e5e65f0b59dd971ed7be2fdf8d4be94ec694b2d27832d2e7561f
+  languageName: node
+  linkType: hard
+
 "terser@npm:^5.14.1, terser@npm:^5.15.1, terser@npm:^5.3.4":
   version: 5.16.1
   resolution: "terser@npm:5.16.1"
@@ -15482,7 +15442,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.5.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
   checksum: ae3ed5f9ce29932d049908ebfdf21b3a003a85653a9a140d614da6b767a93ef94f460e52c3d787f0e4f383546981713f165037dc2274df212ea9f8a4541004e1

@@ -17,7 +17,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "./src",
     "outDir": "./dist",
+    "sourceMap": true,
     "declaration": true,
+    "declarationMap": true,
     "emitDeclarationOnly": true
   },
   "include": ["custom.d.ts", "src/**/*"],

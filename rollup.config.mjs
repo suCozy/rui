@@ -1,16 +1,17 @@
-import { defineConfig } from 'rollup';
-import typescript from '@rollup/plugin-typescript';
-import nodeResolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import svgr from '@svgr/rollup';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { promise as glob } from 'glob-promise';
+import { defineConfig } from 'rollup';
+import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript2';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 export default async () => {
-  const entries = await glob('./src/**/index.{ts,tsx}');
+  const entries = await glob('./src/**/index.ts');
   const input = entries.reduce((obj, entry) => {
     obj[getInputAlias(entry)] = entry;
 
@@ -35,26 +36,30 @@ export default async () => {
         nodeResolve({
           extensions,
         }),
-        commonjs(),
+        commonjs({
+          sourceMap: true,
+        }),
         babel({
+          sourceMap: true,
           extensions: extensions,
           babelHelpers: 'runtime',
           exclude: './node_modules/**/*',
         }),
         svgr({ exportType: 'named', typescript: true }),
+        terser(),
       ],
       input,
       output: [
         {
-          sourcemap: true,
           dir: './dist',
+          sourcemap: true,
           format: 'es',
           entryFileNames: '[name].mjs',
           chunkFileNames: 'chunks/[hash]/[name].mjs',
         },
         {
-          sourcemap: true,
           dir: './dist',
+          sourcemap: true,
           format: 'cjs',
           entryFileNames: '[name].js',
           chunkFileNames: 'chunks/[hash]/[name].js',
@@ -66,6 +71,6 @@ export default async () => {
 };
 
 function getInputAlias(path) {
-  const aliasRegexp = /^\.\/src\/(.+)(\.tsx?)$/g;
+  const aliasRegexp = /^\.\/src\/(.+)(\.ts)$/g;
   return aliasRegexp.exec(path)[1];
 }
