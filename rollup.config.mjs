@@ -1,10 +1,10 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import svgr from '@svgr/rollup';
 import { promise as glob } from 'glob-promise';
 import { defineConfig } from 'rollup';
-import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import { visualizer } from 'rollup-plugin-visualizer';
 
@@ -46,7 +46,7 @@ export default async () => {
           exclude: './node_modules/**/*',
         }),
         svgr({ exportType: 'named', typescript: true }),
-        terser(),
+        terser({ sourceMap: true }),
       ],
       input,
       output: [
