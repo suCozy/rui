@@ -50,4 +50,4 @@ const icons = svgIconFiles
   })
   .join('\n');
 
-fs.writeFileSync(path.join(EXPORT_DIR, 'index.ts'), icons);
+fs.writeFileSync(path.join(EXPORT_DIR, 'index.ts'), icons + '\n');
