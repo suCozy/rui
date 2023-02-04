@@ -21,7 +21,6 @@ export default async () => {
   return defineConfig([
     {
       plugins: [
-        visualizer({ open: true }),
         typescript({
           include: ['custom.d.ts', 'src/**/*.{ts,tsx}'],
           exclude: [
@@ -56,6 +55,11 @@ export default async () => {
           format: 'es',
           entryFileNames: '[name].mjs',
           chunkFileNames: 'chunks/[hash]/[name].mjs',
+          plugins: [
+            visualizer({
+              open: true,
+            }),
+          ],
         },
         {
           dir: './dist',
