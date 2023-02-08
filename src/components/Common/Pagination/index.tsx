@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { contents000, contents300 } from 'mixins/colors';
 import {
   IconArrowDoubleLeftS,

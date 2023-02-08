@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { contents000, contents999 } from 'mixins/colors';
 import { IconSpinner } from 'icons';
 import { Container } from './styles';

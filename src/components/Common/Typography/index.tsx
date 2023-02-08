@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { type TypographyStyle } from 'mixins/typography';
 import { StyledTypography } from './styles';
 import type { TypographyTagNames } from './types';
