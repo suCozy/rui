@@ -1,18 +1,19 @@
 import styled, { css } from 'styled-components';
 
+import {
+  bg100,
+  bg200,
+  bg300,
+  contents000,
+  contents100,
+  contents150,
+  contents300,
+  contents999,
+} from 'colors/v3';
+import { webOnly } from 'mixins/breakpoints';
 import { getTypographyStyles } from 'mixins/typography';
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
 import type { ButtonStyleType } from './types';
-import {
-  contents300,
-  contents999,
-  contents000,
-  bg100,
-  contents100,
-  bg200,
-  bg300,
-  contents150,
-} from 'colors/v3';
 
 export const ButtonRoot = styled.button<ButtonStyleType>`
   all: unset;
@@ -46,11 +47,15 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   }
 
   &:hover {
-    background-color: ${contents100};
+    ${webOnly(css`
+      background-color: ${contents100};
+    `)}
   }
 
   &:active {
-    background-color: ${contents150};
+    ${webOnly(css`
+      background-color: ${contents150};
+    `)}
   }
 
   ${({ block }) =>
@@ -78,11 +83,15 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       color: ${contents000};
 
       &:hover {
-        background-color: ${bg200};
+        ${webOnly(css`
+          background-color: ${bg200};
+        `)}
       }
 
       &:active {
-        background-color: ${bg300};
+        ${webOnly(css`
+          background-color: ${bg300};
+        `)}
       }
     `};
 `;
