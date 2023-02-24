@@ -9,14 +9,14 @@ import {
 } from 'components/Icons';
 import { range } from 'utils/common';
 import {
-  BaseButton,
   Pages,
   Page,
   PaginationContainer,
   PageButton,
-} from './styles';
-import type { PaginationProps } from './types';
-import usePagination from './usePagination';
+  ArrowButton,
+} from '../styles';
+import type { PaginationProps } from '../types';
+import usePagination from '../usePagination';
 
 export function Pagination({
   activePage = 1,
@@ -59,7 +59,7 @@ export function Pagination({
       role="navigation"
       aria-label="페이지네이션"
     >
-      <BaseButton
+      <ArrowButton
         disabled={isFirstPageDisabled}
         onClick={onClickFirstPage}
         aria-label="첫 페이지로 이동"
@@ -68,8 +68,8 @@ export function Pagination({
           color={iconColor(isFirstPageDisabled)}
           aria-hidden="true"
         />
-      </BaseButton>
-      <BaseButton
+      </ArrowButton>
+      <ArrowButton
         disabled={isPrevPageDisabled}
         onClick={onClickPrevPage}
         aria-label="이전 페이지로 이동"
@@ -78,7 +78,7 @@ export function Pagination({
           color={iconColor(isPrevPageDisabled)}
           aria-hidden="true"
         />
-      </BaseButton>
+      </ArrowButton>
       <Pages>
         {range(firstPage, rangeLastPage)?.map((_page) => (
           <Page key={_page}>
@@ -92,7 +92,7 @@ export function Pagination({
           </Page>
         ))}
       </Pages>
-      <BaseButton
+      <ArrowButton
         disabled={isNextPageDisabled}
         onClick={onClickNextPage}
         aria-label="다음 페이지로 이동"
@@ -101,8 +101,8 @@ export function Pagination({
           color={iconColor(isNextPageDisabled)}
           aria-hidden="true"
         />
-      </BaseButton>
-      <BaseButton
+      </ArrowButton>
+      <ArrowButton
         disabled={isLastPageDisabled}
         onClick={onClickLastPage}
         aria-label="마지막 페이지로 이동"
@@ -111,7 +111,7 @@ export function Pagination({
           color={iconColor(isLastPageDisabled)}
           aria-hidden="true"
         />
-      </BaseButton>
+      </ArrowButton>
     </PaginationContainer>
   );
 }

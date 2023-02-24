@@ -12,7 +12,7 @@ export * from './components/Typography';
 export * from './components/Common/Divider';
 export * from './components/Common/Flex';
 export * from './components/Common/Grid';
-export * from './components/Common/Pagination';
+export * from './components/Common/Paginations/Pagination';
 export * from './components/Controls/Control';
 export * from './components/Controls/Switch';
 export * from './components/Common/Spinner';
