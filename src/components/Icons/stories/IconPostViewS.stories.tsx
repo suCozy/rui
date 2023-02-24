@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconPostViewS',
   component: IconPostViewS,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconPostViewS>;

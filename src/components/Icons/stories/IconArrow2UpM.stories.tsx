@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconArrow2UpM',
   component: IconArrow2UpM,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconArrow2UpM>;
