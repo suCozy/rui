@@ -1,19 +1,19 @@
-import type { ButtonProps } from './types';
-import { ButtonRoot } from './styles';
 import { Spinner } from 'components/Common/Spinner';
+import { ButtonRoot } from './styles';
+import type { ButtonSizeType, ButtonTheme } from './types';
 
 export function Button({
   className,
   disabled = false,
   theme = 'solid',
   outline = false,
-  size,
+  size = 'medium',
   loading = false,
   block = false,
   children,
   ...props
 }: ButtonProps) {
-  const isLarge = size.toLocaleLowerCase().includes('large');
+  const isLarge = size?.toLocaleLowerCase().includes('large');
 
   return (
     <ButtonRoot
@@ -33,4 +33,15 @@ export function Button({
       )}
     </ButtonRoot>
   );
+}
+
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  disabled?: boolean;
+  theme?: ButtonTheme;
+  outline?: boolean;
+  size?: ButtonSizeType;
+  loading?: boolean;
+  block?: boolean;
+  children: React.ReactNode;
 }

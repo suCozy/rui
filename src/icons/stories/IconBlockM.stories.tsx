@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconBlockM',
   component: IconBlockM,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconBlockM>;

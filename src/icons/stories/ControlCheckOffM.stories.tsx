@@ -6,8 +6,6 @@ export default {
   title: 'Icons/ControlCheckOffM',
   component: ControlCheckOffM,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof ControlCheckOffM>;

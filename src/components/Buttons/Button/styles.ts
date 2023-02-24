@@ -1,9 +1,19 @@
 import styled, { css } from 'styled-components';
+import {
+  bg100,
+  bg200,
+  bg300,
+  contents000,
+  contents100,
+  contents150,
+  contents300,
+  contents999,
+} from 'colors/v3';
 
+import { webOnly } from 'mixins/breakpoints';
 import { getTypographyStyles } from 'mixins/typography';
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
 import type { ButtonStyleType } from './types';
-import { contents300, contents999, contents000 } from 'mixins/colors';
 
 export const ButtonRoot = styled.button<ButtonStyleType>`
   all: unset;
@@ -11,6 +21,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   box-sizing: border-box;
   user-select: none;
   padding: 0 16px;
+  transition: background 0.2s ease-in-out;
 
   display: inline-flex;
   flex-shrink: 0;
@@ -21,6 +32,29 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   color: ${contents999};
   border-radius: 4px;
 
+  &:disabled {
+    background-color: ${contents300};
+    cursor: not-allowed;
+    color: ${contents999};
+
+    ${({ outline }) =>
+      outline &&
+      css`
+        background-color: ${bg100};
+        border: 1px solid ${contents300};
+        color: ${contents300};
+      `};
+  }
+
+  ${webOnly(css`
+    &:hover {
+      background-color: ${contents100};
+    }
+    &:active {
+      background-color: ${contents150};
+    }
+  `)}
+
   ${({ block }) =>
     block &&
     css`
@@ -28,7 +62,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       width: 100%;
     `};
 
-  ${({ size }) => css`
+  ${({ size = 'medium' }) => css`
     ${getTypographyStyles(BUTTON_SIZES[size].typography)}
     height: ${BUTTON_SIZES[size].height};
     min-width: ${BUTTON_SIZES[size].minWidth};
@@ -41,22 +75,17 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
   ${({ outline }) =>
     outline &&
     css`
-      background-color: ${contents999};
+      background-color: ${bg100};
       border: 1px solid ${contents300};
       color: ${contents000};
+
+      ${webOnly(css`
+        &:hover {
+          background-color: ${bg200};
+        }
+        &:active {
+          background-color: ${bg300};
+        }
+      `)}
     `};
-
-  &:disabled {
-    background-color: ${contents300};
-    cursor: not-allowed;
-    color: ${contents999};
-
-    ${({ outline }) =>
-      outline &&
-      css`
-        background-color: ${contents999};
-        border: 1px solid ${contents300};
-        color: ${contents300};
-      `};
-  }
 `;

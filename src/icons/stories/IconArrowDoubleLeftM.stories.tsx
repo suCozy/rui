@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconArrowDoubleLeftM',
   component: IconArrowDoubleLeftM,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconArrowDoubleLeftM>;

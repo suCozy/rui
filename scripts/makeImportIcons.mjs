@@ -22,8 +22,6 @@ export default {
   title: 'Icons/${name}',
   component: ${name},
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof ${name}>;
