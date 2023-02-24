@@ -6,8 +6,6 @@ export default {
   title: 'Icons/IconEduS',
   component: IconEduS,
   args: {
-    width: '32px',
-    height: '32px',
     color: 'black',
   },
 } as ComponentMeta<typeof IconEduS>;
