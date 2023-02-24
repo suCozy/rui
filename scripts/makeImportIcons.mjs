@@ -1,4 +1,4 @@
-import path from 'path';
+import path, { join } from 'path';
 import fs from 'fs';
 import { default as humps } from 'humps';
 
@@ -40,6 +40,9 @@ const svgIconFiles = fs
 const icons = svgIconFiles
   .map((fileName) => {
     const componentName = humps.pascalize(fileName.replace('.svg', ''));
+    if (!fs.existsSync(join(EXPORT_DIR, 'stories'))) {
+      fs.mkdirSync(join(EXPORT_DIR, 'stories'), { recursive: true });
+    }
     fs.writeFileSync(
       path.join(EXPORT_DIR, 'stories', `${componentName}.stories.tsx`),
       createIconStoryTemplate(componentName)

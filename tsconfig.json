@@ -15,7 +15,6 @@
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": ".",
-    "declarationDir": "./package",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
