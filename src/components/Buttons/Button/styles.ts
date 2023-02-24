@@ -46,17 +46,14 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       `};
   }
 
-  &:hover {
-    ${webOnly(css`
+  ${webOnly(css`
+    &:hover {
       background-color: ${contents100};
-    `)}
-  }
-
-  &:active {
-    ${webOnly(css`
+    }
+    &:active {
       background-color: ${contents150};
-    `)}
-  }
+    }
+  `)}
 
   ${({ block }) =>
     block &&
@@ -65,7 +62,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       width: 100%;
     `};
 
-  ${({ size }) => css`
+  ${({ size = 'medium' }) => css`
     ${getTypographyStyles(BUTTON_SIZES[size].typography)}
     height: ${BUTTON_SIZES[size].height};
     min-width: ${BUTTON_SIZES[size].minWidth};
@@ -82,16 +79,13 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       border: 1px solid ${contents300};
       color: ${contents000};
 
-      &:hover {
-        ${webOnly(css`
+      ${webOnly(css`
+        &:hover {
           background-color: ${bg200};
-        `)}
-      }
-
-      &:active {
-        ${webOnly(css`
+        }
+        &:active {
           background-color: ${bg300};
-        `)}
-      }
+        }
+      `)}
     `};
 `;

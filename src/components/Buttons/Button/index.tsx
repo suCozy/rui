@@ -15,7 +15,7 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const isLarge = size.toLocaleLowerCase().includes('large');
+  const isLarge = size?.toLocaleLowerCase().includes('large');
 
   return (
     <ButtonRoot
@@ -42,7 +42,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   theme?: ButtonTheme;
   outline?: boolean;
-  size: ButtonSizeType;
+  size?: ButtonSizeType;
   loading?: boolean;
   block?: boolean;
   children: React.ReactNode;
