@@ -11,6 +11,8 @@ const meta: ComponentMeta<typeof Pagination> = {
     pageRangeDisplayed: 10,
     itemCountPerPage: 10,
     className: 'pagination',
+    showFirstButton: true,
+    showLastButton: true,
   },
 };
 

@@ -23,7 +23,6 @@ export const CompactPaginationContainer = styled.div`
   all: unset;
 
   ${getTypographyStyles('Body1_M')}
-
   gap: 16px;
   display: flex;
   align-items: center;

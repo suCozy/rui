@@ -21,10 +21,12 @@ import usePagination from '../usePagination';
 export function Pagination({
   activePage = 1,
   totalItemCount = 0,
-  pageRangeDisplayed,
+  pageRangeDisplayed = 10,
   onChangePage,
   itemCountPerPage,
   className,
+  showFirstButton = false,
+  showLastButton = false,
 }: PaginationProps) {
   const {
     firstPage,
@@ -59,16 +61,18 @@ export function Pagination({
       role="navigation"
       aria-label="페이지네이션"
     >
-      <ArrowButton
-        disabled={isFirstPageDisabled}
-        onClick={onClickFirstPage}
-        aria-label="첫 페이지로 이동"
-      >
-        <IconArrowDoubleLeftS
-          color={iconColor(isFirstPageDisabled)}
-          aria-hidden="true"
-        />
-      </ArrowButton>
+      {showFirstButton && (
+        <ArrowButton
+          disabled={isFirstPageDisabled}
+          onClick={onClickFirstPage}
+          aria-label="첫 페이지로 이동"
+        >
+          <IconArrowDoubleLeftS
+            color={iconColor(isFirstPageDisabled)}
+            aria-hidden="true"
+          />
+        </ArrowButton>
+      )}
       <ArrowButton
         disabled={isPrevPageDisabled}
         onClick={onClickPrevPage}
@@ -102,16 +106,18 @@ export function Pagination({
           aria-hidden="true"
         />
       </ArrowButton>
-      <ArrowButton
-        disabled={isLastPageDisabled}
-        onClick={onClickLastPage}
-        aria-label="마지막 페이지로 이동"
-      >
-        <IconArrowDoubleRightS
-          color={iconColor(isLastPageDisabled)}
-          aria-hidden="true"
-        />
-      </ArrowButton>
+      {showLastButton && (
+        <ArrowButton
+          disabled={isLastPageDisabled}
+          onClick={onClickLastPage}
+          aria-label="마지막 페이지로 이동"
+        >
+          <IconArrowDoubleRightS
+            color={iconColor(isLastPageDisabled)}
+            aria-hidden="true"
+          />
+        </ArrowButton>
+      )}
     </PaginationContainer>
   );
 }

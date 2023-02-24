@@ -6,7 +6,7 @@ import {
   CompactPaginationContainer,
   CurrentPage,
 } from '../styles';
-import { PaginationProps } from '../types';
+import { DefaultPaginationProps } from '../types';
 import usePagination from '../usePagination';
 
 export function CompactPagination({
@@ -15,7 +15,7 @@ export function CompactPagination({
   onChangePage,
   itemCountPerPage,
   className,
-}: PaginationProps) {
+}: DefaultPaginationProps) {
   const {
     totalLastPage,
     prevPage,
