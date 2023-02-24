@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { primary200, contents000, contents100 } from 'mixins/colors';
-import { getTypographyStyles } from 'mixins/typography';
+import { primary200, contents000, contents100 } from '@/mixins/colors';
+import { getTypographyStyles } from '@/mixins/typography';
 
 export const overlayShow = keyframes`
   0% { opacity: 0; }

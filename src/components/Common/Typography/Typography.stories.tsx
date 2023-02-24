@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
   TitleContainer,
-} from 'components/stories/common.styles';
-import { TypographyStyle, TYPOGRAPHY_STYLES } from 'mixins/typography';
+} from '@/components/stories/common.styles';
+import { TypographyStyle, TYPOGRAPHY_STYLES } from '@/mixins/typography';
 
 import { Typography } from '.';
 

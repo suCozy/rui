@@ -8,10 +8,10 @@ import {
   contents300,
   contents999,
   roleRed,
-} from 'mixins/colors';
-import { ellipsis, getTypographyStyles } from 'mixins/typography';
+} from '@/mixins/colors';
+import { ellipsis, getTypographyStyles } from '@/mixins/typography';
 
-import { HintTextColorType } from '.';
+import { HintTextColorType } from './types';
 
 export const InputContainer = styled.div<{
   disabled?: boolean;

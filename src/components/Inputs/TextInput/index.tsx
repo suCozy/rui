@@ -7,8 +7,9 @@ import {
   type InputHTMLAttributes,
 } from 'react';
 
-import { IconVisibilityS, IconVisibilityOffS } from 'icons';
-import { createRandomId } from 'utils/id';
+import { IconVisibilityS, IconVisibilityOffS } from '@/icons';
+import { createRandomId } from '@/utils/id';
+
 import {
   InputContainer,
   InputError,
@@ -17,8 +18,7 @@ import {
   InputLabel,
   InputTogglePasswordVisibilityButton,
 } from './styles';
-
-export type HintTextColorType = 'roleRed' | 'contents000' | 'contents300';
+import type { HintTextColorType } from './types';
 
 type BaseInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

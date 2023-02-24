@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import {
   bg100,
   bg200,
@@ -8,10 +9,10 @@ import {
   contents150,
   contents300,
   contents999,
-} from 'colors/v3';
+} from '@/mixins';
+import { webOnly } from '@/mixins/breakpoints';
+import { getTypographyStyles } from '@/mixins/typography';
 
-import { webOnly } from 'mixins/breakpoints';
-import { getTypographyStyles } from 'mixins/typography';
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
 import type { ButtonStyleType } from './types';
 

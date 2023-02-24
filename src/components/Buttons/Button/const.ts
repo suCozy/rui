@@ -1,4 +1,5 @@
-import { contents000, contents150 } from 'mixins/colors';
+import { contents000, contents150 } from '@/mixins/colors';
+
 import type { ButtonTheme } from './types';
 
 export const BUTTON_SIZES = {

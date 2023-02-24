@@ -21,7 +21,7 @@ export const RememberMobileLogo = ({
     <svg
       className={className}
       height="100%"
-      viewBox={`0 0 17 20`}
+      viewBox="0 0 17 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"

@@ -1,11 +1,12 @@
-import { contents000, contents300 } from 'mixins/colors';
+import { contents000, contents300 } from '@/mixins/colors';
 import {
   IconArrowDoubleLeftS,
   IconArrowLeftS,
   IconArrowRightS,
   IconArrowDoubleRightS,
-} from 'icons';
-import { range } from 'utils/common';
+} from '@/icons';
+import { range } from '@/utils/common';
+
 import {
   BaseButton,
   Pages,

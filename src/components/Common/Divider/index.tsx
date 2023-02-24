@@ -1,7 +1,7 @@
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import styled from 'styled-components';
 
-import { divider } from 'mixins/colors';
+import { divider } from '@/mixins/colors';
 
 export interface DividerProps extends SeparatorPrimitive.SeparatorProps {
   color?: string;

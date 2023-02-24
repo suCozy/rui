@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Button } from 'components/Buttons/Button';
-import { Flex } from 'components/Common/Flex';
+import { Button } from '@/components/Buttons/Button';
+import { Flex } from '@/components/Common/Flex';
 
 import { Dialog } from '.';
 
 const DialogComponent = () => (
   <Dialog>
     <Dialog.Trigger asChild>
-      <button>Open Dialog</button>
+      <button type="button">Open Dialog</button>
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.CloseIcon />

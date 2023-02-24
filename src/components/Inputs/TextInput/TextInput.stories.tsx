@@ -1,9 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { createElement } from 'react';
 
-import * as Icons from 'icons';
+import * as Icons from '@/icons';
 
 import { TextInput } from '.';
+
 const iconNames = ['none', ...Object.keys(Icons)];
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

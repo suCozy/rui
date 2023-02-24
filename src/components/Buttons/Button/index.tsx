@@ -1,4 +1,5 @@
-import { Spinner } from 'components/Common/Spinner';
+import { Spinner } from '@/components/Common/Spinner';
+
 import { ButtonRoot } from './styles';
 import type { ButtonSizeType, ButtonTheme } from './types';
 

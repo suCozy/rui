@@ -31,6 +31,5 @@ export const getEnvLabel = (env?: EnvType): JSX.Element | undefined => {
         />
       );
     default:
-      return;
   }
 };

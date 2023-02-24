@@ -77,6 +77,8 @@ export { ReactComponent as IconInfoM } from '../assets/icons/icon_info_m.svg';
 export { ReactComponent as IconInfoS } from '../assets/icons/icon_info_s.svg';
 export { ReactComponent as IconKakaonaviM } from '../assets/icons/icon_kakaonavi_m.svg';
 export { ReactComponent as IconLinkM } from '../assets/icons/icon_link_m.svg';
+export { ReactComponent as IconLockM } from '../assets/icons/icon_lock_m.svg';
+export { ReactComponent as IconLockS } from '../assets/icons/icon_lock_s.svg';
 export { ReactComponent as IconMailL } from '../assets/icons/icon_mail_l.svg';
 export { ReactComponent as IconMailM } from '../assets/icons/icon_mail_m.svg';
 export { ReactComponent as IconMapM } from '../assets/icons/icon_map_m.svg';
@@ -115,6 +117,7 @@ export { ReactComponent as IconSpinner } from '../assets/icons/icon_spinner.svg'
 export { ReactComponent as IconTeambcM } from '../assets/icons/icon_teambc_m.svg';
 export { ReactComponent as IconTimeM } from '../assets/icons/icon_time_m.svg';
 export { ReactComponent as IconTimeS } from '../assets/icons/icon_time_s.svg';
+export { ReactComponent as IconTipS } from '../assets/icons/icon_tip_s.svg';
 export { ReactComponent as IconUploadM } from '../assets/icons/icon_upload_m.svg';
 export { ReactComponent as IconUploadS } from '../assets/icons/icon_upload_s.svg';
 export { ReactComponent as IconVideoS } from '../assets/icons/icon_video_s.svg';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getTypographyStyles, type TypographyStyle } from 'mixins/typography';
+import { getTypographyStyles, type TypographyStyle } from '@/mixins/typography';
 
 export const StyledTypography = styled.div<{
   variant?: TypographyStyle;

@@ -1,14 +1,15 @@
-import { contents300, secondary100 } from 'mixins/colors';
 import {
-  ControlCheckOnM,
-  ControlCheckOffM,
-  ControlCheckboxOnM,
-  ControlCheckboxOffM,
-  ControlBookmarkOnM,
   ControlBookmarkOffM,
-  ControlFavoriteOn,
+  ControlBookmarkOnM,
+  ControlCheckboxOffM,
+  ControlCheckboxOnM,
+  ControlCheckOffM,
+  ControlCheckOnM,
   ControlFavoriteOff,
-} from 'icons';
+  ControlFavoriteOn,
+} from '@/icons';
+import { contents300, secondary100 } from '@/mixins/colors';
+
 import type { ControlChildrenType, ControlOption } from '../types';
 
 const ICON_NAME: Record<
