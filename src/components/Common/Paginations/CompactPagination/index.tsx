@@ -6,7 +6,7 @@ import {
   CompactPaginationContainer,
   CurrentPage,
 } from '../styles';
-import { DefaultPaginationProps } from '../types';
+import type { CompactPaginationProps } from '../types';
 import usePagination from '../usePagination';
 
 export function CompactPagination({
@@ -14,8 +14,9 @@ export function CompactPagination({
   totalItemCount = 0,
   onChangePage,
   itemCountPerPage,
+  infinite = false,
   className,
-}: DefaultPaginationProps) {
+}: CompactPaginationProps) {
   const {
     totalLastPage,
     prevPage,
@@ -32,8 +33,39 @@ export function CompactPagination({
   const iconColor = (disabled: boolean) =>
     disabled ? contents300 : contents000;
 
-  const onClickPrevPage = () => onChangePage(prevPage);
-  const onClickNextPage = () => onChangePage(nextPage);
+  const onClickPrevPage = () => {
+    const prevPageToGo =
+      activePage === 1 && infinite ? totalLastPage : prevPage;
+    onChangePage(prevPageToGo);
+  };
+
+  const onClickNextPage = () => {
+    const nextPageToGo =
+      activePage === totalLastPage && infinite ? 1 : nextPage;
+    onChangePage(nextPageToGo);
+  };
+
+  const hasOnlyOnePage = totalLastPage === 1;
+
+  const getArrowButtonDisabled = (disabled: boolean) => {
+    if (hasOnlyOnePage) {
+      return true;
+    }
+    if (infinite) {
+      return false;
+    }
+    return disabled;
+  };
+
+  const getArrowButtonColor = (disabled: boolean) => {
+    if (hasOnlyOnePage) {
+      return contents300;
+    }
+    if (infinite) {
+      return contents000;
+    }
+    return iconColor(disabled);
+  };
 
   return (
     <CompactPaginationContainer
@@ -42,25 +74,25 @@ export function CompactPagination({
       aria-label="페이지네이션"
     >
       <ArrowButton
-        disabled={isPrevPageDisabled}
+        disabled={getArrowButtonDisabled(isPrevPageDisabled)}
         onClick={onClickPrevPage}
         aria-label="이전 페이지로 이동"
       >
         <IconArrowLeftS
-          color={iconColor(isPrevPageDisabled)}
+          color={getArrowButtonColor(isPrevPageDisabled)}
           aria-hidden="true"
         />
       </ArrowButton>
-      <Flex gap="4px" style={{ minWidth: '44px' }}>
+      <Flex gap="4px" style={{ minWidth: '44px', userSelect: 'none' }}>
         <CurrentPage>{activePage}</CurrentPage>/ {totalLastPage}
       </Flex>
       <ArrowButton
-        disabled={isNextPageDisabled}
+        disabled={getArrowButtonDisabled(isNextPageDisabled)}
         onClick={onClickNextPage}
         aria-label="다음 페이지로 이동"
       >
         <IconArrowRightS
-          color={iconColor(isNextPageDisabled)}
+          color={getArrowButtonColor(isNextPageDisabled)}
           aria-hidden="true"
         />
       </ArrowButton>
