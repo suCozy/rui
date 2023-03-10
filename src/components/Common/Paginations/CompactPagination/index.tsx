@@ -1,6 +1,7 @@
-import { contents000, contents300 } from 'colors/v3';
-import { Flex } from 'components/Common/Flex';
-import { IconArrowLeftS, IconArrowRightS } from 'components/Icons';
+import { IconArrowLeftS, IconArrowRightS } from '@/icons';
+import { Flex } from '@/components/Common/Flex';
+import { contents000, contents300 } from '@/mixins';
+
 import {
   ArrowButton,
   CompactPaginationContainer,

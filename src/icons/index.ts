@@ -112,6 +112,7 @@ export { ReactComponent as IconSettingM } from '../assets/icons/icon_setting_m.s
 export { ReactComponent as IconSettingS } from '../assets/icons/icon_setting_s.svg';
 export { ReactComponent as IconShareM } from '../assets/icons/icon_share_m.svg';
 export { ReactComponent as IconShareS } from '../assets/icons/icon_share_s.svg';
+export { ReactComponent as IconShieldS } from '../assets/icons/icon_shield_s.svg';
 export { ReactComponent as IconSkillM } from '../assets/icons/icon_skill_m.svg';
 export { ReactComponent as IconSpinner } from '../assets/icons/icon_spinner.svg';
 export { ReactComponent as IconTeambcM } from '../assets/icons/icon_teambc_m.svg';
