@@ -2,5 +2,5 @@ export * from './Divider';
 export * from './Flex';
 export * from './Grid';
 export * from './Spinner';
-export * from './Pagination';
+export * from './Paginations';
 export * from './Typography';
