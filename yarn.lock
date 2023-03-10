@@ -2499,11 +2499,11 @@ __metadata:
     prettier: ^2.7.1
     react: ^17.0.0
     react-dom: ^17.0.0
-    react-is: ^18.2.0
     rollup: ^3.12.0
     rollup-plugin-copy: ^3.4.0
     rollup-plugin-delete: ^2.0.0
     rollup-plugin-generate-package-json: ^3.2.0
+    rollup-plugin-peer-deps-external: ^2.2.4
     rollup-plugin-typescript2: ^0.34.1
     rollup-plugin-visualizer: ^5.9.0
     styled-components: ^5.3.5
@@ -13568,13 +13568,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
-  languageName: node
-  linkType: hard
-
 "react-merge-refs@npm:^1.0.0":
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
@@ -14176,6 +14169,15 @@ __metadata:
   peerDependencies:
     rollup: ">=1.0.0"
   checksum: 61b440377a16a1674ee0c8c4ccaf3d43522671ccde2c182a302fb063f32f8b5c81c81a74d1dbf5239aefab2743037f4dae6583083072ed30829225dc117c2d7d
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-peer-deps-external@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "rollup-plugin-peer-deps-external@npm:2.2.4"
+  peerDependencies:
+    rollup: "*"
+  checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
   languageName: node
   linkType: hard
 

@@ -13,6 +13,7 @@ import generatePackageJson from 'rollup-plugin-generate-package-json';
 import typescript from 'rollup-plugin-typescript2';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { fileURLToPath } from 'url';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,12 +23,13 @@ const SOURCE_DIR = './src';
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx', '.json', '.mts'];
 const libraryEntryNames = ['legacy', 'icons'];
+
 const packageJsonGenerators = libraryEntryNames.map((entryName) => {
   return generatePackageJson({
     outputFolder: path.join(BASE_DIR, entryName),
     baseContents: () => {
       return {
-        main: './index.js',
+        main: './index.cjs.js',
         module: './index.esm.js',
         types: './index.d.ts',
       };
@@ -53,13 +55,11 @@ const plugins = [
     },
     useTsconfigDeclarationDir: true,
   }),
+  peerDepsExternal(),
   alias({
     entries: {
       '@': path.join(__dirname, SOURCE_DIR),
     },
-  }),
-  nodeResolve({
-    extensions,
   }),
   commonjs({
     sourceMap: true,
@@ -96,27 +96,32 @@ export default async () => {
 
   return defineConfig([
     {
-      plugins: [...plugins],
+      plugins: [
+        nodeResolve({
+          extensions,
+          mainFields: ['main', 'module'],
+        }),
+        ...plugins,
+      ],
       input: {
         index: path.join(SOURCE_DIR, '/index.ts'),
-        // ...Object.fromEntries(
-        //   libraryEntryNames.map((entry) => [
-        //     `${entry}/index`,
-        //     path.join(SOURCE_DIR, entry, '/index.ts'),
-        //   ])
-        // ),
+        ...inputEntries,
       },
       output: {
         dir: BASE_DIR,
         sourcemap: true,
         format: 'cjs',
-        entryFileNames: '[name].js',
-        chunkFileNames: 'chunks/[hash]/[name].js',
+        entryFileNames: '[name].cjs.js',
+        chunkFileNames: 'chunks/[hash]/[name].cjs.js',
+        interop: 'auto',
       },
-      external: ['react', 'react-dom', 'styled-components', /@babel\/runtime/],
+      external: [/@babel\/runtime/],
     },
     {
       plugins: [
+        nodeResolve({
+          extensions,
+        }),
         ...plugins,
         generatePackageJson({
           inputFolder: './',
@@ -138,32 +143,11 @@ export default async () => {
           format: 'es',
           entryFileNames: '[name].esm.js',
           chunkFileNames: 'chunks/[hash]/[name].esm.js',
-          plugins: [
-            visualizer({
-              open: true,
-            }),
-          ],
+          interop: 'auto',
         },
-        // {
-        //   dir: BASE_DIR,
-        //   sourcemap: true,
-        //   format: 'cjs',
-        //   entryFileNames: '[name].js',
-        //   chunkFileNames: 'chunks/[hash]/[name].js',
-        // },
       ],
-      external: ['react', 'react-dom', 'styled-components', /@babel\/runtime/],
+      external: [/@babel\/runtime/],
     },
-    // {
-    //   input: './custom.d.ts',
-    //   output: {
-    //     format: 'es',
-    //     dir: output,
-    //     entryFileNames: 'custom.d.ts',
-    //   },
-    //   plugins: [dts()],
-    // },
-    //
   ]);
 };
 
