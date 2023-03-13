@@ -6,6 +6,10 @@ export interface DefaultPaginationProps {
   className?: string;
 }
 
+export interface CompactPaginationProps extends DefaultPaginationProps {
+  infinite?: boolean;
+}
+
 export interface PaginationProps extends DefaultPaginationProps {
   pageRangeDisplayed?: number;
   showFirstButton?: boolean;

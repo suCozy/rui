@@ -9,6 +9,7 @@ const meta: ComponentMeta<typeof CompactPagination> = {
   args: {
     totalItemCount: 100,
     itemCountPerPage: 10,
+    infinite: true,
     className: 'CompactPagination',
   },
 };
