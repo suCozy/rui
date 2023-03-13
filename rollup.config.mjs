@@ -82,6 +82,7 @@ export default async () => {
     recursive: true,
     filter: (source) => !source.includes('stories'),
   });
+  fs.copyFileSync('./tsconfig.json', path.join(BASE_DIR, 'tsconfig.json'));
 
   const entries = await glob(path.join(SOURCE_DIR, '**/index.{ts,tsx}'));
   const inputEntries = entries.reduce((obj, entry) => {
