@@ -103,6 +103,7 @@ export default async () => {
           extensions,
           mainFields: ['main', 'module'],
         }),
+        visualizer({ open: true }),
         ...plugins,
       ],
       input: {
