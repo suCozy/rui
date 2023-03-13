@@ -95,6 +95,7 @@ export default async () => {
   }, {});
 
   return defineConfig([
+    // cjs output
     {
       plugins: [
         nodeResolve({
@@ -117,6 +118,7 @@ export default async () => {
       },
       external: [/@babel\/runtime/],
     },
+    // esm output
     {
       plugins: [
         nodeResolve({
@@ -144,6 +146,11 @@ export default async () => {
           entryFileNames: '[name].esm.js',
           chunkFileNames: 'chunks/[hash]/[name].esm.js',
           interop: 'auto',
+          manualChunks: (id) => {
+            if (id.endsWith('.svg')) {
+              return 'svgAssets';
+            }
+          },
         },
       ],
       external: [/@babel\/runtime/],
