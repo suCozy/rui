@@ -1,12 +1,12 @@
 import { Spinner } from '@/components/Common/Spinner';
 
 import { ButtonRoot } from './styles';
-import type { ButtonSizeType, ButtonTheme } from './types';
+import type { ButtonSizeType, ButtonVariant } from './types';
 
 export function Button({
   className,
   disabled = false,
-  theme = 'solid',
+  variant = 'solid',
   outline = false,
   size = 'medium',
   loading = false,
@@ -20,7 +20,7 @@ export function Button({
     <ButtonRoot
       className={className}
       size={size}
-      theme={theme}
+      variant={variant}
       outline={outline}
       disabled={disabled}
       block={block}
@@ -39,7 +39,7 @@ export function Button({
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   className?: string;
   disabled?: boolean;
-  theme?: ButtonTheme;
+  variant?: ButtonVariant;
   outline?: boolean;
   size?: ButtonSizeType;
   loading?: boolean;

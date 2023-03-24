@@ -17,7 +17,7 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "paths": {
       "@/*": ["src/*"]
     }

@@ -5,7 +5,9 @@ import * as Icons from '@/icons';
 
 import { TextInput } from '.';
 
-const iconNames = ['none', ...Object.keys(Icons)];
+type IconNamesType = keyof typeof Icons;
+
+const iconNames = ['none' as const, ...(Object.keys(Icons) as IconNamesType[])];
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -59,10 +61,18 @@ const Template: ComponentStory<typeof TextInput> = ({
   rightElement,
   ...args
 }) => {
+  const isIconsString = (value: string): value is IconNamesType =>
+    Object.keys(Icons).includes(value);
+  const leftIconString = String(leftElement);
+  const RightIconString = String(rightElement);
   const renderedLeftElement =
-    leftElement && createElement(Icons[String(leftElement)]);
+    leftElement &&
+    isIconsString(leftIconString) &&
+    createElement(Icons[leftIconString]);
   const renderedRightElement =
-    rightElement && createElement(Icons[String(rightElement)]);
+    rightElement &&
+    isIconsString(RightIconString) &&
+    createElement(Icons[RightIconString]);
 
   return (
     <TextInput

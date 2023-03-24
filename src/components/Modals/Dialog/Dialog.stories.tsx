@@ -18,7 +18,7 @@ const DialogComponent = () => (
       <Flex gap="10px" width="100%">
         <Dialog.Close asChild>
           <Button
-            theme="solid"
+            variant="solid"
             size="large"
             outline
             block
@@ -29,7 +29,7 @@ const DialogComponent = () => (
         </Dialog.Close>
         <Dialog.Close asChild>
           <Button
-            theme="solid"
+            variant="solid"
             size="large"
             block
             onClick={() => console.log('취소')}

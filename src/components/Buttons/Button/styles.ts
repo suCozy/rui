@@ -69,8 +69,8 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
     min-width: ${BUTTON_SIZES[size].minWidth};
   `};
 
-  ${({ theme }) => css`
-    background-color: ${BUTTON_COLORS[theme]};
+  ${({ variant }) => css`
+    background-color: ${BUTTON_COLORS[variant]};
   `};
 
   ${({ outline }) =>
