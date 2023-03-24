@@ -1,5 +1,6 @@
-import { contents000, contents150 } from 'colors/v3';
-import type { ButtonTheme } from './types';
+import { contents000, contents150 } from '@/mixins/colors';
+
+import type { ButtonVariant } from './types';
 
 export const BUTTON_SIZES = {
   small: {
@@ -24,7 +25,7 @@ export const BUTTON_SIZES = {
   },
 } as const;
 
-export const BUTTON_COLORS: Record<ButtonTheme, string> = {
+export const BUTTON_COLORS: Record<ButtonVariant, string> = {
   solid: contents000,
   secondary: contents150,
 } as const;

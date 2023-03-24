@@ -1,8 +1,14 @@
 import styled, { css } from 'styled-components';
 
-import { getTypographyStyles } from 'mixins/typography';
-import { bg100, bg200, bg300, contents000, contents300 } from 'colors/v3';
-import { mobileOnly, webOnly } from 'mixins/breakpoints';
+import {
+  bg100,
+  bg200,
+  bg300,
+  contents000,
+  contents300,
+  getTypographyStyles,
+} from '@/mixins';
+import { mobileOnly, webOnly } from '@/mixins/breakpoints';
 
 export const PaginationContainer = styled.nav`
   all: unset;

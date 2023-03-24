@@ -1,7 +1,7 @@
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory } from '@storybook/react';
 
-import { Flex } from 'components/Common';
+import { Flex } from '@/components/Common';
 
 import { Radio } from '.';
 

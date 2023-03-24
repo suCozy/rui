@@ -1,29 +1,17 @@
-const path = require('path');
-
-/** @link https://github.com/import-js/eslint-plugin-import/issues/2164 */
-const getExternals = () => {
-  const getPackageJson = () =>
-    require(path.resolve(process.cwd(), 'package.json'));
-
-  const { dependencies, peerDependencies, devDependencies } = getPackageJson();
-
-  return Object.keys({
-    ...dependencies,
-    ...peerDependencies,
-    ...devDependencies,
-  });
-};
+// off = 0, warn = 1, error= 2 로 통일 부탁드립니다
 
 module.exports = {
+  plugins: ['@typescript-eslint'],
   extends: [
-    'react-app',
+    'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
-    'prettier',
+    'plugin:prettier/recommended',
     'plugin:storybook/recommended',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json',
+    project: ['./tsconfig.json'],
   },
   rules: {
     // react
@@ -38,8 +26,9 @@ module.exports = {
     'react/require-default-props': 0,
     'react/no-unescaped-entities': 0,
     'react/forbid-prop-types': 0,
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/function-component-definition': 0,
     // 웹 접근성
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
@@ -49,7 +38,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/media-has-caption': 0,
     // Javascript
-    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-body-style': [2, 'as-needed'],
     'consistent-return': 0,
     'no-underscore-dangle': 0,
     'no-unused-expressions': 0,
@@ -57,7 +46,7 @@ module.exports = {
     'no-restricted-syntax': 0,
     'no-await-in-loop': 0,
     'prefer-destructuring': [
-      'error',
+      2,
       {
         object: true,
         array: false,
@@ -66,55 +55,29 @@ module.exports = {
     // Module
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
+    'import/extensions': [
+      2,
+      'never',
+      { styles: 'always', types: 'always', json: 'always' },
+    ],
     'import/order': [
-      'error',
+      2,
       {
-        groups: [
-          ['builtin', 'external'],
-          ['internal', 'parent', 'sibling'],
-        ],
+        groups: [['builtin', 'external'], ['internal'], ['parent', 'sibling']],
         pathGroups: [
-          ...getExternals().map((name) => ({
-            pattern: `${name}`,
-            group: 'external',
-          })),
-          ...getExternals().map((name) => ({
-            pattern: `${name}/**`,
-            group: 'external',
-          })),
           {
-            pattern: 'global-style/**',
+            pattern: './**',
             group: 'sibling',
             position: 'after',
           },
           {
-            pattern: './*.constant',
-            group: 'sibling',
+            pattern: '../**',
+            group: 'parent',
             position: 'after',
           },
           {
-            pattern: './*.text',
-            group: 'sibling',
-            position: 'after',
-          },
-          {
-            pattern: './*.styles',
-            group: 'sibling',
-            position: 'after',
-          },
-          {
-            pattern: './*.scss',
-            group: 'sibling',
-            position: 'after',
-          },
-          {
-            pattern: './*.css',
-            group: 'sibling',
-            position: 'after',
-          },
-          {
-            pattern: 'assets/**',
-            group: 'sibling',
+            pattern: '@/**',
+            group: 'internal',
             position: 'after',
           },
         ],
@@ -123,9 +86,9 @@ module.exports = {
     ],
     // typescript eslint
     '@typescript-eslint/no-unused-expressions': 0,
-    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/naming-convention': [
-      'error',
+      2,
       {
         selector: 'variable',
         format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
@@ -136,13 +99,5 @@ module.exports = {
   env: {
     browser: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: [path.resolve(__dirname, 'src')],
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      },
-    },
-  },
-  ignorePatterns: ['vite.config.ts'],
+  ignorePatterns: ['rollup.config.mjs'],
 };

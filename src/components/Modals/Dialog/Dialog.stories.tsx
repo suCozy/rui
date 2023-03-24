@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Button } from 'components/Buttons/Button';
-import { Flex } from 'components/Common/Flex';
+import { Button } from '@/components/Buttons/Button';
+import { Flex } from '@/components/Common/Flex';
 
 import { Dialog } from '.';
 
 const DialogComponent = () => (
   <Dialog>
     <Dialog.Trigger asChild>
-      <button>Open Dialog</button>
+      <button type="button">Open Dialog</button>
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.CloseIcon />
@@ -18,7 +18,7 @@ const DialogComponent = () => (
       <Flex gap="10px" width="100%">
         <Dialog.Close asChild>
           <Button
-            theme="solid"
+            variant="solid"
             size="large"
             outline
             block
@@ -29,7 +29,7 @@ const DialogComponent = () => (
         </Dialog.Close>
         <Dialog.Close asChild>
           <Button
-            theme="solid"
+            variant="solid"
             size="large"
             block
             onClick={() => console.log('취소')}

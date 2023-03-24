@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import { bg100, contents000, contents100, contents300 } from 'colors/v3';
+import { bg100, contents000, contents100, contents300 } from '@/mixins/colors';
 
 type TextAlign = 'left' | 'center' | 'right';
 

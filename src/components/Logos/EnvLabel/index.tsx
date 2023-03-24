@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type EnvType =
   | 'production'
   | 'final'
@@ -33,6 +31,5 @@ export const getEnvLabel = (env?: EnvType): JSX.Element | undefined => {
         />
       );
     default:
-      return;
   }
 };

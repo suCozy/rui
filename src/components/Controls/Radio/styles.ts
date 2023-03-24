@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { secondary100 } from 'colors/v3';
+import { secondary100 } from '@/mixins/colors';
 
 export const RadioInput = styled.input`
   height: 20px;

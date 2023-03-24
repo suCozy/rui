@@ -1,20 +1,16 @@
-import React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
-import { Flex } from 'components/Common/Flex';
+import { Flex } from '@/components/Common/Flex';
+import { IconCloseS, IconConfirmAlert, IconConfirmCheck } from '@/icons';
+
 import {
-  IconConfirmAlert,
-  IconConfirmCheck,
-  IconCloseS,
-} from 'components/Icons';
-import {
-  StyledOverlay,
   DialogContent,
-  DialogTitle,
   DialogDescription,
   DialogIcon,
+  DialogTitle,
   IconButton,
+  StyledOverlay,
 } from './styles';
 
 interface ContentProps {

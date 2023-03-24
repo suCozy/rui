@@ -1,17 +1,16 @@
-import path from 'path';
+import path, { join } from 'path';
 import fs from 'fs';
-import * as humps from 'humps'; // 이 녀석 esm 지원안함
+import { default as humps } from 'humps';
 
-const pascalize = humps.default.pascalize;
+const BASE_DIR = path.join(process.cwd(), '/src');
+const ICONS_DIR = path.join(BASE_DIR, 'assets/icons');
+const EXPORT_DIR = path.join(BASE_DIR, 'icons');
 
-const ICONS_DIR = '/src/assets/icons';
-const EXPORT_DIR = '/src/components/Icons';
-
-const createIconFileTemplate = (componentName, fileName) =>
-  `export { ReactComponent as ${componentName} } from '${path.join(
-    ICONS_DIR,
-    fileName
-  )}';`;
+const createIconFileTemplate = (componentName, fileName) => {
+  const iconAbsPath = path.join(ICONS_DIR, fileName);
+  const iconRelPath = path.relative(EXPORT_DIR, iconAbsPath);
+  return `export { ReactComponent as ${componentName} } from '${iconRelPath}';`;
+};
 
 const createIconStoryTemplate = (
   name
@@ -35,22 +34,21 @@ export const Basic = Template.bind({});
 `;
 
 const svgIconFiles = fs
-  .readdirSync(path.join(process.cwd(), ICONS_DIR))
+  .readdirSync(path.join(ICONS_DIR))
   .filter((fileName) => /\.svg$/.test(fileName));
 
 const icons = svgIconFiles
   .map((fileName) => {
-    const componentName = pascalize(fileName.replace('.svg', ''));
+    const componentName = humps.pascalize(fileName.replace('.svg', ''));
+    if (!fs.existsSync(join(EXPORT_DIR, 'stories'))) {
+      fs.mkdirSync(join(EXPORT_DIR, 'stories'), { recursive: true });
+    }
     fs.writeFileSync(
-      path.join(
-        process.cwd(),
-        `${EXPORT_DIR}/stories`,
-        `${componentName}.stories.tsx`
-      ),
+      path.join(EXPORT_DIR, 'stories', `${componentName}.stories.tsx`),
       createIconStoryTemplate(componentName)
     );
     return createIconFileTemplate(componentName, fileName);
   })
   .join('\n');
 
-fs.writeFileSync(path.join(process.cwd(), EXPORT_DIR, 'index.ts'), icons);
+fs.writeFileSync(path.join(EXPORT_DIR, 'index.ts'), icons + '\n');

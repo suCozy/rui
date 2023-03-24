@@ -9,9 +9,10 @@ import {
   contents150,
   contents300,
   contents999,
-} from 'colors/v3';
-import { webOnly } from 'mixins/breakpoints';
-import { getTypographyStyles } from 'mixins/typography';
+} from '@/mixins';
+import { webOnly } from '@/mixins/breakpoints';
+import { getTypographyStyles } from '@/mixins/typography';
+
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
 import type { ButtonStyleType } from './types';
 
@@ -68,8 +69,8 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
     min-width: ${BUTTON_SIZES[size].minWidth};
   `};
 
-  ${({ theme }) => css`
-    background-color: ${BUTTON_COLORS[theme]};
+  ${({ variant }) => css`
+    background-color: ${BUTTON_COLORS[variant]};
   `};
 
   ${({ outline }) =>

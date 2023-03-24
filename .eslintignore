@@ -4,6 +4,7 @@ vite.config.ts
 dist
 docs
 public
+package
 scripts
 visualizer
 custom.d.ts

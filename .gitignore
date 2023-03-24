@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+package
 *.local
 
 # Editor directories and files
@@ -28,8 +29,7 @@ stats.html
 visualizer
 
 # Yarn Berry
-.yarn/*
-!.yarn/cache
+.yarn/**
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases

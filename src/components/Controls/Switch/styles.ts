@@ -1,7 +1,8 @@
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import styled, { css } from 'styled-components';
 
-import { contents300, contents999, secondary100 } from 'colors/v3';
+import { contents300, contents999, secondary100 } from '@/mixins/colors';
+
 import type { SwitchProps } from './types';
 
 export const Label = styled.label`
