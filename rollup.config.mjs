@@ -34,7 +34,7 @@ const plugins = [
     ],
     tsconfigOverride: {
       compilerOptions: {
-        emit: true,
+        noEmit: false,
         emitDeclarationOnly: true,
         mapRoot: process.cwd(),
         declarationDir: path.join(PACKAGE_DIST_DIR),
