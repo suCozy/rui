@@ -66,7 +66,6 @@ const plugins = [
   }),
   svgr({ exportType: 'named', typescript: true }),
   terser({ sourceMap: true }),
-  visualizer({ open: true }),
 ];
 
 export default async () => {
