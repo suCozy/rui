@@ -10,7 +10,7 @@ import {
   contents300,
   contents999,
 } from '@/mixins';
-import { webOnly } from '@/mixins/breakpoints';
+import { desktopOnly } from '@/mixins/breakpoints';
 import { getTypographyStyles } from '@/mixins/typography';
 
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
@@ -47,7 +47,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       `};
   }
 
-  ${webOnly(css`
+  ${desktopOnly(css`
     &:hover {
       background-color: ${contents100};
     }
@@ -80,7 +80,7 @@ export const ButtonRoot = styled.button<ButtonStyleType>`
       border: 1px solid ${contents300};
       color: ${contents000};
 
-      ${webOnly(css`
+      ${desktopOnly(css`
         &:hover {
           background-color: ${bg200};
         }

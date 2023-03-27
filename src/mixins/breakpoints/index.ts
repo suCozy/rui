@@ -30,7 +30,7 @@ export const mobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
 `;
 
 /** `min-width: ${mobileSizeBreak + 1}px` */
-export const webOnly = (cssContent: FlattenSimpleInterpolation) => css`
+export const desktopOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (min-width: ${mobileSizeBreak + 1}px) {
     ${cssContent}
   }
@@ -46,14 +46,16 @@ export const landingMobileOnly = (
 `;
 
 /** `min-width: ${landingMobileSizeBreak + 1}px` */
-export const landingWebOnly = (cssContent: FlattenSimpleInterpolation) => css`
+export const landingDesktopOnly = (
+  cssContent: FlattenSimpleInterpolation
+) => css`
   @media only screen and (min-width: ${landingMobileSizeBreak + 1}px) {
     ${cssContent}
   }
 `;
 
 /** mobileSizeBreak 이하에서 `display: none;` */
-export const displayWebOnly = css`
+export const displayDesktopOnly = css`
   ${mobileOnly(css`
     display: none !important;
   `)}
@@ -61,7 +63,7 @@ export const displayWebOnly = css`
 
 /** mobileSizeBreak 이상에서 `display: none;` */
 export const displayMobileOnly = css`
-  ${webOnly(css`
+  ${desktopOnly(css`
     display: none !important;
   `)}
 `;
