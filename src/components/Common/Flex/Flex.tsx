@@ -14,7 +14,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
 const StyledFlex = styled.div<Partial<FlexProps>>`
   box-sizing: border-box;
   display: flex;
-  height: ${({ width = 'auto' }) =>
+  width: ${({ width = 'auto' }) =>
     typeof width === 'number' ? `${width}px` : width};
   height: ${({ height = 'auto' }) =>
     typeof height === 'number' ? `${height}px` : height};
