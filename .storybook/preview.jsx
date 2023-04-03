@@ -1,3 +1,5 @@
+import { RUIProvider } from '../src/context/RUIContext';
+import { bg100, contents000, fixedBlack, fixedWhite } from '../src';
 import React from 'react';
 // global decorators를 설정하기 위해 반드시 필요한 react 모듈 import
 
@@ -7,11 +9,12 @@ import React from 'react';
 export const parameters = {
   layout: 'padded',
   backgrounds: {
-    default: 'light',
+    default: 'background',
     values: [
-      { name: 'light', value: '#f3f2ef' },
-      { name: 'dark', value: '#333333' },
-      { name: 'white', value: '#fff' },
+      { name: 'background', value: bg100 },
+      { name: 'contents', value: contents000 },
+      { name: 'white', value: fixedWhite },
+      { name: 'black', value: fixedBlack },
     ],
   },
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -64,8 +67,10 @@ export const parameters = {
  */
 export const decorators = [
   (Story) => (
-    <div style={{ margin: '3em' }}>
-      <Story />
-    </div>
+    <RUIProvider>
+      <div style={{ margin: '3em' }}>
+        <Story />
+      </div>
+    </RUIProvider>
   ),
 ];

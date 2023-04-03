@@ -33,8 +33,11 @@ export const bgHighlight = 'var(--rui-bg-highlight)';
 export const bgRoleYellow = 'var(--rui-bg-role-yellow)';
 export const bgRoleBlue = 'var(--rui-bg-role-blue)';
 export const bgRoleGreen = 'var(--rui-bg-role-green)';
-export const whiteFixed = 'var(--rui-white-fixed)';
-export const blackFixed = 'var(--rui-black-fixed)';
 
 // Divider
 export const divider = 'var(--rui-divider)';
+
+// Fixed
+export const fixedWhite = 'var(--rui-fixed-white)';
+export const fixedBgWhite = 'var(--rui-fixed-bg-white)';
+export const fixedBlack = 'var(--rui-fixed-black)';
