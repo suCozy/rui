@@ -1,3 +1,5 @@
+import { isSSR } from '@/common/utils/common';
+
 import { RUIColorNameType, ThemeType } from './types';
 
 /** RDS컬러의 rgb값이 필요할 때 사용
@@ -33,7 +35,7 @@ export function hexToRgb(colorHex: string) {
 }
 
 export function getBrowserTheme(): ThemeType {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  if (!isSSR() && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return 'dark';
   }
   return 'light';

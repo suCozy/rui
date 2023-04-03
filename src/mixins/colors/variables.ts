@@ -1,40 +1,40 @@
-export const primary100 = '--rui-primary100';
-export const primary200 = '--rui-primary200';
-export const secondary100 = '--rui-secondary100';
+export const primary100 = 'var(--rui-primary100)';
+export const primary200 = 'var(--rui-primary200)';
+export const secondary100 = 'var(--rui-secondary100)';
 
 // Contents  txt/ label/ border/ divider
-export const contents000 = '--rui-contents000';
-export const contents100 = '--rui-contents100';
-export const contents150 = '--rui-contents150';
-export const contents200 = '--rui-contents200';
-export const contents300 = '--rui-contents300';
-export const contents999 = '--rui-contents999';
+export const contents000 = 'var(--rui-contents000)';
+export const contents100 = 'var(--rui-contents100)';
+export const contents150 = 'var(--rui-contents150)';
+export const contents200 = 'var(--rui-contents200)';
+export const contents300 = 'var(--rui-contents300)';
+export const contents999 = 'var(--rui-contents999)';
 
 // Disable disabled CTA
-export const disabled = '--rui-disabled';
-export const disabledRoleRed = '--rui-disabled-role-red';
-export const disabledSecondary = '--rui-disabled-secondary';
+export const disabled = 'var(--rui-disabled)';
+export const disabledRoleRed = 'var(--rui-disabled-role-red)';
+export const disabledSecondary = 'var(--rui-disabled-secondary)';
 
 // Accent Error/ Link/
-export const roleRed = '--rui-role-red';
-export const roleYellow = '--rui-role-yellow';
-export const roleBlue = '--rui-role-blue';
-export const roleGreen = '--rui-role-green';
+export const roleRed = 'var(--rui-role-red)';
+export const roleYellow = 'var(--rui-role-yellow)';
+export const roleBlue = 'var(--rui-role-blue)';
+export const roleGreen = 'var(--rui-role-green)';
 
 // Background
-export const bg100 = '--rui-bg100';
-export const bg200 = '--rui-bg200';
-export const bg300 = '--rui-bg300';
-export const bgModal100 = '--rui-bg-modal100';
-export const bgModal200 = '--rui-bg-modal200';
-export const bgRoleRed = '--rui-bg-role-red';
-export const bgSecondary100 = '--rui-bg-secondary100';
-export const bgHighlight = '--rui-bg-highlight';
-export const bgRoleYellow = '--rui-bg-role-yellow';
-export const bgRoleBlue = '--rui-bg-role-blue';
-export const bgRoleGreen = '--rui-bg-role-green';
-export const whiteFixed = '--rui-white-fixed';
-export const blackFixed = '--rui-black-fixed';
+export const bg100 = 'var(--rui-bg100)';
+export const bg200 = 'var(--rui-bg200)';
+export const bg300 = 'var(--rui-bg300)';
+export const bgModal100 = 'var(--rui-bg-modal100)';
+export const bgModal200 = 'var(--rui-bg-modal200)';
+export const bgRoleRed = 'var(--rui-bg-role-red)';
+export const bgSecondary100 = 'var(--rui-bg-secondary100)';
+export const bgHighlight = 'var(--rui-bg-highlight)';
+export const bgRoleYellow = 'var(--rui-bg-role-yellow)';
+export const bgRoleBlue = 'var(--rui-bg-role-blue)';
+export const bgRoleGreen = 'var(--rui-bg-role-green)';
+export const whiteFixed = 'var(--rui-white-fixed)';
+export const blackFixed = 'var(--rui-black-fixed)';
 
 // Divider
-export const divider = '--rui-divider';
+export const divider = 'var(--rui-divider)';

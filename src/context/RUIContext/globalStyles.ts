@@ -5,7 +5,7 @@ import { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
 import { hexToRgb } from '@/mixins/colors/utils';
 
 export const RUIGlobalStyle = createGlobalStyle<{
-  customMixins: RUIColorMixinsType;
+  customMixins?: RUIColorMixinsType;
   forceTheme?: ThemeType;
 }>(({ customMixins, forceTheme }) => {
   switch (forceTheme) {
@@ -14,7 +14,7 @@ export const RUIGlobalStyle = createGlobalStyle<{
         :root {
           ${Object.entries({
             ...ruiColorTheme.light,
-            ...customMixins.light,
+            ...customMixins?.light,
           }).map(
             ([key, value]) =>
               `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
@@ -26,7 +26,7 @@ export const RUIGlobalStyle = createGlobalStyle<{
         :root {
           ${Object.entries({
             ...ruiColorTheme.dark,
-            ...customMixins.dark,
+            ...customMixins?.dark,
           }).map(
             ([key, value]) =>
               `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
@@ -38,7 +38,7 @@ export const RUIGlobalStyle = createGlobalStyle<{
         :root {
           ${Object.entries({
             ...ruiColorTheme.light,
-            ...customMixins.light,
+            ...customMixins?.light,
           }).map(
             ([key, value]) =>
               `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
@@ -49,7 +49,7 @@ export const RUIGlobalStyle = createGlobalStyle<{
           :root {
             ${Object.entries({
               ...ruiColorTheme.dark,
-              ...customMixins.dark,
+              ...customMixins?.dark,
             }).map(
               ([key, value]) =>
                 `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`

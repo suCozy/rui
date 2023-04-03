@@ -6,9 +6,9 @@ import { getBrowserTheme } from '@/mixins/colors/utils';
 import { RUIGlobalStyle } from './globalStyles';
 
 export interface RUIContentProps {
-  customMixins: RUIColorMixinsType;
+  customMixins?: RUIColorMixinsType;
   forceTheme?: ThemeType;
-  setTheme: (theme: ThemeType) => void;
+  setTheme?: (theme: ThemeType) => void;
 }
 
 export interface RUIContextValue {
