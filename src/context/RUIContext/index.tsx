@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useMemo } from 'react';
+import { ReactNode, createContext, useContext, useMemo } from 'react';
 
 import { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
 import { getBrowserTheme } from '@/mixins/colors/utils';
@@ -38,4 +38,14 @@ export function RUIProvider({
       {children}
     </RUIContext.Provider>
   );
+}
+
+export function useRUI() {
+  const ruiContextValue = useContext(RUIContext);
+
+  if (ruiContextValue === null) {
+    throw new Error('useRUI must be used within RUIProvider');
+  }
+
+  return ruiContextValue;
 }
