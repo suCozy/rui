@@ -23,18 +23,10 @@ export function hexToRgb(colorHex: string) {
   }
 
   if (hexWithoutHash.length === 3) {
-    hexWithoutHash =
-      hexWithoutHash[0] +
-      hexWithoutHash[0] +
-      hexWithoutHash[1] +
-      hexWithoutHash[1] +
-      hexWithoutHash[2] +
-      hexWithoutHash[2];
+    hexWithoutHash = [...hexWithoutHash].map((hex) => hex.repeat(2)).join();
   }
 
-  const r = parseInt(hexWithoutHash.slice(0, 2), 16);
-  const g = parseInt(hexWithoutHash.slice(2, 4), 16);
-  const b = parseInt(hexWithoutHash.slice(4, 6), 16);
+  const [, r, g, b] = hexWithoutHash.split(/(..)(..)(..)/);
 
   return `${r},${g},${b}`;
 }
