@@ -26,7 +26,9 @@ export function hexToRgb(colorHex: string) {
     hexWithoutHash = [...hexWithoutHash].map((hex) => hex.repeat(2)).join();
   }
 
-  const [, r, g, b] = hexWithoutHash.split(/(..)(..)(..)/);
+  const [, r, g, b] = hexWithoutHash
+    .split(/(..)(..)(..)/)
+    .map((hex) => parseInt(hex, 16));
 
   return `${r},${g},${b}`;
 }
