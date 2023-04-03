@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import { IconVisibilityS, IconVisibilityOffS } from '@/icons';
-import { createRandomId } from '@/utils/id';
+import { createRandomId } from '@/common/utils/id';
 
 import {
   InputContainer,

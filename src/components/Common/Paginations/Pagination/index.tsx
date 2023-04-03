@@ -5,7 +5,7 @@ import {
   IconArrowRightS,
   IconArrowDoubleRightS,
 } from '@/icons';
-import { range } from '@/utils/common';
+import { range } from '@/common/utils/common';
 
 import {
   Pages,
