@@ -34,7 +34,7 @@ export function RUIProvider({
 
   return (
     <RUIContext.Provider value={ruiContextValue}>
-      <RUIGlobalStyle customMixins={customMixins} />
+      <RUIGlobalStyle customMixins={customMixins} forceTheme={forceTheme} />
       {children}
     </RUIContext.Provider>
   );
