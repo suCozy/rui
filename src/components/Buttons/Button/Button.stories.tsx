@@ -1,22 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from '.';
+import { Button as _Button } from '.';
 
 export default {
   title: 'Buttons/Button',
-  component: Button,
-  args: {
-    disabled: false,
-    theme: 'solid',
-    outline: false,
-    size: 'large',
-    loading: true,
-    block: false,
-  },
-} as ComponentMeta<typeof Button>;
+  component: _Button,
+  args: {},
+} as ComponentMeta<typeof _Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+const Template: ComponentStory<typeof _Button> = (args) => (
+  // eslint-disable-next-line react/jsx-pascal-case
+  <_Button {...args}>버튼</_Button>
 );
 
-export const Primary = Template.bind({});
+export const Button = Template.bind({});

@@ -1,92 +1,97 @@
 import styled, { css } from 'styled-components';
 
 import {
-  bg100,
-  bg200,
-  bg300,
-  contents000,
-  contents100,
-  contents150,
-  contents300,
-  contents999,
+  disabled,
+  getRgb,
+  getTypographyStyles,
+  primary100,
+  primary200,
 } from '@/mixins';
-import { desktopOnly } from '@/mixins/breakpoints';
-import { getTypographyStyles } from '@/mixins/typography';
 
 import { BUTTON_COLORS, BUTTON_SIZES } from './const';
-import type { ButtonStyleType } from './types';
+import { ButtonStyleProps } from './types';
 
-export const ButtonRoot = styled.button<ButtonStyleType>`
-  all: unset;
-  appearance: none;
-  box-sizing: border-box;
-  user-select: none;
-  padding: 0 16px;
-  transition: background 0.2s ease-in-out;
+export const StyledButton = styled.button<ButtonStyleProps>(
+  ({ variant, $size, layout, $color }) => [
+    // 공용 스타일
+    css`
+      all: unset;
+      appearance: none;
+      box-sizing: border-box;
+      user-select: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
 
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+      display: ${layout === 'inline' ? 'inline-flex' : 'flex'};
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
 
-  color: ${contents999};
-  border-radius: 4px;
+      ${getTypographyStyles(BUTTON_SIZES[$size].typography)}
+      ${layout === 'fullBlock' && `width: 100%;`}
+      min-width: ${BUTTON_SIZES[$size].minWidth};
+      height: ${BUTTON_SIZES[$size].height};
+      padding: ${BUTTON_SIZES[$size].padding};
+      border-radius: 4px;
 
-  &:disabled {
-    background-color: ${contents300};
-    cursor: not-allowed;
-    color: ${contents999};
+      color: ${(variant === 'outline' ? $color : null) ??
+      BUTTON_COLORS[variant].color};
 
-    ${({ outline }) =>
-      outline &&
+      &:disabled {
+        cursor: not-allowed;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(${getRgb(primary200)});
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.2s;
+      }
+      @media (hover: hover) {
+        &:hover::before {
+          opacity: 0.1;
+        }
+      }
+      &:active::before {
+        opacity: 0.2;
+      }
+    `,
+
+    // primary 스타일
+    variant === 'primary' &&
       css`
-        background-color: ${bg100};
-        border: 1px solid ${contents300};
-        color: ${contents300};
-      `};
-  }
-
-  ${desktopOnly(css`
-    &:hover {
-      background-color: ${contents100};
-    }
-    &:active {
-      background-color: ${contents150};
-    }
-  `)}
-
-  ${({ block }) =>
-    block &&
-    css`
-      flex-shrink: 1;
-      width: 100%;
-    `};
-
-  ${({ size = 'medium' }) => css`
-    ${getTypographyStyles(BUTTON_SIZES[size].typography)}
-    height: ${BUTTON_SIZES[size].height};
-    min-width: ${BUTTON_SIZES[size].minWidth};
-  `};
-
-  ${({ variant }) => css`
-    background-color: ${BUTTON_COLORS[variant]};
-  `};
-
-  ${({ outline }) =>
-    outline &&
-    css`
-      background-color: ${bg100};
-      border: 1px solid ${contents300};
-      color: ${contents000};
-
-      ${desktopOnly(css`
-        &:hover {
-          background-color: ${bg200};
+        background-color: ${$color ?? BUTTON_COLORS[variant].backgroundColor};
+        &:disabled {
+          background-color: ${disabled};
         }
-        &:active {
-          background-color: ${bg300};
+        &::before {
+          background-color: ${primary200};
         }
-      `)}
-    `};
-`;
+      `,
+
+    // outline 스타일
+    variant === 'outline' &&
+      css`
+        border: 1px solid ${$color ?? BUTTON_COLORS[variant].backgroundColor};
+        &:disabled {
+          border-color: ${disabled};
+          color: ${disabled};
+        }
+        &::before {
+          background-color: ${primary100};
+        }
+      `,
+  ]
+);
