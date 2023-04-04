@@ -1,5 +1,5 @@
 <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8 7L4 7.2V5.2L8 5V7Z" fill="#212322"/>
-<path d="M8 19L4 19.2V17.2L8 17V19Z" fill="#212322"/>
-<path d="M4 13.2L8 13V11L4 11.2V13.2Z" fill="#212322"/>
+  <path d="M8 7L4 7.2V5.2L8 5V7Z" fill="currentColor" />
+  <path d="M8 19L4 19.2V17.2L8 17V19Z" fill="currentColor" />
+  <path d="M4 13.2L8 13V11L4 11.2V13.2Z" fill="currentColor" />
 </svg>
