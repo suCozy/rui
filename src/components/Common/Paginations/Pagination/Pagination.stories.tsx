@@ -1,9 +1,11 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
 import { Pagination } from '.';
 
-const meta: ComponentMeta<typeof Pagination> = {
+type Story = StoryObj<typeof Pagination>;
+
+const meta: Meta = {
   title: 'Common/Pagination',
   component: Pagination,
   args: {
@@ -16,18 +18,21 @@ const meta: ComponentMeta<typeof Pagination> = {
   },
 };
 
-export const Basic: ComponentStory<typeof Pagination> = (args) => {
-  const [pageNumber1, setPageNumber1] = React.useState(1);
+export const Basic: Story = {
+  render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [pageNumber1, setPageNumber1] = useState(1);
 
-  return (
-    <Pagination
-      {...args}
-      onChangePage={(page) => {
-        setPageNumber1(page);
-      }}
-      activePage={pageNumber1}
-    />
-  );
+    return (
+      <Pagination
+        {...args}
+        onChangePage={(page) => {
+          setPageNumber1(page);
+        }}
+        activePage={pageNumber1}
+      />
+    );
+  },
 };
 
 export default meta;

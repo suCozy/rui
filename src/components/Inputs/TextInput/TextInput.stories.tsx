@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { createElement } from 'react';
 
 import {
@@ -9,8 +9,10 @@ import {
 
 import { TextInput } from '.';
 
+type Story = StoryObj<typeof TextInput>;
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta = {
   title: 'Example/Input',
   component: TextInput,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -53,33 +55,30 @@ export default {
       defaultValue: false,
     },
   },
-} as ComponentMeta<typeof TextInput>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TextInput> = ({
-  leftElement,
-  rightElement,
-  ...args
-}) => {
-  const leftIconString = String(leftElement);
-  const RightIconString = String(rightElement);
-  const renderedLeftElement =
-    leftElement &&
-    isIconName(leftIconString) &&
-    createElement(getIconComponentFromName(leftIconString));
-  const renderedRightElement =
-    rightElement &&
-    isIconName(RightIconString) &&
-    createElement(getIconComponentFromName(RightIconString));
-
-  return (
-    <TextInput
-      {...args}
-      leftElement={renderedLeftElement}
-      rightElement={renderedRightElement}
-    />
-  );
 };
 
-export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+export const Default: Story = {
+  render: ({ leftElement, rightElement, ...args }) => {
+    const leftIconString = String(leftElement);
+    const RightIconString = String(rightElement);
+    const renderedLeftElement =
+      leftElement &&
+      isIconName(leftIconString) &&
+      createElement(getIconComponentFromName(leftIconString));
+    const renderedRightElement =
+      rightElement &&
+      isIconName(RightIconString) &&
+      createElement(getIconComponentFromName(RightIconString));
+
+    return (
+      <TextInput
+        {...args}
+        leftElement={renderedLeftElement}
+        rightElement={renderedRightElement}
+      />
+    );
+  },
+};
+
+export default meta;
