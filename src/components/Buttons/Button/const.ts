@@ -1,4 +1,5 @@
 import { contents000, contents300, contents999 } from '@/mixins/colors';
+import { SpinnerSize } from '@/components/Common/Spinner/types';
 
 import type { ButtonSize, ButtonVariant } from './types';
 
@@ -39,3 +40,17 @@ export const BUTTON_COLORS = {
     color: contents000,
   },
 } as const satisfies Record<ButtonVariant, unknown>;
+
+export const SPINNER_SIZE_MAP = {
+  small: 'small',
+  medium: 'small',
+  large: 'medium',
+  xLarge: 'medium',
+} as const satisfies Record<ButtonSize, SpinnerSize>;
+
+export const ICON_GAP_MAP = {
+  small: '4px',
+  medium: '4px',
+  large: '8px',
+  xLarge: '8px',
+} as const satisfies Record<ButtonSize, string>;

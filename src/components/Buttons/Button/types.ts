@@ -1,3 +1,4 @@
+import { ConvertTransientProps } from '@/common/utils/type';
 import { ColorVariable } from '@/mixins/colors/types';
 
 export type ButtonSize = 'small' | 'medium' | 'large' | 'xLarge';
@@ -10,15 +11,17 @@ export type ButtonColor = ColorVariable | string;
 
 export interface ButtonStyleProps {
   $size: ButtonSize;
-  $color: ButtonColor;
+  $color?: ButtonColor;
   variant: ButtonVariant;
   layout: ButtonLayout;
   isLoading: boolean;
 }
 
-export interface ButtonProps
-  extends Omit<ButtonStyleProps, '$size' | '$color'>,
-    Omit<React.HTMLAttributes<HTMLButtonElement>, `aria-${string}`> {
-  size: ButtonStyleProps['$size'];
-  color: ButtonStyleProps['$color'];
-}
+export type ButtonProps = Omit<
+  React.HTMLAttributes<HTMLButtonElement>,
+  `aria-${string}`
+> &
+  Partial<ConvertTransientProps<ButtonStyleProps>> & {
+    icon?: React.ReactNode;
+    iconPosition?: 'left' | 'right';
+  };

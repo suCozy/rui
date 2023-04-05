@@ -1,16 +1,34 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { createElement } from 'react';
 
-import { Button as _Button } from '.';
+import {
+  getIconComponentFromName,
+  iconNames,
+  isIconName,
+} from '@/components/stories/util';
+
+import { Button } from '.';
 
 export default {
   title: 'Buttons/Button',
-  component: _Button,
-  args: {},
-} as ComponentMeta<typeof _Button>;
+  component: Button,
+  argTypes: {
+    icon: { control: 'select', options: iconNames },
+  },
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof _Button> = (args) => (
-  // eslint-disable-next-line react/jsx-pascal-case
-  <_Button {...args}>버튼</_Button>
-);
+const Template: ComponentStory<typeof Button> = ({ icon, ...args }) => {
+  const iconString = String(icon);
+  const iconElement =
+    icon &&
+    isIconName(iconString) &&
+    createElement(getIconComponentFromName(iconString));
 
-export const Button = Template.bind({});
+  return (
+    <Button {...args} icon={iconElement}>
+      버튼
+    </Button>
+  );
+};
+
+export const Default = Template.bind({});

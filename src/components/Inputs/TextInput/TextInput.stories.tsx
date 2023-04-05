@@ -1,13 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { createElement } from 'react';
 
-import * as Icons from '@/icons';
+import {
+  getIconComponentFromName,
+  iconNames,
+  isIconName,
+} from '@/components/stories/util';
 
 import { TextInput } from '.';
-
-type IconNamesType = keyof typeof Icons;
-
-const iconNames = ['none' as const, ...(Object.keys(Icons) as IconNamesType[])];
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -61,24 +61,22 @@ const Template: ComponentStory<typeof TextInput> = ({
   rightElement,
   ...args
 }) => {
-  const isIconsString = (value: string): value is IconNamesType =>
-    Object.keys(Icons).includes(value);
   const leftIconString = String(leftElement);
   const RightIconString = String(rightElement);
   const renderedLeftElement =
     leftElement &&
-    isIconsString(leftIconString) &&
-    createElement(Icons[leftIconString]);
+    isIconName(leftIconString) &&
+    createElement(getIconComponentFromName(leftIconString));
   const renderedRightElement =
     rightElement &&
-    isIconsString(RightIconString) &&
-    createElement(Icons[RightIconString]);
+    isIconName(RightIconString) &&
+    createElement(getIconComponentFromName(RightIconString));
 
   return (
     <TextInput
       {...args}
-      leftElement={leftElement === 'none' ? null : renderedLeftElement}
-      rightElement={rightElement === 'none' ? null : renderedRightElement}
+      leftElement={renderedLeftElement}
+      rightElement={renderedRightElement}
     />
   );
 };
