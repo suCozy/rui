@@ -1,6 +1,8 @@
 import { StorybookConfig } from '@storybook/react-vite';
 
 import path from 'path';
+import { InlineConfig } from 'vite';
+import { mergeConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
@@ -19,15 +21,16 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
   viteFinal: async (config) => {
-    config?.plugins?.push(
-      /** @see https://github.com/aleclarson/vite-tsconfig-paths */
-      tsconfigPaths({
-        projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
-      }),
-      svgr()
-    );
-    config.base = process.env.NODE_ENV === 'production' ? '/rui' : '/';
-    return config;
+    return mergeConfig(config, {
+      plugins: [
+        /** @see https://github.com/aleclarson/vite-tsconfig-paths */
+        tsconfigPaths({
+          projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
+        }),
+        svgr(),
+      ],
+      base: process.env.NODE_ENV === 'production' ? '/rui' : '/',
+    } satisfies InlineConfig);
   },
   docs: {
     autodocs: true,
