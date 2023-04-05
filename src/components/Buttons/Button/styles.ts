@@ -91,7 +91,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
           color: ${disabled};
         }
         &::before {
-          background-color: ${primary100};
+          background-color: ${$color ?? primary100};
         }
       `,
   ]

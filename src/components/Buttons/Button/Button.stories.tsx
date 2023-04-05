@@ -16,6 +16,7 @@ const meta: Meta = {
   component: Button,
   argTypes: {
     icon: { control: 'select', options: iconNames },
+    color: { control: 'color' },
   },
 };
 
