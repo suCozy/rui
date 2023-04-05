@@ -1,6 +1,6 @@
 import * as Icons from '@/icons';
 
-type IconNameType = keyof typeof Icons;
+export type IconNameType = keyof typeof Icons;
 
 export const iconNames = [
   'none' as const,
