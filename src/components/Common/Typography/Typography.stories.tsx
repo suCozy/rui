@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import {
@@ -10,7 +10,8 @@ import {
   TableRow,
   TitleContainer,
 } from '@/components/stories/common.styles';
-import { TYPOGRAPHY_STYLES, TypographyStyle } from '@/mixins/typography';
+import type { TypographyStyle } from '@/mixins/typography';
+import { TYPOGRAPHY_STYLES } from '@/mixins/typography';
 
 import { Typography } from '.';
 

@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useContext, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
-import { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
+import type { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
 import { getBrowserTheme } from '@/mixins/colors/utils';
 
 import { RUIGlobalStyle } from './globalStyles';

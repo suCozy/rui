@@ -1,5 +1,5 @@
 import { Container } from './styles';
-import { SpinnerProps } from './types';
+import type { SpinnerProps } from './types';
 import { SPINNER_SIZES } from './const';
 
 export const Spinner = ({

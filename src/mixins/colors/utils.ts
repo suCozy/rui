@@ -1,6 +1,6 @@
 import { isSSR } from '@/common/utils/common';
 
-import { ColorVariable, ThemeType } from './types';
+import type { ColorVariable, ThemeType } from './types';
 
 /** var(color)로 된 string을 color로 변경해줄 때 사용 */
 export function getVariableName(variableName: ColorVariable) {

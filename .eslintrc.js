@@ -55,6 +55,10 @@ module.exports = {
     // Module
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
+    '@typescript-eslint/consistent-type-imports': [
+      2,
+      { disallowTypeAnnotations: false },
+    ],
     'import/extensions': [
       2,
       'never',

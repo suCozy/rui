@@ -1,6 +1,6 @@
 import { IconSpinnerM, IconSpinnerS } from '@/icons';
 
-import { SpinnerSize } from './types';
+import type { SpinnerSize } from './types';
 
 export const SPINNER_SIZES = {
   medium: IconSpinnerM,

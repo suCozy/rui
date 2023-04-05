@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { SpinnerStyleProps } from './types';
+import type { SpinnerStyleProps } from './types';
 
 const RotateAnimation = keyframes`
   to { transform: rotate(360deg); };

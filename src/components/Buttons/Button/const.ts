@@ -1,5 +1,5 @@
 import { contents000, contents300, contents999 } from '@/mixins/colors';
-import { SpinnerSize } from '@/components/Common/Spinner/types';
+import type { SpinnerSize } from '@/components/Common/Spinner/types';
 
 import type { ButtonSize, ButtonVariant } from './types';
 

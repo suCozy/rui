@@ -9,7 +9,7 @@ import {
 } from '@/mixins';
 
 import { BUTTON_COLORS, BUTTON_SIZES, ICON_GAP_MAP } from './const';
-import { ButtonStyleProps } from './types';
+import type { ButtonStyleProps } from './types';
 
 export const StyledButton = styled.button<ButtonStyleProps>(
   ({ variant, $size, layout, $color }) => [

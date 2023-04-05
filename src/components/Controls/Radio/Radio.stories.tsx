@@ -1,5 +1,5 @@
 import { useArgs } from '@storybook/client-api';
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Flex } from '@/components/Common';
 
