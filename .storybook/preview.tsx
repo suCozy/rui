@@ -1,6 +1,8 @@
 import { RUIProvider } from '../src/context/RUIContext';
 import { bg100, contents000, fixedBlack, fixedWhite } from '../src';
 import React from 'react';
+import { Preview } from '@storybook/react';
+
 // global decorators를 설정하기 위해 반드시 필요한 react 모듈 import
 
 /**
@@ -60,11 +62,6 @@ export const parameters = {
   },
 };
 
-/**
- * global decorators
- * @see https://vitejs.dev/guide/features.html#jsx
- * vite 설정으로 인해 JSX syntax를 사용하려면 .jsx 확장자를 사용해야한다.
- */
 export const decorators = [
   (Story) => (
     <RUIProvider>
@@ -74,3 +71,22 @@ export const decorators = [
     </RUIProvider>
   ),
 ];
+
+export const preview: Preview = {
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        // Array of plain string values or MenuItem shape (see below)
+        items: ['light', 'dark'],
+        // Property that specifies if the name of the item will be displayed
+        showName: true,
+        // Change title based on selected value
+        dynamicTitle: true,
+      },
+    },
+  },
+};
