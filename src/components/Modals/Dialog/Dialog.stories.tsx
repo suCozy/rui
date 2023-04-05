@@ -12,16 +12,14 @@ const DialogComponent = () => (
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.CloseIcon />
-      <Dialog.HeadIcon />
+      {/* <Dialog.HeadIcon /> */}
       <Dialog.Title>Title</Dialog.Title>
       <Dialog.Description>all description in here</Dialog.Description>
       <Flex gap="10px" width="100%">
         <Dialog.Close asChild>
           <Button
-            variant="solid"
+            variant="outline"
             size="large"
-            outline
-            block
             onClick={() => console.log('확인')}
           >
             확인
@@ -29,9 +27,8 @@ const DialogComponent = () => (
         </Dialog.Close>
         <Dialog.Close asChild>
           <Button
-            variant="solid"
+            variant="primary"
             size="large"
-            block
             onClick={() => console.log('취소')}
           >
             취소

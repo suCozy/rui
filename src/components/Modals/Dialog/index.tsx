@@ -2,12 +2,11 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { DialogProps } from '@radix-ui/react-dialog';
 
 import { Flex } from '@/components/Common/Flex';
-import { IconCloseS, IconConfirmAlert, IconConfirmCheck } from '@/icons';
+import { IconCloseS } from '@/icons';
 
 import {
   DialogContent,
   DialogDescription,
-  DialogIcon,
   DialogTitle,
   IconButton,
   StyledOverlay,
@@ -50,19 +49,6 @@ Dialog.Content = function ({
         </Flex>
       </DialogContent>
     </DialogPrimitive.Portal>
-  );
-};
-
-Dialog.HeadIcon = function ({
-  type = 'alert',
-}: {
-  type?: 'alert' | 'confirm';
-}) {
-  return (
-    <DialogIcon>
-      {type === 'alert' && <IconConfirmAlert />}
-      {type === 'confirm' && <IconConfirmCheck />}
-    </DialogIcon>
   );
 };
 
