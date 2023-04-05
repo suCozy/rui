@@ -63,8 +63,8 @@ export const parameters = {
 };
 
 export const decorators = [
-  (Story) => (
-    <RUIProvider>
+  (Story, context) => (
+    <RUIProvider forceTheme={context.globals.theme}>
       <div style={{ margin: '3em', color: contents000 }}>
         <Story />
       </div>
@@ -72,7 +72,7 @@ export const decorators = [
   ),
 ];
 
-export const preview: Preview = {
+const preview: Preview = {
   globalTypes: {
     theme: {
       name: 'Theme',
@@ -80,13 +80,12 @@ export const preview: Preview = {
       defaultValue: 'light',
       toolbar: {
         icon: 'circlehollow',
-        // Array of plain string values or MenuItem shape (see below)
         items: ['light', 'dark'],
-        // Property that specifies if the name of the item will be displayed
         showName: true,
-        // Change title based on selected value
         dynamicTitle: true,
       },
     },
   },
 };
+
+export default preview;
