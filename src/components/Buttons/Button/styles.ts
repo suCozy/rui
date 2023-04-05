@@ -22,6 +22,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
 
       display: ${layout === 'inline' ? 'inline-flex' : 'flex'};
       flex-shrink: 0;
