@@ -1,20 +1,19 @@
-import { IconSpinner } from '@/icons';
-import { contents000 } from '@/mixins/colors';
-
 import { Container } from './styles';
-
-export interface SpinnerProps {
-  size?: number;
-  color?: string;
-  className?: string;
-}
+import { SpinnerProps } from './types';
+import { SPINNER_SIZES } from './const';
 
 export const Spinner = ({
-  size = 32,
-  color = contents000,
+  size = 'small',
   className,
-}: SpinnerProps) => (
-  <Container className={className}>
-    <IconSpinner width={size} height={size} color={color} aria-hidden />
-  </Container>
-);
+  color,
+  layout = 'block',
+}: SpinnerProps) => {
+  const isRegularSize = typeof size === 'string';
+  const SpinnerIcon = SPINNER_SIZES[isRegularSize ? size : 'small'];
+
+  return (
+    <Container className={className} $color={color} layout={layout}>
+      <SpinnerIcon {...(!isRegularSize && { width: size, height: size })} />
+    </Container>
+  );
+};
