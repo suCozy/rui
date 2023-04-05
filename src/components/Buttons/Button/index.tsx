@@ -32,9 +32,15 @@ const _Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
     ref={ref}
     {...props}
   >
-    {iconPosition === 'left' && icon}
-    {isLoading ? <Spinner size={SPINNER_SIZE_MAP[size]} /> : children}
-    {iconPosition === 'right' && icon}
+    {isLoading ? (
+      <Spinner size={SPINNER_SIZE_MAP[size]} />
+    ) : (
+      <>
+        {iconPosition === 'left' && icon}
+        {children}
+        {iconPosition === 'right' && icon}
+      </>
+    )}
   </StyledButton>
 );
 
