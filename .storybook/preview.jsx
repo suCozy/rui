@@ -68,7 +68,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <RUIProvider>
-      <div style={{ margin: '3em' }}>
+      <div style={{ margin: '3em', color: contents000 }}>
         <Story />
       </div>
     </RUIProvider>
