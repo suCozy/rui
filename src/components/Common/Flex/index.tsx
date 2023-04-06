@@ -1,6 +1,8 @@
 import type { CSSProperties, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 
+import type { ConvertTransientProps } from '@/common/utils/type';
+
 export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   align?: CSSProperties['alignItems'];
   direction?: CSSProperties['flexDirection'];
@@ -43,4 +45,6 @@ const StyledFlex = styled.div<Partial<FlexProps>>(
  * @prop {CSSProperties['flexDirection']} direction
  * @prop {CSSProperties['flexWrap']} wrap
  */
-export const Flex = (props: FlexProps) => <StyledFlex {...props} />;
+export const Flex = (props: ConvertTransientProps<FlexProps>) => (
+  <StyledFlex {...props} />
+);
