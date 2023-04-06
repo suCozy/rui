@@ -35,40 +35,32 @@ export function Dialog({ children, ...props }: DialogProps) {
  * @prop {boolean} dimmed
  * @see https://www.radix-ui.com/docs/primitives/components/dialog
  */
-Dialog.Content = function ({
-  children,
-  dimmed = true,
-  ...props
-}: ContentProps) {
-  return (
-    <DialogPrimitive.Portal>
-      {dimmed && <StyledOverlay />}
-      <DialogContent {...props}>
-        <Flex direction="column" align="center">
-          {children}
-        </Flex>
-      </DialogContent>
-    </DialogPrimitive.Portal>
-  );
-};
+Dialog.Content = ({ children, dimmed = true, ...props }: ContentProps) => (
+  <DialogPrimitive.Portal>
+    {dimmed && <StyledOverlay />}
+    <DialogContent {...props}>
+      <Flex direction="column" align="center">
+        {children}
+      </Flex>
+    </DialogContent>
+  </DialogPrimitive.Portal>
+);
 
-Dialog.CloseIcon = function () {
-  return (
-    <Close asChild>
-      <IconButton type="button" aria-label="Close">
-        <IconCloseS />
-      </IconButton>
-    </Close>
-  );
-};
+Dialog.CloseIcon = () => (
+  <Close asChild>
+    <IconButton type="button" aria-label="Close">
+      <IconCloseS />
+    </IconButton>
+  </Close>
+);
 
-Dialog.Title = function ({ children }: { children: React.ReactNode }) {
-  return <DialogTitle>{children}</DialogTitle>;
-};
+Dialog.Title = ({ children }: { children: React.ReactNode }) => (
+  <DialogTitle>{children}</DialogTitle>
+);
 
-Dialog.Description = function ({ children }: { children: React.ReactNode }) {
-  return <DialogDescription>{children}</DialogDescription>;
-};
+Dialog.Description = ({ children }: { children: React.ReactNode }) => (
+  <DialogDescription>{children}</DialogDescription>
+);
 
 Dialog.Trigger = Trigger;
 Dialog.Close = Close;
