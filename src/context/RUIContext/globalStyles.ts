@@ -7,55 +7,29 @@ import { hexToRgb } from '@/mixins/colors/utils';
 export const RUIGlobalStyle = createGlobalStyle<{
   customMixins?: RUIColorMixinsType;
   forceTheme?: ThemeType;
-}>(({ customMixins, forceTheme }) => {
-  switch (forceTheme) {
-    case 'light':
-      return css`
-        :root {
-          ${Object.entries({
-            ...ruiColorTheme.light,
-            ...customMixins?.light,
-          }).map(
-            ([key, value]) =>
-              `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
-          )}
-        }
-      `;
-    case 'dark':
-      return css`
-        :root {
-          ${Object.entries({
-            ...ruiColorTheme.dark,
-            ...customMixins?.dark,
-          }).map(
-            ([key, value]) =>
-              `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
-          )}
-        }
-      `;
-    default:
-      return css`
-        :root {
-          ${Object.entries({
-            ...ruiColorTheme.light,
-            ...customMixins?.light,
-          }).map(
-            ([key, value]) =>
-              `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
-          )}
-        }
+}>(
+  ({ customMixins, forceTheme }) => css`
+    :root {
+      ${getThemeCssFragment({ theme: forceTheme || 'light', customMixins })}
 
-        @media (prefers-color-scheme: dark) {
-          :root {
-            ${Object.entries({
-              ...ruiColorTheme.dark,
-              ...customMixins?.dark,
-            }).map(
-              ([key, value]) =>
-                `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
-            )}
-          }
-        }
-      `;
-  }
-});
+      @media (prefers-color-scheme: dark) {
+        ${getThemeCssFragment({ theme: forceTheme || 'dark', customMixins })}
+      }
+    }
+  `
+);
+
+function getThemeCssFragment({
+  theme,
+  customMixins,
+}: {
+  theme: ThemeType;
+  customMixins?: RUIColorMixinsType;
+}) {
+  return Object.entries({
+    ...ruiColorTheme[theme],
+    ...customMixins?.[theme],
+  }).map(
+    ([key, value]) => `${key}: ${value}; ${key}__rgb: ${hexToRgb(value)};`
+  );
+}
