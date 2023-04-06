@@ -12,7 +12,7 @@ import { TextInput } from '.';
 type Story = StoryObj<typeof TextInput>;
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta: Meta = {
+const meta = {
   title: 'Example/Input',
   component: TextInput,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -27,7 +27,7 @@ const meta: Meta = {
         'tel',
         'url',
         'password',
-      ] as Parameters<typeof TextInput>[0]['type'][],
+      ] satisfies Parameters<typeof TextInput>[0]['type'][],
       defaultValue: 'text',
     },
     hasTogglePasswordVisibilityButton: {
@@ -55,7 +55,7 @@ const meta: Meta = {
       defaultValue: false,
     },
   },
-};
+} satisfies Meta<typeof TextInput>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Default: Story = {

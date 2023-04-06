@@ -11,14 +11,14 @@ import { Button } from '.';
 
 type Story = StoryObj<typeof Button>;
 
-const meta: Meta = {
+const meta = {
   title: 'Buttons/Button',
   component: Button,
   argTypes: {
     icon: { control: 'select', options: iconNames },
     color: { control: 'color' },
   },
-};
+} satisfies Meta<typeof Button>;
 
 export const Default: Story = {
   render: ({ icon, ...args }) => {

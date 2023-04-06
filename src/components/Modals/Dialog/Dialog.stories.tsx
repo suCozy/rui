@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/Buttons/Button';
@@ -7,10 +8,10 @@ import { Dialog } from '.';
 
 type Story = StoryObj<typeof Dialog>;
 
-const meta: Meta = {
+const meta = {
   title: 'Modals/Dialog',
   component: DialogComponent,
-};
+} satisfies Meta<typeof DialogComponent>;
 
 export const Default: Story = { render: () => <DialogComponent /> };
 

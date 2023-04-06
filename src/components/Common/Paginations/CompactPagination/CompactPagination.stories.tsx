@@ -5,7 +5,7 @@ import { CompactPagination } from '.';
 
 type Story = StoryObj<typeof CompactPagination>;
 
-const meta: Meta = {
+const meta = {
   title: 'Common/CompactPagination',
   component: CompactPagination,
   args: {
@@ -14,7 +14,7 @@ const meta: Meta = {
     infinite: true,
     className: 'CompactPagination',
   },
-};
+} satisfies Meta<typeof CompactPagination>;
 
 export const Basic: Story = {
   render: (args) => {

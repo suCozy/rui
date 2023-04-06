@@ -5,10 +5,10 @@ import { Divider } from './index';
 
 type Story = StoryObj<typeof Divider>;
 
-const meta: Meta = {
+const meta = {
   title: 'Common/Divider',
   component: Divider,
-};
+} satisfies Meta<typeof Divider>;
 
 export const Default: Story = {
   render: () => (

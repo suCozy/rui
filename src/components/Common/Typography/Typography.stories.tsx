@@ -17,10 +17,10 @@ import { Typography } from '.';
 
 type Story = StoryObj<typeof Typography>;
 
-const meta: Meta = {
+const meta = {
   title: 'Typography/Typography',
   component: Typography,
-};
+} satisfies Meta<typeof Typography>;
 
 export const Overview: Story = {
   render: () => (

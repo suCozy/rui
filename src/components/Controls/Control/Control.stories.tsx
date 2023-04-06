@@ -5,7 +5,7 @@ import { Control } from '.';
 
 type Story = StoryObj<typeof Control>;
 
-const meta: Meta = {
+const meta = {
   title: 'Controls/Control',
   component: Control,
   args: {
@@ -16,7 +16,7 @@ const meta: Meta = {
     checked: false,
     onCheckedChange: () => {},
   },
-};
+} satisfies Meta<typeof Control>;
 
 export const Default: Story = {
   render: ({ onCheckedChange, ...args }) => {

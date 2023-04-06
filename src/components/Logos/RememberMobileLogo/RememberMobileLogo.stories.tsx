@@ -4,7 +4,7 @@ import { RememberMobileLogo } from '.';
 
 type Story = StoryObj<typeof RememberMobileLogo>;
 
-const meta: Meta = {
+const meta = {
   title: 'Logos/RememberMobileLogo',
   component: RememberMobileLogo,
   args: {
@@ -12,7 +12,7 @@ const meta: Meta = {
     height: 20,
     customElement: '기업용 서비스',
   },
-};
+} satisfies Meta<typeof RememberMobileLogo>;
 
 export const Default: Story = {
   render: (args) => <RememberMobileLogo {...args} />,

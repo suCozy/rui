@@ -7,17 +7,16 @@ import { Radio } from '.';
 
 type Story = StoryObj<typeof Radio>;
 
-const meta: Meta = {
+const meta = {
   title: 'Controls/Radio',
   component: Radio,
   args: {
     disabled: false,
-    required: false,
     name: 'Radio',
     checked: false,
     onCheckedChange: () => {},
   },
-};
+} satisfies Meta<typeof Radio>;
 
 export const Default: Story = {
   render: ({ onCheckedChange, ...args }) => {

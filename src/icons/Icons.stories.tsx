@@ -6,14 +6,14 @@ import { getIconComponentFromName, iconNames } from '@/components/stories/util';
 
 type Story = StoryObj<typeof Icons>;
 
-const meta: Meta = {
+const meta = {
   title: 'Assets/Icons',
   component: Icons,
   argTypes: {
     iconName: { control: 'select', options: iconNames.slice(1) },
     color: { control: 'color' },
   },
-};
+} satisfies Meta<typeof Icons>;
 
 export const Default: Story = {
   render: (args) => <Icons {...args} />,
