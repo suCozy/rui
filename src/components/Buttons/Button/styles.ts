@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import {
   disabled,
-  getRgb,
   getTypographyStyles,
   primary100,
   primary200,
@@ -55,7 +54,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(${getRgb(primary200)});
+        background-color: ${primary200};
         opacity: 0;
         pointer-events: none;
 
