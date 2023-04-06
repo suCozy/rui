@@ -80,6 +80,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
         }
         &::before {
           background-color: ${primary200};
+          mix-blend-mode: luminosity;
         }
       `,
 
@@ -93,6 +94,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
         }
         &::before {
           background-color: ${$color ?? primary100};
+          mix-blend-mode: luminosity;
         }
       `,
   ]
