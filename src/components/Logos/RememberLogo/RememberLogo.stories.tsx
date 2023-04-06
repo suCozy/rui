@@ -1,8 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RememberLogo } from './index';
 
-const meta: ComponentMeta<typeof RememberLogo> = {
+type Story = StoryObj<typeof RememberLogo>;
+
+const meta: Meta = {
   title: 'Logos/RememberLogo',
   component: RememberLogo,
   args: {
@@ -11,10 +13,8 @@ const meta: ComponentMeta<typeof RememberLogo> = {
   },
 };
 
-const Template: ComponentStory<typeof RememberLogo> = (args) => (
-  <RememberLogo {...args} />
-);
-
-export const Basic = Template.bind({});
+export const Default: Story = {
+  render: (args) => <RememberLogo {...args} />,
+};
 
 export default meta;

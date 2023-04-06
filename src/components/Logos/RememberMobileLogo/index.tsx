@@ -1,4 +1,4 @@
-import { RememberLogoProps } from '../types';
+import type { RememberLogoProps } from '../types';
 
 export const RememberMobileLogo = ({
   className,

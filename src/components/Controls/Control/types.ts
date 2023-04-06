@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 
 export type ControlSizeType = 'small' | 'medium';
 

@@ -1,0 +1,4 @@
+import{a as n}from"./jsx-runtime-93f93352.js";import{r as m}from"./index-ba39e096.js";import{i,g as p}from"./util-640a97cb.js";import"./_commonjsHelpers-042e6b4d.js";import"./control_favorite_on-4f971eb0.js";import"./icon_arrow_right_double_s-efcbd90a.js";import"./icon_arrow_right_s-bda9810d.js";import"./icon_close_s-d21862cb.js";import"./icon_spinner_s-5dce1a3f.js";const D={title:"Assets/Icons",component:a,argTypes:{iconName:{control:"select",options:i.slice(1)},color:{control:"color"}}},o={render:r=>n(a,{...r})};function a({iconName:r,color:c}){return r?n("div",{style:{color:c},children:m.createElement(p(r))}):null}var e,t,s;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  render: args => <Icons {...args} />
+}`,...(s=(t=o.parameters)==null?void 0:t.docs)==null?void 0:s.source}}};const N=["Default"];export{o as Default,N as __namedExportsOrder,D as default};
+//# sourceMappingURL=Icons.stories-bfaf5039.js.map

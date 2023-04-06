@@ -1,6 +1,6 @@
-import path, { join } from 'path';
 import fs from 'fs';
 import { default as humps } from 'humps';
+import path from 'path';
 
 const BASE_DIR = path.join(process.cwd(), '/src');
 const ICONS_DIR = path.join(BASE_DIR, 'assets/icons');
@@ -12,27 +12,6 @@ const createIconFileTemplate = (componentName, fileName) => {
   return `export { ReactComponent as ${componentName} } from '${iconRelPath}';`;
 };
 
-const createIconStoryTemplate = (
-  name
-) => `import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { ${name} } from '..';
-
-export default {
-  title: 'Icons/${name}',
-  component: ${name},
-  args: {
-    color: 'black',
-  },
-} as ComponentMeta<typeof ${name}>;
-
-const Template: ComponentStory<typeof ${name}> = (args) => (
-  <${name} {...args} />
-);
-
-export const Basic = Template.bind({});
-`;
-
 const svgIconFiles = fs
   .readdirSync(path.join(ICONS_DIR))
   .filter((fileName) => /\.svg$/.test(fileName));
@@ -40,13 +19,6 @@ const svgIconFiles = fs
 const icons = svgIconFiles
   .map((fileName) => {
     const componentName = humps.pascalize(fileName.replace('.svg', ''));
-    if (!fs.existsSync(join(EXPORT_DIR, 'stories'))) {
-      fs.mkdirSync(join(EXPORT_DIR, 'stories'), { recursive: true });
-    }
-    fs.writeFileSync(
-      path.join(EXPORT_DIR, 'stories', `${componentName}.stories.tsx`),
-      createIconStoryTemplate(componentName)
-    );
     return createIconFileTemplate(componentName, fileName);
   })
   .join('\n');

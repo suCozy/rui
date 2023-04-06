@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 import { ruiColorTheme } from '@/mixins/colors/theme';
-import { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
+import type { RUIColorMixinsType, ThemeType } from '@/mixins/colors/types';
 import { hexToRgb } from '@/mixins/colors/utils';
 
 export const RUIGlobalStyle = createGlobalStyle<{

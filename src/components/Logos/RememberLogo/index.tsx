@@ -1,5 +1,6 @@
-import { getEnvLabel, EnvType } from '../EnvLabel';
-import { RememberLogoProps } from '../types';
+import type { EnvType } from '../EnvLabel';
+import { getEnvLabel } from '../EnvLabel';
+import type { RememberLogoProps } from '../types';
 
 export const getViewBoxWidth = (env?: EnvType): number => {
   switch (env) {

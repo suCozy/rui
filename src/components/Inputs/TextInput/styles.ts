@@ -11,7 +11,7 @@ import {
 } from '@/mixins/colors';
 import { ellipsis, getTypographyStyles } from '@/mixins/typography';
 
-import { HintTextColorType } from './types';
+import type { HintTextColorType } from './types';
 
 export const InputContainer = styled.div<{
   disabled?: boolean;

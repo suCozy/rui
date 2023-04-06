@@ -1,4 +1,4 @@
-import { RUIColorThemeType } from './types';
+import type { RUIColorThemeType } from './types';
 
 /**
  * {@link https://www.figma.com/file/2qQ5eJPRTiAKyz6Q1IzfMJ/WEB?node-id=2570%3A12136&viewport=347%2C475%2C0.47}

@@ -1,0 +1,2 @@
+import{r as e}from"./index-ba39e096.js";const r=t=>e.createElement("svg",{width:16,height:16,viewBox:"0 0 16 16",fill:"none",xmlns:"http://www.w3.org/2000/svg",...t},e.createElement("path",{d:"M12.733 3.93332L11.7997 3.06665L7.99967 7.06665L4.26634 3.46665L3.33301 4.46665L7.06635 7.99999L3.33301 12L4.26634 12.8667L7.99967 8.93332L11.7997 12.4667L12.733 11.4667L8.933 7.93332L12.733 3.93332Z",fill:"currentColor"}));export{r as S};
+//# sourceMappingURL=icon_close_s-d21862cb.js.map
