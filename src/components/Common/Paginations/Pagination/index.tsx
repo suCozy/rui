@@ -1,11 +1,11 @@
 import { contents000, contents300 } from '@/mixins/colors';
 import {
-  IconArrowDoubleLeftS,
+  IconArrowLeftDoubleS,
   IconArrowLeftS,
   IconArrowRightS,
-  IconArrowDoubleRightS,
+  IconArrowRightDoubleS,
 } from '@/icons';
-import { range } from '@/utils/common';
+import { range } from '@/common/utils/common';
 
 import {
   Pages,
@@ -66,7 +66,7 @@ export function Pagination({
           onClick={onClickFirstPage}
           aria-label="첫 페이지로 이동"
         >
-          <IconArrowDoubleLeftS
+          <IconArrowLeftDoubleS
             color={iconColor(isFirstPageDisabled)}
             aria-hidden="true"
           />
@@ -111,7 +111,7 @@ export function Pagination({
           onClick={onClickLastPage}
           aria-label="마지막 페이지로 이동"
         >
-          <IconArrowDoubleRightS
+          <IconArrowRightDoubleS
             color={iconColor(isLastPageDisabled)}
             aria-hidden="true"
           />

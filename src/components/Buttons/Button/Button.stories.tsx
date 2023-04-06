@@ -1,22 +1,39 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { createElement } from 'react';
+
+import {
+  getIconComponentFromName,
+  iconNames,
+  isIconName,
+} from '@/components/stories/util';
 
 import { Button } from '.';
 
-export default {
+type Story = StoryObj<typeof Button>;
+
+const meta: Meta = {
   title: 'Buttons/Button',
   component: Button,
-  args: {
-    disabled: false,
-    theme: 'solid',
-    outline: false,
-    size: 'large',
-    loading: true,
-    block: false,
+  argTypes: {
+    icon: { control: 'select', options: iconNames },
+    color: { control: 'color' },
   },
-} as ComponentMeta<typeof Button>;
+};
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
-);
+export const Default: Story = {
+  render: ({ icon, ...args }) => {
+    const iconString = String(icon);
+    const iconElement =
+      icon &&
+      isIconName(iconString) &&
+      createElement(getIconComponentFromName(iconString));
 
-export const Primary = Template.bind({});
+    return (
+      <Button {...args} icon={iconElement}>
+        버튼
+      </Button>
+    );
+  },
+};
+
+export default meta;
