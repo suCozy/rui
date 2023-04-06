@@ -17,11 +17,12 @@ export const StyledButton = styled.button<ButtonStyleProps>(
       all: unset;
       appearance: none;
       box-sizing: border-box;
-      user-select: none;
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      user-select: none;
       -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
 
       display: ${layout === 'inline' ? 'inline-flex' : 'flex'};
       flex-shrink: 0;
