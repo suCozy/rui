@@ -79,8 +79,10 @@ const preview: Preview = {
       description: 'Global theme for components',
       defaultValue: 'light',
       toolbar: {
-        icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: [
+          { value: 'light', title: '🌅 LightMode' },
+          { value: 'dark', title: '🌌 DarkMode' },
+        ],
         showName: true,
         dynamicTitle: true,
       },
