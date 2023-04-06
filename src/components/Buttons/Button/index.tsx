@@ -1,48 +1,47 @@
-import { Spinner } from '@/components/Common/Spinner';
+import type { ForwardRefRenderFunction } from 'react';
+import { forwardRef, memo } from 'react';
 
-import { ButtonRoot } from './styles';
-import type { ButtonSizeType, ButtonVariant } from './types';
+import { Spinner } from '@/components/Common';
 
-export function Button({
-  className,
-  disabled = false,
-  variant = 'solid',
-  outline = false,
-  size = 'medium',
-  loading = false,
-  block = false,
-  children,
-  ...props
-}: ButtonProps) {
-  const isLarge = size?.toLocaleLowerCase().includes('large');
+import { SPINNER_SIZE_MAP } from './const';
+import { StyledButton } from './styles';
+import type { ButtonProps } from './types';
 
-  return (
-    <ButtonRoot
-      className={className}
-      size={size}
-      variant={variant}
-      outline={outline}
-      disabled={disabled}
-      block={block}
-      {...props}
-    >
-      {/* left / right 아이콘 추가 시 Icon 컴포넌트를 사용해주세요. */}
-      {loading && !disabled ? (
-        <Spinner size={isLarge ? 24 : 16} color={outline ? 'black' : 'white'} />
-      ) : (
-        children
-      )}
-    </ButtonRoot>
-  );
-}
+const _Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
+  {
+    children,
+    color,
+    size = 'small',
+    variant = 'primary',
+    layout = 'block',
+    isLoading = false,
+    icon,
+    iconPosition,
+    ...props
+  },
+  ref
+) => (
+  <StyledButton
+    $color={color}
+    $size={size}
+    variant={variant}
+    layout={layout}
+    isLoading={isLoading}
+    aria-live="polite"
+    aria-busy={isLoading}
+    ref={ref}
+    {...props}
+  >
+    {isLoading ? (
+      <Spinner size={SPINNER_SIZE_MAP[size]} />
+    ) : (
+      <>
+        {iconPosition === 'left' && icon}
+        {children}
+        {iconPosition === 'right' && icon}
+      </>
+    )}
+  </StyledButton>
+);
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  disabled?: boolean;
-  variant?: ButtonVariant;
-  outline?: boolean;
-  size?: ButtonSizeType;
-  loading?: boolean;
-  block?: boolean;
-  children: React.ReactNode;
-}
+export const Button = memo(forwardRef(_Button));

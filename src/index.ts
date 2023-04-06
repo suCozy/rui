@@ -1,4 +1,3 @@
 export * from './components';
+export * from './context';
 export * from './mixins';
-export * as legacy from './legacy';
-export * as icons from './icons';

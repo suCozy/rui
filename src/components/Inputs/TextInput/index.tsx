@@ -1,14 +1,12 @@
-import {
-  forwardRef,
-  memo,
+import { forwardRef, memo, useState } from 'react';
+import type {
   ReactNode,
-  useState,
-  type ForwardRefRenderFunction,
-  type InputHTMLAttributes,
+  ForwardRefRenderFunction,
+  InputHTMLAttributes,
 } from 'react';
 
 import { IconVisibilityS, IconVisibilityOffS } from '@/icons';
-import { createRandomId } from '@/utils/id';
+import { createRandomId } from '@/common/utils/id';
 
 import {
   InputContainer,

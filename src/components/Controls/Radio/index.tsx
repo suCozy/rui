@@ -1,6 +1,6 @@
 import { ControlRoot } from '../Control/styles';
 import { RadioInput } from './styles';
-import { ControlProps } from './types';
+import type { ControlProps } from './types';
 
 /**
  *

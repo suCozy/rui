@@ -1,20 +1,20 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { RememberSquareLogo } from './index';
+import { RememberSquareLogo } from '.';
 
-const meta: ComponentMeta<typeof RememberSquareLogo> = {
-  title: 'Logos/RememberSquareLogo ',
+type Story = StoryObj<typeof RememberSquareLogo>;
+
+const meta: Meta = {
+  title: 'Logos/RememberSquareLogo',
   component: RememberSquareLogo,
   args: {
+    color: 'black',
     height: 20,
-    customElement: '리멤버 블랙',
   },
 };
 
-const Template: ComponentStory<typeof RememberSquareLogo> = (args) => (
-  <RememberSquareLogo {...args} />
-);
-
-export const Basic = Template.bind({});
+export const Default: Story = {
+  render: (args) => <RememberSquareLogo {...args} />,
+};
 
 export default meta;

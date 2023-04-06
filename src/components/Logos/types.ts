@@ -1,4 +1,4 @@
-import { EnvType } from './EnvLabel';
+import type { EnvType } from './EnvLabel';
 
 export interface RememberLogoProps
   extends React.HTMLAttributes<HTMLDivElement> {

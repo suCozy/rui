@@ -8,7 +8,7 @@ import {
   contents300,
   getTypographyStyles,
 } from '@/mixins';
-import { mobileOnly, webOnly } from '@/mixins/breakpoints';
+import { mobileOnly, desktopOnly } from '@/mixins/breakpoints';
 
 export const PaginationContainer = styled.nav`
   all: unset;
@@ -71,7 +71,7 @@ const DefaultButton = styled.button`
 `;
 
 export const ArrowButton = styled(DefaultButton)`
-  ${webOnly(css`
+  ${desktopOnly(css`
     &:hover {
       background-color: ${bg200};
     }
