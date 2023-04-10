@@ -1,7 +1,7 @@
 import type { CSSProperties, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 
-import type { ConvertTransientProps } from '@/common/utils/type';
+import type { ConvertTransientProps } from '@/common/types/styles';
 
 export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   align?: CSSProperties['alignItems'];

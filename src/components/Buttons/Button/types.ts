@@ -1,4 +1,4 @@
-import type { ConvertTransientProps } from '@/common/utils/type';
+import type { ConvertTransientProps } from '@/common/types/styles';
 import type { ColorVariable } from '@/mixins/colors/types';
 
 export type ButtonSize = 'small' | 'medium' | 'large' | 'xLarge';

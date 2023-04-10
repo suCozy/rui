@@ -3,7 +3,7 @@ import type { RUIColorThemeType } from './types';
 /**
  * {@link https://www.figma.com/file/2qQ5eJPRTiAKyz6Q1IzfMJ/WEB?node-id=2570%3A12136&viewport=347%2C475%2C0.47}
  */
-export const ruiColorTheme: RUIColorThemeType = {
+export const ruiColorTheme = {
   light: {
     '--rui-primary100': '#000000',
     '--rui-primary200': '#FFFFF9',
@@ -70,4 +70,4 @@ export const ruiColorTheme: RUIColorThemeType = {
     '--rui-fixed-bg-white': '#000000',
     '--rui-fixed-black': '#000000',
   },
-};
+} as const satisfies RUIColorThemeType;
