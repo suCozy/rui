@@ -3,7 +3,7 @@ import type { ColorVariable } from '@/mixins/colors/types';
 
 export type ButtonSize = 'small' | 'medium' | 'large' | 'xLarge';
 
-export type ButtonVariant = 'primary' | 'outline';
+export type ButtonVariant = 'primary' | 'outline' | 'outlineFilled';
 
 export type ButtonLayout = 'inline' | 'block' | 'fullBlock';
 

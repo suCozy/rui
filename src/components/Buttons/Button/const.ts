@@ -1,4 +1,4 @@
-import { contents000, contents300, contents999 } from '@/mixins/colors';
+import { bg100, contents000, contents999 } from '@/mixins/colors';
 import type { SpinnerSize } from '@/components/Common/Spinner/types';
 
 import type { ButtonSize, ButtonVariant } from './types';
@@ -36,7 +36,11 @@ export const BUTTON_COLORS = {
     color: contents999,
   },
   outline: {
-    backgroundColor: contents300,
+    backgroundColor: 'transparent',
+    color: contents000,
+  },
+  outlineFilled: {
+    backgroundColor: bg100,
     color: contents000,
   },
 } as const satisfies Record<ButtonVariant, unknown>;

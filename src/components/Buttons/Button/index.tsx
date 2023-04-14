@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { forwardRef, memo } from 'react';
+import { forwardRef } from 'react';
 
 import { Spinner } from '@/components/Common';
 
@@ -44,4 +44,4 @@ const _Button: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   </StyledButton>
 );
 
-export const Button = memo(forwardRef(_Button));
+export const Button = forwardRef(_Button);
