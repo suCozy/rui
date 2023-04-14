@@ -1,44 +1,19 @@
-import { forwardRef, memo, useState } from 'react';
-import type {
-  ReactNode,
-  ForwardRefRenderFunction,
-  InputHTMLAttributes,
-} from 'react';
+import type { ForwardRefRenderFunction } from 'react';
+import { forwardRef, useState } from 'react';
 
-import { IconVisibilityS, IconVisibilityOffS } from '@/icons';
 import { createRandomId } from '@/common/utils/id';
+import { IconVisibilityOffS, IconVisibilityS } from '@/icons';
 
 import {
   InputContainer,
+  InputDecorator,
   InputError,
   InputHintText,
   InputInner,
   InputLabel,
   InputTogglePasswordVisibilityButton,
 } from './styles';
-import type { HintTextColorType } from './types';
-
-type BaseInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  `aria-${string}`
->;
-
-type TextInputProps = {
-  type?: 'text' | 'number' | 'email' | 'search' | 'tel' | 'url';
-  label?: ReactNode;
-  hintText?: string;
-  hintTextColor?: HintTextColorType;
-  leftElement?: ReactNode;
-  rightElement?: ReactNode;
-  errorMessage?: string;
-};
-
-type PasswordInputProps = Omit<TextInputProps, 'type'> & {
-  type: 'password';
-  hasTogglePasswordVisibilityButton: boolean;
-};
-
-export type InputProps = BaseInputProps & (TextInputProps | PasswordInputProps);
+import type { InputProps } from './types';
 
 const _TextInput: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   {
@@ -61,7 +36,7 @@ const _TextInput: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     props.type === 'password' &&
     props.hasTogglePasswordVisibilityButton &&
     isVisiblePassword;
-  hintTextColor;
+
   return (
     <>
       {label && (
@@ -75,13 +50,13 @@ const _TextInput: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         hasError={!!errorMessage}
         className={className}
       >
-        {leftElement}
+        {leftElement && <InputDecorator>{leftElement}</InputDecorator>}
         <InputInner
           disabled={disabled}
           id={inputId}
           aria-labelledby={label ? labelId : undefined}
           {...props}
-          type={isForceVisibleInput ? 'text' : props.type ?? 'text'}
+          type={isForceVisibleInput ? 'text' : props.type || 'text'}
           ref={ref}
         />
         {hintText && (
@@ -94,7 +69,7 @@ const _TextInput: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
               onChange={setIsVisiblePassword}
             />
           )}
-        {rightElement}
+        {rightElement && <InputDecorator>{rightElement}</InputDecorator>}
       </InputContainer>
       {errorMessage && <InputError>{errorMessage}</InputError>}
     </>
@@ -120,4 +95,4 @@ const TogglePasswordVisibilityButton = ({
   </InputTogglePasswordVisibilityButton>
 );
 
-export const TextInput = memo(forwardRef(_TextInput));
+export const TextInput = forwardRef(_TextInput);
