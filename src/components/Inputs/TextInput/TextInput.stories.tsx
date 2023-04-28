@@ -11,11 +11,9 @@ import { TextInput } from '.';
 
 type Story = StoryObj<typeof TextInput>;
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta: Meta = {
-  title: 'Example/Input',
+const meta = {
+  title: 'Inputs/TextInput',
   component: TextInput,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     type: {
       control: 'select',
@@ -27,8 +25,7 @@ const meta: Meta = {
         'tel',
         'url',
         'password',
-      ] as Parameters<typeof TextInput>[0]['type'][],
-      defaultValue: 'text',
+      ] satisfies Parameters<typeof TextInput>[0]['type'][],
     },
     hasTogglePasswordVisibilityButton: {
       type: 'boolean',
@@ -38,7 +35,12 @@ const meta: Meta = {
         eq: 'password',
       },
     },
-    placeholder: { defaultValue: 'PlaceHolder', type: 'string' },
+    placeholder: {
+      type: 'string',
+      table: {
+        defaultValue: { summary: 'PlaceHolder' },
+      },
+    },
     hintText: { type: 'string' },
     hintTextColor: {
       control: 'select',
@@ -55,11 +57,11 @@ const meta: Meta = {
       defaultValue: false,
     },
   },
-};
+} satisfies Meta<typeof TextInput>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Default: Story = {
-  render: ({ leftElement, rightElement, ...args }) => {
+  render: ({ leftElement, rightElement, ...props }) => {
     const leftIconString = String(leftElement);
     const RightIconString = String(rightElement);
     const renderedLeftElement =
@@ -70,12 +72,12 @@ export const Default: Story = {
       rightElement &&
       isIconName(RightIconString) &&
       createElement(getIconComponentFromName(RightIconString));
-
     return (
       <TextInput
-        {...args}
         leftElement={renderedLeftElement}
         rightElement={renderedRightElement}
+        placeholder="PlaceHolder"
+        {...props}
       />
     );
   },

@@ -5,7 +5,7 @@ import { Pagination } from '.';
 
 type Story = StoryObj<typeof Pagination>;
 
-const meta: Meta = {
+const meta = {
   title: 'Common/Pagination',
   component: Pagination,
   args: {
@@ -16,7 +16,7 @@ const meta: Meta = {
     showFirstButton: true,
     showLastButton: true,
   },
-};
+} satisfies Meta<typeof Pagination>;
 
 export const Basic: Story = {
   render: (args) => {

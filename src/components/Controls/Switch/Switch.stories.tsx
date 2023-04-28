@@ -5,7 +5,7 @@ import { Switch } from '.';
 
 type Story = StoryObj<typeof Switch>;
 
-const meta: Meta = {
+const meta = {
   title: 'Controls/Switch',
   component: Switch,
   args: {
@@ -13,7 +13,7 @@ const meta: Meta = {
     checked: false,
     onCheckedChange: () => {},
   },
-};
+} satisfies Meta<typeof Switch>;
 
 export const Default: Story = {
   render: ({ onCheckedChange, ...args }) => {

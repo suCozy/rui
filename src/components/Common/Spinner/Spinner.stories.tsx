@@ -6,11 +6,11 @@ import { Spinner } from './index';
 
 type Story = StoryObj<typeof Spinner>;
 
-const meta: Meta = {
+const meta = {
   title: 'Common/Spinner',
   component: Spinner,
   args: {},
-};
+} satisfies Meta<typeof Spinner>;
 
 export const Default: Story = {
   render: (args) => (

@@ -37,7 +37,7 @@ export const StyledButton = styled.button<ButtonStyleProps>(
       padding: ${BUTTON_SIZES[$size].padding};
       border-radius: 4px;
 
-      color: ${(variant === 'outline' ? $color : null) ??
+      color: ${(variant.startsWith('outline') ? $color : null) ??
       BUTTON_COLORS[variant].color};
 
       &:disabled {
@@ -80,21 +80,20 @@ export const StyledButton = styled.button<ButtonStyleProps>(
         }
         &::before {
           background-color: ${primary200};
-          mix-blend-mode: luminosity;
         }
       `,
 
     // outline 스타일
-    variant === 'outline' &&
+    variant.startsWith('outline') &&
       css`
-        border: 1px solid ${$color ?? BUTTON_COLORS[variant].backgroundColor};
+        background-color: ${BUTTON_COLORS[variant].backgroundColor};
+        border: 1px solid ${$color ?? BUTTON_COLORS[variant].color};
         &:disabled {
           border-color: ${disabled};
           color: ${disabled};
         }
         &::before {
           background-color: ${$color ?? primary100};
-          mix-blend-mode: luminosity;
         }
       `,
   ]

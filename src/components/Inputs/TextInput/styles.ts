@@ -1,17 +1,14 @@
 import styled, { css } from 'styled-components';
-import * as Label from '@radix-ui/react-label';
 
 import {
   bg200,
   contents000,
   contents200,
   contents300,
-  contents999,
   roleRed,
 } from '@/mixins/colors';
+import type { ColorVariable } from '@/mixins/colors/types';
 import { ellipsis, getTypographyStyles } from '@/mixins/typography';
-
-import type { HintTextColorType } from './types';
 
 export const InputContainer = styled.div<{
   disabled?: boolean;
@@ -22,7 +19,6 @@ export const InputContainer = styled.div<{
   border: 1px solid ${contents300};
   border-radius: 4px;
   padding: 0 12px;
-  background-color: ${contents999};
   gap: 8px;
 
   transition: border-color 0.2s, background-color 0.2s;
@@ -44,15 +40,23 @@ export const InputContainer = styled.div<{
   ]}
 `;
 
+export const InputDecorator = styled.div`
+  flex-shrink: 0;
+  /* Inline요소가 들어오면 강제로 block으로 처리 (중앙정렬을 위해) */
+  > * {
+    display: block;
+  }
+`;
+
 export const InputInner = styled.input`
   ${getTypographyStyles('Body1_M')}
+  color: ${contents000};
 
   display: block;
   flex-grow: 1;
   width: 100%;
   padding: 10px 0;
   border: 0;
-  color: ${contents000};
   background-color: transparent;
 
   &:placeholder-shown {
@@ -68,7 +72,7 @@ export const InputInner = styled.input`
   }
 `;
 
-export const InputLabel = styled(Label.Label)`
+export const InputLabel = styled.label`
   ${getTypographyStyles('Headline4_B')}
   display: block;
   margin-bottom: 12px;
@@ -89,10 +93,9 @@ export const InputError = styled.div`
   margin-top: 8px;
 `;
 
-export const InputHintText = styled.span<{ textColor?: HintTextColorType }>`
+export const InputHintText = styled.span<{ textColor?: ColorVariable }>`
   ${getTypographyStyles('Body1_M')}
-  color: ${({ textColor }) =>
-    ({ roleRed, contents000, contents300 }[textColor ?? 'roleRed'] ?? roleRed)};
+  color: ${({ textColor }) => textColor};
   white-space: nowrap;
 `;
 
@@ -100,6 +103,7 @@ export const InputTogglePasswordVisibilityButton = styled.button`
   all: unset;
   appearance: none;
   cursor: pointer;
+  flex-shrink: 0;
 
   > svg {
     display: block;
